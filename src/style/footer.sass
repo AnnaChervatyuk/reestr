@@ -1,0 +1,77 @@
+.container-fluid
+  .footer
+    padding: 17px 15px
+  .btn-footer
+    padding: 15px 0
+    .btn
+      padding: 3px
+      min-width: 30px
+      &:focus
+        box-shadow: none
+    .icons
+      fill: $font-color
+      stroke: none
+    .icons--rss
+      @include icons--rss ()
+      &:hover
+        stroke: $color-rss
+    .icons--vk:hover
+        fill: $color-vk
+
+    .icons--tel:hover
+        fill: $color-tel
+
+    .icons--fb:hover
+        fill: $color-fb
+
+    .icons--twitter:hover
+        fill: $color-twitter
+
+    .icons--youtube:hover
+        fill: $color-youtube
+
+    .icons--instagram:hover
+        fill: $color-instagram
+
+    .icons--zen:hover
+        fill: $color-zen
+  .btn-partners
+    border-bottom: 1px solid $font-color
+    padding-bottom: 14px
+    .nav-link__logo-copyright
+      img
+        width: 155px
+        height: auto
+    .nav-link__logo-unisender
+      img
+        width: 104px
+        height: 30px
+
+
+
+@media (min-width: 768px)
+  .container-fluid
+    .footer
+      padding: 20px 0
+      max-width: 1100px
+      margin: 0 45px
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+      .btn-partners
+        border: none
+        padding-bottom: 0
+        .nav-link__logo-copyright
+          margin-right: 40px
+      .btn-footer
+        padding: 0
+        .btn
+          padding: 0 5px
+          &:last-child
+            padding-right: 0
+
+@media (min-width: 1200px)
+  .container-fluid
+    .footer
+      margin: 0 auto

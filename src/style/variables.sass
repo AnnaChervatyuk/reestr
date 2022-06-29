@@ -1,0 +1,162 @@
+
+$bg-card-color: #F9FAFA
+$bg-tag-color: #F1F4F8
+$bg-donate-color: #F2EFF5
+$bg-color: #F5F5F4
+$bg-main-color: #ffffff
+$bg-btn-donate-active: #1D1D1B
+$bg-monitor: #FFEDBF
+$bg-second: #F5F4F4
+
+
+$border-card-color: #F4F6F6
+$light-gray: #444444
+$text-white: #ffffff
+$border-gray: #ededed
+$tablet-width: 768px
+$desktop-width: 1300px
+
+$font-color: #1D1D1B
+$font-color-gray: #D1D1CD
+$font-color-hover: #4661BC
+$font-small-color: #6B6B66
+$color-bg-hover: #E4E4E4
+
+$border-color: $font-color
+$border: 2px solid $border-color
+
+$color-tel: #37AEE3
+$color-twitter: #1B94DF
+$color-fb: #1778F2
+$color-vk: #4A76A8
+$color-youtube: #FF0000
+$color-zen: #484F58
+$color-rss: #4661BC
+$color-instagram: #DB3270
+$color-quote: #758CDA
+$color-error: #B61414
+$color-active: #758CDA
+$color-mid-grey: #9C9D9E
+
+
+$bg-card-color--dark: #3A3A3A
+$bg-tag-color--dark: #3A3A3A
+$bg-donate-color--dark: #352B41
+$bg-color--dark: #1D1D1B
+$bg-main-color--dark: #1A1C1E
+$bg-btn-donate-active--dark: #D1D1CD
+// $card-body-gradient-mob--dark: linear-gradient(360deg, rgba(29, 29, 27, 0.971353) 0%, rgba(29, 29, 27, 0.768225) 33.33%, rgba(29, 29, 27, 0) 100%)
+// $card-body-gradient-tablet--dark: linear-gradient(360deg, rgba(29, 29, 27, 0.971353) 0%, rgba(29, 29, 27, 0.96449) 13.33%, rgba(29, 29, 27, 0.91834) 20%, rgba(29, 29, 27, 0.852589) 26.67%, rgba(29, 29, 27, 0.768225) 33.33%, rgba(29, 29, 27, 0.668116) 40%, rgba(29, 29, 27, 0.557309) 46.67%, rgba(29, 29, 27, 0.442691) 53.33%, rgba(29, 29, 27, 0.331884) 60%, rgba(29, 29, 27, 0.231775) 66.67%, rgba(29, 29, 27, 0.147411) 73.33%, rgba(29, 29, 27, 0.0816599) 80%, rgba(29, 29, 27, 0.03551) 86.67%, rgba(29, 29, 27, 0.0086472) 93.33%, rgba(29, 29, 27, 0) 100%)
+$font-color--dark: #E4E4E4
+$border-color--dark: #3A3A3A
+$border--dark: 2px solid $border-color--dark
+
+@mixin btn ()
+    border: $border
+    padding: 0
+    height: 27px
+    border-radius: 0
+    box-sizing: border-box
+    font-weight: 500
+    font-size: 13px
+    color: $font-color
+    border-color: $font-color
+    &:hover
+      color: $font-color-hover
+      border-color: $font-color-hover
+    &:active
+      color: $font-color-hover
+      border-color: $font-color-hover
+      opacity: 0.8
+    &:focus
+      box-shadow: none
+
+@mixin btn--dark ()
+    border: $border
+    padding: 0
+    height: 27px
+    border-radius: 3px
+    box-sizing: border-box
+    font-weight: 500
+    font-size: 13px
+    color: $font-color--dark
+    border-color: $font-color--dark
+    &:hover
+      color: $font-color-hover
+      border-color: $font-color-hover
+    &:active
+      color: $font-color-hover
+      border-color: $font-color-hover
+      opacity: 0.8
+    &:focus
+      box-shadow: none
+
+
+@mixin input ()
+    border: $border
+    padding: 0
+    height: 27px
+    border-radius: 0
+    box-sizing: border-box
+    font-weight: 500
+    font-size: 13px
+    color: $font-color
+    border-color: $font-color
+    &:active, &:focus, &:hover, &:focus-visible, &:-moz-focusring
+      border-radius: 0
+      border-color: $border-color
+
+@mixin icons ()
+  stroke: $font-color
+  stroke-width: 2
+  fill: transparent
+  stroke-linecap: round
+  stroke-linejoin: round
+  &:hover
+    stroke:  $font-color-hover
+  &:active
+    stroke:  $font-color-hover
+
+@mixin icons--dark ()
+  stroke: $font-color--dark
+  stroke-width: 2
+  fill: transparent
+  stroke-linecap: round
+  stroke-linejoin: round
+  &:hover
+    stroke:  $font-color-hover
+  &:active
+    stroke:  $font-color-hover
+
+@mixin icons--rss ()
+  stroke-width: 4px
+  stroke: $font-color
+  fill: none
+
+@mixin icons--rss--dark ()
+  stroke-width: 4px
+  stroke: $font-color--dark
+  fill: none
+
+@mixin text-article-quote ()
+  font-size: 18px
+  line-height: 29px
+  @media (min-width: 768px)
+    font-size: 21px
+    line-height: 34px
+
+@mixin text-main-article ()
+  font-size: 16px
+  line-height: 24px
+  @media (min-width: 768px)
+    font-size: 18px
+    line-height: 29px
+
+
+@keyframes OPEN
+  0%
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visibility

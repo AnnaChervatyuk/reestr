@@ -1,0 +1,86 @@
+.section_blockings
+  margin-top: 50px
+  max-width: 1100px
+  margin: 50px auto 0
+  padding: 20px 15px
+  .section_blocking
+    margin-bottom: 100px
+    &:last-child
+      margin-bottom: 0
+    .section_blocking__title
+      font-size: 24px
+      line-height: 30px
+      margin-bottom: 20px
+    .section_blocking__chart
+      .chart_wrapper
+        width: 100%
+      .chart_wrapper-agency
+        height: 500px
+      .chart_wrapper-type-blocking
+        min-height: 500px
+      .section_blocking__chart-filters
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+        overflow-x: auto
+        margin-bottom: 35px
+        .chart-filters__title
+          white-space: nowrap
+          font-size: 13px
+          line-height: 20px
+          font-weight: 500
+          padding: 5px 10px
+          margin: 7px 10px 7px 0
+
+          &:last-child
+            margin-right: 0
+          &.chart-filters__title-active,
+          &:hover
+            background: #E4E4E4
+            border-radius: 4px
+          &:hover
+            cursor: pointer
+      .section_blocking__chart-descr
+        font-size: 13px
+        line-height: 20px
+        color: $font-small-color
+        margin-bottom: 20px
+
+.chartCard
+  width: 100vw
+  height: 500px
+  display: flex
+  align-items: center
+  justify-content: center
+
+
+.chartBox
+  width: 600px
+  padding: 20px
+
+
+
+
+@media (min-width: 768px)
+  .section_blockings
+    .section_blocking
+      .section_blocking__chart
+        .chart_wrapper-agency
+          height: 800px
+        .section_blocking__chart-filters
+          flex-wrap: wrap
+          overflow: hidden
+
+
+// @media (min-width: 1200px)
+//   .container-visual
+//     .header_monitor
+//       .monitoring_filter
+//         h1.filter_title
+//           margin-bottom: 30px
+//         .list_blockings
+//           font-size: 18px
+//           line-height: 29px
+//           margin-bottom: 15px
+//           &:last-child
+//             margin-bottom: 0

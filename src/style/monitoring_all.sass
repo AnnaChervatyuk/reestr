@@ -1,0 +1,41 @@
+.container-fluid
+  .monitoring_all
+    padding: 50px 30px
+    max-width: 1100px
+    margin: 100px 15px
+    background-color: $bg-second
+    border-radius: 20px
+    text-align: center
+    .monitoring_all-text
+      font-size: 13px
+      line-height: 20px
+      margin-bottom: 20px
+    .monitoring_all-btn
+      @include btn()
+      font-size: 13px
+      line-height: 20px
+      padding: 0 15px
+      height: 30px
+
+
+@media (min-width: 768px)
+  .container-fluid
+    .monitoring_all
+      margin: 100px 45px
+      .monitoring_all-text
+        margin: auto
+        margin-bottom: 20px
+        max-width: 300px
+  .container_ori
+    .container-fluid
+      .monitoring_all
+        .monitoring_all-text,
+        .line
+          max-width: 400px
+
+
+
+@media (min-width: 1200px)
+  .container-fluid
+    .monitoring_all
+      margin: 0 auto

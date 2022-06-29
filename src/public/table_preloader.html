@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Роскомсвобода</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+      <link rel="stylesheet" href="app.css">
+   </head>
+   <body class="container">
+      <div class="container-fluid">
+         <div class="header_monitor">
+            <div class="navigator"> <!-- копировать блок с роскомсвободы -->
+               <div class="block__nav d-none d-md-block d-lg-block">
+                  <div class="block__nav-social">
+                     <div class="item-social social-desc " id="social-desc">
+                        <div class="btn-social d-flex flex-wrap justify-content-center w-100" role="group" aria-label="Basic example" id="btn-social-group">
+                           <a class="btn" href="/">
+                              <svg class="icons icons--tel" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                 <use xlink:href="sprite.svg#icon-tel"></use>
+                              </svg>
+                           </a>
+                           <a class="btn" href="/">
+                              <svg class="icons icons--fb" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                 <use xlink:href="sprite.svg#icon-fb"></use>
+                              </svg>
+                           </a>
+                           <a class="btn" href="/">
+                              <svg class="icons icons--vk" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                 <use xlink:href="sprite.svg#icon-vk"></use>
+                              </svg>
+                           </a>
+                           <a class="btn" href="/">
+                              <svg class="icons icons--twitter" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                 <use xlink:href="sprite.svg#icon-twitter"></use>
+                              </svg>
+                           </a>
+                           <div class="dropdown more-social" id="more-social_drpdwn">
+                              <button class="btn  dropdown-toggle" type="button" id="dropdownMenu-social" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 <svg class="icons icons--more_horiz" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <use xlink:href="sprite.svg#icon-more_horiz"></use>
+                                 </svg>
+                              </button>
+                              <div class="dropdown-menu more-social__menu" id="more-social" aria-labelledby="dropdownMenu2">
+                                 <div class="block__nav">
+                                    <ul class="nav navbar">
+                                       <li class="nav-item" id="btn-zen__item">
+                                          <a class="btn" href="/" id="btn-zen">
+                                             <svg class="icons icons--zen" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <use xlink:href="sprite.svg#icon-zen"></use>
+                                             </svg>
+                                             <span>Дзен</span>
+                                          </a>
+                                       </li>
+                                       <li class="nav-item" id="btn-inst__item">
+                                          <a  class="btn" href="/" id="btn-inst">
+                                             <svg class="icons icons--instagram" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <use xlink:href="sprite.svg#icon-instagram"></use>
+                                             </svg>
+                                             <span>Инстаграмм</span>
+                                          </a>
+                                       </li>
+                                       <li class="nav-item" id="btn-youtube__item">
+                                          <a  class="btn" href="/" id="btn-youtube">
+                                             <svg class="icons icons--youtube" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <use xlink:href="sprite.svg#icon-youtube"></use>
+                                             </svg>
+                                             <span>YouTube</span>
+                                          </a>
+                                       </li>
+                                       <li class="nav-item" id="btn-rss__item">
+                                          <a class="btn" href="/"  id="btn-rss">
+                                             <svg class="icons icons--rss" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <use xlink:href="sprite.svg#icon-rss"></use>
+                                             </svg>
+                                             <span>RSS</span>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="btn-group btn-group-donate" role="group" aria-label="Basic example">
+                        <a href="" class="btn btn-help">Нужна юр.помощь?</a>
+                        <button type="button" class="btn btn-donate">Поддержать</button>
+                     </div>
+                  </div>
+               </div>
+               <div class="block__nav block__nav-category">
+                  <div class="twelve columns filter-wrapper">
+                     <ul class="nav-bar-logo" id="nav-bar-logo">
+                        <li class="nav-item nav-item__logo"><a class="nav-link nav-link__logo" href="/"><img src="./images/logo.svg" width="151" height="17" alt="Роскомсвобода"></a></li>
+                     </ul>
+                     <ul class="nav-bar-filter nav-bar-filter-menu" id="nav-bar-filter">
+                        <li class="nav-item item-active d-none d-md-block"><a href="#">Мониторинг реестров</a></li>
+                        <li class="nav-item d-none d-md-block"><a href="visual.html">Инфографика</a></li>
+                     </ul>
+                  </div>
+                  <div class="btn-group__nav" id="btn-group__nav">
+                     <div class="btn-group " role="group" aria-label="Basic example">
+                        <button type="button" class="btn mobail-menu btn-nav d-block d-sm-block d-md-none" id="navbarDropdown_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <svg class="icons icons--menu" id="mobile-menu" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <use xlink:href="sprite.svg#icon-menu"></use>
+                           </svg>
+                        </button>
+                        <div class="dropdown-menu mobail-menu dropdown-menu-right" id="mobail-menu">
+                           <div class="dropdown-item panel-group dropdown-accordion" id="accordion">
+                              <div class="panel panel-default">
+                                 <div class="panel-heading item-active">
+                                    Мониторинг реестров
+                                 </div>
+                              </div>
+                              <div class="panel panel-default">
+                                 <div class="panel-heading">
+                                    <a href="visual.html" >Инфографика</a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="dropdown-item item-help">
+                              <button type="button" class="btn btn-donate">Поддержать</button>
+                              <button type="button" class="btn btn-help">Нужна юр.помощь?</button>
+                           </div>
+                           <div class="dropdown-item item-social social-mob" id="social-mob">
+                              <!-- блок для соц сетей, копируется с десктопа -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="monitoring_filter">
+               <h1 class="filter_title">Мониторинг реестров</h1>
+               <div class="search__block">
+                  <input type="email" class="search__input" placeholder="Домен, адрес или IP-адрес">
+                  <button type="button" class="btn btn-search btn-search-mob">
+                     <svg class="icons icons--search" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="sprite.svg#icon-search"></use>
+                     </svg>
+                  </button>
+                  <button type="button" class="btn btn-search btn-search-tablet">Найти</button>
+               </div>
+               <div class="filters__block">
+                  <div class="btn-group-filter">
+                     <div class="btn btn-filter btn-filter__active">
+                        <span class="filter-item"><span class="filter-title">Запрещенные сайты</span><span class="filter_count">548 138</span></span>
+                     </div>
+                     <div class="btn btn-filter ">
+                        <a href="ori.html">
+                        <span class="filter-item"><span class="filter-title">Организаторы распространения информации</span><span class="filter_count">548</span></span>
+                        </a>
+                     </div>
+                     <div class="btn btn-filter ">
+                        <a href="news.html">
+                        <span class="filter-item"><span class="filter-title">Новостные агрегаторы</span><span class="filter_count">54</span></span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="monitoring_ct" id="censorTrackerBanner">
+            <div class="monitor-bg"></div>
+            <div class="ct-content">
+               <div class="ct-quokka"></div>
+               <a href="" class="ct-descr">
+                  <h6>Censor Tracker ></h6>
+                  <div class="ct-text">Расширение, которое откроет заблокированные сайты и предупредит, если сайт в реестре ОРИ</div>
+               </a>
+               <div class="btn-close" id="btnCloseCtBanner">
+                  <svg class="icons icons--close" width="13" height="13" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-close"></use>
+                  </svg>
+               </div>
+            </div>
+         </div>
+         <div class="monitoring_table">
+            <div class="table_filter">
+               <div class="table_setting filter" id="btn_filter">
+                  <svg class="icons icons--equalizer" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-equalizer"></use>
+                  </svg>
+               </div>
+               <div class="filters hidden" id="all_filters">
+                  <div class="select__state select">
+                     <div class="btn-select">
+                        <button type="button" class="select__toggle" name="state" value="auto" data-select="toggle-state" id="btn_select_state">
+                        Статус в реестре
+                        </button>
+                        <span class="btn-close btn-close-select hidden" id="btnCloseSelectState">
+                           <svg class="icons icons--close" width="10" height="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <use xlink:href="sprite.svg#icon-close"></use>
+                           </svg>
+                        </span>
+                     </div>
+                     <div class="select__dropdown">
+                        <ul class="select__list select__list-state">
+                           <li class="select__item select__item_selected select__item_selected-state" data-select="option" data-value="auto" data-index="0">Любой&nbsp;статус</li>
+                           <li class="select__item" data-select="option" data-value="disabled" data-index="1">Разблокирован</li>
+                           <li class="select__item" data-select="option" data-value="enabled" data-index="2">Заблокирован</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="select__duration select">
+                     <div class="btn-select">
+                        <button type="button" class="select__toggle" name="duration" value="auto" data-select="toggle-duration" id="btn_select_duration">
+                        Временной интервал
+                        </button>
+                        <span class="btn-close btn-close-select hidden" id="btnCloseSelecTime">
+                           <svg class="icons icons--close" width="10" height="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <use xlink:href="sprite.svg#icon-close"></use>
+                           </svg>
+                        </span>
+                     </div>
+                     <div class="select__dropdown ">
+                        <!-- КОПИРУЕТСЯ ВЕРСТКА И ЛОГИКА С РАБОЧЕГО САЙТА-->
+                     </div>
+                  </div>
+                  <div class="select__government select ">
+                     <div class="btn-select">
+                        <button type="button" class="select__toggle" name="government" value="auto" data-select="toggle-government" id="btn_select_government">
+                        Госорган
+                        </button>
+                        <span class="btn-close btn-close-select hidden" id="btnCloseSelectGovernment">
+                           <svg class="icons icons--close" width="10" height="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <use xlink:href="sprite.svg#icon-close"></use>
+                           </svg>
+                        </span>
+                     </div>
+                     <div class="select__dropdown">
+                        <ul class="select__list select__list-goverment">
+                           <li class="select__item select__item_selected select__item_selected-government" data-select="option" data-value="auto" data-index="0">Любой&nbsp;госорган</li>
+                           <li class="select__item" data-select="option" data-value="mosgorsud" data-index="1">Мосгорсуд</li>
+                           <li class="select__item" data-select="option" data-value="fnc" data-index="2">ФНС</li>
+                           <li class="select__item" data-select="option" data-value="yfssp" data-index="3">ОСП по Центральному АО №1 УФССП России по Москве</li>
+                           <li class="select__item" data-select="option" data-value="roskomnadzor" data-index="4">Роскомнадзор</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="table_setting notification" id="btnToSubscribe">
+                  <svg class="icons icons--bell" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-bell"></use>
+                  </svg>
+                  <span class="notification-label">Оповестить о внесении в реестр</span>
+               </div>
+            </div>
+            <div class="table_wrapper table_preloader">
+
+              <div class="preloader_background">
+              <div class="preloader_gradiend"></div>
+            </div>
+
+            </div>
+            <div class="btn_group">
+               <div class="btn_navigator">
+                  <div class="btn btn_prev">
+                     &larr;
+                  </div>
+                  <div class="btn btn_next">
+                     Следующая&nbsp;&rarr;
+                  </div>
+               </div>
+               <div class="btn_list-pages">
+                  <div class="btn btn_page btn_page-active">1</div>
+                  <div class="btn btn_page">2</div>
+                  <div class="btn btn_page">3</div>
+                  <div class="btn btn_page">4</div>
+                  <div class="btn btn_page">5</div>
+                  <div class="btn btn_page">6</div>
+               </div>
+            </div>
+            <div class="table_wrapper empty_list">
+               <div class="empty_list-img"><img src="./images/empty_list.svg" width="120" height="120" alt="not found"></div>
+               <div class="empty_list-text">Ничего не нашлось</div>
+               <div class="empty_list-reset">Сбростить параметры поиска</div>
+            </div>
+         </div>
+         <div class="monitoring_all">
+            <h2 class="monitoring_all-header">548 138</h2>
+            <div class="monitoring_all-text">записей в реестре запрещенных сайтов на данный момент</div>
+            <button type="button" class="btn monitoring_all-btn" >Статистика блокировок&nbsp;&rarr;</button>
+         </div>
+         <div class="monitoring_group_banners">
+            <div class="monitoring_banner banner-drc">
+               <div class="banner-bg"></div>
+               <h3 class="banner-title">Юридическая помощь в&nbsp;цифровом пространстве</h3>
+               <div class="banner-text">Если вы считаете, что доступ к какому-либо ресурсу был ограничен неправомерно, то можете составить заявление или получить юридическую консультацию в «Центре Цифровых Прав».</div>
+               <a href=""  target="_blank" class="btn banner-btn" >Получить консультацию</a>
+            </div>
+            <div class="monitoring_banner banner-vpn">
+               <div class="banner-bg"></div>
+               <h3 class="banner-title">VPN, которые мы рекомендуем</h3>
+               <div class="banner-text">VPN позволит восстановить доступ к нужным сайтам и обойти все сложности, возникающие при блокировке по IP-адресу.</div>
+               <a href=""  target="_blank" class="btn banner-btn" >Выбрать VPN</a>
+            </div>
+
+         </div>
+         <div class="donate"><!-- копировать блок с роскомсвободы -->
+            <div class="donate__header">
+               <h2>Поддержать нас</h2>
+            </div>
+            <div class="donate__content">
+               <div class="donate_pay">
+                  <div class="carousel-donate">
+                     <div class="carousel btn-group-toggle " data-toggle="buttons" data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false }'>
+                        <label class="btn btn-donate carousel-cell active">
+                        <input type="radio" name="donate" id="donate1" checked>100р
+                        </label>
+                        <label class="btn btn-donate carousel-cell">
+                        <input type="radio" name="donate" id="donate2">500р
+                        </label>
+                        <label class="btn btn-donate carousel-cell">
+                        <input type="radio" name="donate" id="donate3">1000р
+                        </label>
+                        <label class="btn btn-donate carousel-cell">
+                        <input type="radio" name="donate" id="donate4">5000р
+                        </label>
+                        <label class="btn btn-donate carousel-cell">
+                        <input type="radio" name="donate" id="donate5">другая сумма
+                        </label>
+                     </div>
+                     <div class="donate__frequency">
+                        <div class="donate__input">
+                           <input class="donate__check" type="radio" name="radio" id="radio_monthly" value="monthly" checked>
+                           <label class="donate__label" for="radio_monthly">Ежемесячно</label>
+                        </div>
+                        <div class="donate__input">
+                           <input class="donate__check" type="radio" name="radio" id="radio_oneTime" value="one-time">
+                           <label class="donate__label" for="radio_oneTime">Разово</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="donate__gift text-center">
+                     <!-- <img src="./images/gift1.png" class="gift-image" alt="стикеры в подарок"> -->
+                     <!--<p class="gift-text text-center">Набор стикеров в&nbsp;подарок</p> -->
+                     <img src="./images/tshort1.png" class="gift-image" alt="футболка и стикеры в подарок">
+                     <!--<p class="gift-text text-center">Футболка и набор стикеров в&nbsp;подарок</p> -->
+                     <!-- <img src="./images/tshort1box.png" class="gift-image" alt="Лутбокс, футболка и стикеры в подарок"> -->
+                     <!-- <p class="gift-text text-center">Лутбокс, футболка и&nbsp;стикеры в&nbsp;подарок</p> -->
+                  </div>
+                  <div class="donate__btn">
+                     <button type="button" class="btn btn-donate_pay">поддержать&nbsp;&rarr;</button>
+                     <p class="card-text text-center">Принимаем криптовалюту</p>
+                  </div>
+               </div>
+            </div>
+            <button type="button" class="btn btn-about_donate" >Почему мы просим поддержки&nbsp;&rarr;</button>
+         </div>
+         <div class="contacts"> <!-- копировать блок с роскомсвободы -->
+            <div class="contacts__content">
+               <h5>Контакты</h5>
+               <div class="contacts_list">
+                  <div class="contacts__address">
+                     <p class="address-title">По общим вопросам</p>
+                     <p class="address-text">roskomsvoboda@rublacklist.net</p>
+                  </div>
+                  <div class="contacts__address">
+                     <p class="address-title">По юридическим вопросам</p>
+                     <p class="address-text">legal@roskomsvoboda.org</p>
+                  </div>
+                  <div class="contacts__address">
+                     <p class="address-title">Для СМИ</p>
+                     <p class="address-text">+7&nbsp;903&nbsp;003-89-52</p>
+                  </div>
+               </div>
+            </div>
+            <div class="contacts__email">
+               <h5>Наша рассылка</h5>
+               <p class="card-text">Главное за&nbsp;неделю в&nbsp;области права. <a href="#">Пример рассылки</a>.</p>
+               <form class="form-inline">
+                  <div class="form-group">
+                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <button type="submit" class="btn btn-subscribe">Подписаться</button>
+               </form>
+            </div>
+         </div>
+         <div class="footer" > <!-- копировать блок с роскомсвободы -->
+            <div class="btn-partners d-flex justify-content-between flex-row">
+               <a class="nav-link__logo-copyright" href="/"><img src="./images/logo_creative.png" alt="Время менять копирайт"></a>
+               <a class="nav-link__logo-unisender" href="/"><img src="./images/logo_uniSender.png" alt="UniSender"></a>
+            </div>
+            <div class="btn-group btn-footer d-flex justify-content-between" role="group" aria-label="Basic example" id="btn-footer">
+               <a class="btn" href="/">
+                  <svg class="icons icons--tel" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-tel"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--fb" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-fb"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--vk" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-vk"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--twitter" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-twitter"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--youtube" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-youtube"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--zen" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-zen"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--instagram" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-instagram"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--rss" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-rss"></use>
+                  </svg>
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="form_to_subscribe hidden" id="formToSubscribe">
+         <div class="form_to_subscribe-inner">
+            <div class="btn-close btn-close-subscribe" id="btnCloseFormSubscribe">
+               <svg class="icons icons--close" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="sprite.svg#icon-close"></use>
+               </svg>
+            </div>
+            <h1 class="subscribe-title">Оповестим о блокировке</h1>
+            <div class="subscribe-text">Пришлём письмо, если ваш сайт или страница попадут в Единый реестр запрещенной информации Роскомнадзора.</div>
+            <div class="line"></div>
+            <div class="subscribe-type telegram">
+               <div class="type-icon">
+                  <svg class="icons icons--telegram" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-telegram"></use>
+                  </svg>
+               </div>
+               <div class="type-name">В Telegram</div>
+               <div class="type-btn">
+                  <svg class="icons icons--arrow" width="13" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-arrow"></use>
+                  </svg>
+               </div>
+            </div>
+            <div class="line"></div>
+            <div class="subscribe-type mail">
+               <div class="type-icon">
+                  <svg class="icons icons--email" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-email"></use>
+                  </svg>
+               </div>
+               <div class="type-name">По почте</div>
+            </div>
+            <label for="email" class="label-subscribe">Email
+            <input type="email" class="input-subscribe" placeholder="" name="email">
+            </label>
+            <label for="domain"  class="label-subscribe">Домен или IP-адрес
+            <input type="email" class="input-subscribe" placeholder="" name="domain">
+            </label>
+            <div class="btn btn_subscribe" id="btnSubscribe">Подписаться</div>
+            <div class="subscribe-success hidden" id="subscribeSuccess">Готово! Дадим знать, если такая запись появится в реестре</div>
+         </div>
+      </div>
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> <!--горизонатльынй скролл блока Наша работа -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--  скрывающиеся элементы меню в планшете и десктопе -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> <!--всплывающее окно, например, меню мобилы-->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+      <script>
+        var btnFilter = document.getElementById("btn_filter")
+        var allFilters = document.getElementById("all_filters")
+        btnFilter.addEventListener("click", (event) => {
+          allFilters.classList.toggle("hidden")
+        })
+        if ($('body').innerWidth() > 767) {
+          allFilters.classList.remove("hidden")
+        }
+        window.addEventListener("resize", (e) => {
+          if (document.documentElement.clientWidth > 767) {
+            allFilters.classList.remove("hidden")
+          }
+        })
+      </script>
+      <script>
+         var btnCloseCtBanner = document.getElementById("btnCloseCtBanner")
+         var censorTrackerBanner = document.getElementById("censorTrackerBanner")
+         var btnToSubscribe = document.getElementById("btnToSubscribe")
+         var formToSubscribe = document.getElementById("formToSubscribe")
+         var btnSubscribe = document.getElementById("btnSubscribe")
+         var btnCloseFormSubscribe = document.getElementById("btnCloseFormSubscribe")
+         var subscribeSuccess = document.getElementById("subscribeSuccess")
+          btnToSubscribe.addEventListener("click", (event) => { //открыть попап с подпиской
+            formToSubscribe.classList.toggle("hidden")
+          })
+          btnCloseFormSubscribe.addEventListener("click", (event) => { //закрыть попап с подпиской
+            formToSubscribe.classList.toggle("hidden")
+            if (!subscribeSuccess.classList.contains("hidden")) {
+              subscribeSuccess.classList.add("hidden")
+            }
+          })
+          btnSubscribe.addEventListener("click", (event) => { //подписаться
+            subscribeSuccess.classList.toggle("hidden")
+          })
+          btnCloseCtBanner.addEventListener("click", (event) => { //скрыть баннер censor Tracker
+            censorTrackerBanner.classList.toggle("hidden")
+          })
+      </script>
+
+      <script>
+         const BTN_DRPDN_STATE = document.getElementById("btn_select_state")
+         const BTN_DRPDN_GOVERMENT = document.getElementById("btn_select_government")
+         const BTN_DRPDN_DURATION = document.getElementById("btn_select_duration")
+
+         var class_name_selected, selector_option_selected, select, selector_data_toggle, selected, options, elToggle
+
+         const BTN_CLOSE_SELECT_STATE = document.getElementById("btnCloseSelectState")
+         const BTN_CLOSE_SELECT_GOVERMENT = document.getElementById("btnCloseSelectGovernment")
+         const BTN_CLOSE_SELECT_DURATION = document.getElementById("btnCloseSelecTime")
+
+         BTN_DRPDN_GOVERMENT.addEventListener('click', (e) => {
+           closeAllDrpd()
+           select = document.querySelector('.select__government');
+           select.classList.toggle("select_show")
+           setVars('government')
+           if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
+         })
+
+         BTN_DRPDN_STATE.addEventListener('click', (e) => {
+           closeAllDrpd()
+           select = document.querySelector('.select__state');
+           select.classList.toggle("select_show")
+           setVars('state')
+           if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_STATE, '.select__state')
+         })
+
+         BTN_DRPDN_DURATION.addEventListener('click', (e) => {
+           closeAllDrpd()
+           select = document.querySelector('.select__duration');
+           select.classList.toggle("select_show")
+           // setVars('duration') //TODO: скопировать логику с рабочей версии реестра
+           if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_DURATION, '.select__duration')
+         })
+
+         BTN_CLOSE_SELECT_STATE.addEventListener('click', (e) => {
+           setVars('state')
+           update(options[0], 'state');
+         })
+
+         BTN_CLOSE_SELECT_GOVERMENT.addEventListener('click', (e) => {
+           setVars('government')
+           update(options[0], 'government');
+         })
+
+         function setVars (props) {
+           class_name_selected = 'select__item_selected-' + props;
+           selector_option_selected = '.select__item_selected-' + props;
+           selected = document.querySelector(selector_option_selected);
+
+           switch (props) {
+             case 'state':
+               selector_data_toggle = '[data-select="toggle-state"]';
+               options = document.querySelectorAll('.select__list-state > .select__item');
+               break;
+             case 'government':
+               selector_data_toggle = '[data-select="toggle-government"]';
+               options = document.querySelectorAll('.select__list-goverment > .select__item');
+               break;
+           }
+
+           elToggle = document.querySelector(selector_data_toggle);
+           options.forEach((item, i) => {
+               item.addEventListener('click', (e) => {
+                   if (item.classList.contains(class_name_selected)) {
+                     return;
+                   }
+                   update(item, props);
+                   hide();
+               })
+           });
+         }
+
+         function closeAllDrpd () {
+             for (var i = 0; i < document.querySelectorAll('.select').length; i++) {
+               if (document.querySelectorAll('.select')[i].classList.contains('select_show')) {
+                 document.querySelectorAll('.select')[i].classList.remove('select_show')
+               }
+             }
+         }
+
+         function setCoords (el, select) {
+           var coordBtn =  el.getBoundingClientRect()
+           var documentWidth = document.documentElement.clientWidth
+           var drpnWidth = document.querySelector(`${select} > .select__dropdown`).offsetWidth
+           document.querySelector(`${select} > .select__dropdown`).style.top = coordBtn.y + 35 +  "px"
+           document.querySelector(`${select} > .select__dropdown`).style.left = coordBtn.x + "px"
+           if (coordBtn.x + drpnWidth > documentWidth) {
+             document.querySelector(`${select} > .select__dropdown`).style.left = documentWidth - drpnWidth + "px"
+           }
+         }
+
+         function update(option, props) {
+           var btn = (props == "state") ? BTN_CLOSE_SELECT_STATE : BTN_CLOSE_SELECT_GOVERMENT
+           var class_selector = (props == "state") ? '.select__state > .btn-select' : '.select__government > .btn-select'
+
+           if (option.dataset['index'] > 0 && btn.classList.contains("hidden")) {
+             document.querySelector(class_selector).classList.add("applied");
+             btn.classList.remove("hidden")
+
+           } else if (option.dataset['index'] == 0 && !btn.classList.contains("hidden")) {
+             document.querySelector(class_selector).classList.remove("applied");
+             btn.classList.add("hidden")
+           }
+
+           options.forEach((item, i) => {
+               item.classList.remove(class_name_selected)
+           });
+
+           option = option.closest('.select__item');
+           if (selected) {
+             selected.classList.remove(class_name_selected);
+           }
+           option.classList.add(class_name_selected);
+           elToggle.textContent = option.textContent;
+           elToggle.value = option.dataset['value'];
+           elToggle.dataset.index = option.dataset['index'];
+
+           return option.dataset['value'];
+         }
+
+         function hide() {
+           select.classList.remove('select_show');
+         }
+
+         document.addEventListener('click', (e) => {
+           if (!e.target.closest('.select')) {
+             document.querySelectorAll('.select_show').forEach(select => {
+               select.classList.remove('select_show');
+             });
+           }
+         });
+
+         document.querySelector('.filters').addEventListener('scroll', (e) => {
+           closeAllDrpd()
+         })
+
+
+         document.addEventListener('scroll', (e) => {
+           if (document.documentElement.clientWidth < 768) {
+             setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
+             setCoords(BTN_DRPDN_STATE, '.select__state')
+             setCoords(BTN_DRPDN_DURATION, '.select__duration')
+           }
+         })
+
+          window.addEventListener("resize", (e) => {
+            if (document.documentElement.clientWidth < 768) {
+              setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
+              setCoords(BTN_DRPDN_STATE, '.select__state')
+              setCoords(BTN_DRPDN_DURATION, '.select__duration')
+            }
+          })
+
+
+
+      </script>
+   </body>
+</html>

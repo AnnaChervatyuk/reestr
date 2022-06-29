@@ -1,0 +1,56 @@
+@keyframes gradient
+  0%
+    background-position: 50% 0%
+  50%
+    background-position: 50% 100%
+  100%
+    background-position: 50% 0%
+.container-fluid
+  .table_preloader
+    width: 100%
+    height: 50vh
+    .preloader_background
+      position: relative
+      width: 100%
+      height: 100%
+      // background-image: steelblue linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .2) 50%) center center / 100% 1em
+      background-size: 100%
+      background-image: repeating-linear-gradient(#ffffff 2px 17px, #F4F4F4 18px 58px, #ffffff 59px 75px)
+    .preloader_gradiend
+      position: absolute
+      width: inherit
+      height: inherit
+      top: 0
+      left: 0
+      background: repeating-linear-gradient(120.18deg, rgba(196, 196, 196, 0) 10%, #F4F4F4 15%, rgba(196, 196, 196, 0) 25%, #F4F4F4 30%, rgba(196, 196, 196, 0) 40%, #F4F4F4 45%, rgba(196, 196, 196, 0) 55%)
+      // background: linear-gradient(120deg, #C4C4C4 15%, #ffffff 40%, #C4C4C4 55%, #ffffff 100%)
+      // background-image: repeating-linear-gradient(120deg, #C4C4C4 1px, #ffffff 2px 17px, #C4C4C4 18px 58px, #ffffff 59px 75px)
+
+      // background: linear-gradient(120deg, #641e39, #98749b, #ddf810, #8f4ff4)
+      background-size: 300% 300%
+      animation: gradient 5s ease infinite
+      mix-blend-mode: screen
+
+      // background: repeating-linear-gradient(#C4C4C4, #C4C4C4 1px, transparent 1px, transparent 2em), repeating-linear-gradient(red, red 1px, transparent 1px, transparent 2em)
+      // background-color: yellowgreen
+
+      // background-image:  linear-gradient(transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee .1em, transparent .1em)
+      // background-size: 100% 1.2em
+
+// @media (min-width: 768px)
+//   .container-fluid
+//     .block_top
+//       padding: 30px 45px
+//       margin: 0
+//       .top_info
+//         font-size: 15px
+//         line-height: 24px
+//
+//
+// @media (min-width: 1200px)
+//   .container-fluid
+//     .block_top
+//       padding: 40px 0
+//       margin: 0 auto
+//       .top_header
+//         margin-bottom: 20px

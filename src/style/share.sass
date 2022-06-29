@@ -1,0 +1,60 @@
+.container-fluid
+  .share
+    margin: 10px 0
+    border-bottom: $border
+    padding-bottom: 32px
+    h4
+      margin-bottom: 11px
+      padding: 0 15px
+    .btn-group
+      padding: 0 15px
+      .btn-donate_pay
+         @include btn()
+         padding: 10px 20px
+         height: 42px
+         border-radius: 0
+         font-weight: 700
+      button.btn-icons
+        max-width: 42px
+        .icons
+          // @include icons()
+          fill: $font-color
+          stroke: none
+          border-color: $font-color
+        .icons--vk:hover
+            fill: $color-vk
+        .icons--tel:hover
+            fill: $color-tel
+        .icons--fb:hover
+            fill: $color-fb
+        .icons--twitter:hover
+            fill: $color-twitter
+      button
+        padding: 0
+        margin: 7px
+      button:first-child
+        margin-left: 0
+      button:nth-last-child(2)
+        margin-right: 43px
+      button:last-child
+        margin-right: 0
+        margin-left: 0
+        flex-grow: 0
+      .icons
+        border: $border
+        padding: 5px
+
+
+
+@media (min-width: 768px)
+  .container-fluid
+    .share
+      margin: 10px 0
+      padding: 0 32px 45px
+
+
+@media (min-width: 1200px)
+  .container-fluid
+    .share
+      .btn-group
+        width: 830px

@@ -1,0 +1,163 @@
+.container
+  .form_to_subscribe
+    height: 100vh
+    width: 100vw
+    margin: 0
+    padding: 0
+    position: fixed
+    bottom: 0
+    left: 0
+    overflow: auto
+    .form_to_subscribe-inner
+      background-color: $bg-main-color
+      padding: 40px 30px
+      position: relative
+      .btn-close
+        position: absolute
+        top: 0
+        right: 0
+        width: 50px
+        height: 50px
+        .icons--close
+          margin: auto
+          display: block
+          margin-top: 17px
+      .subscribe-title
+        font-weight: 700
+      .subscribe-text
+        margin-bottom: 40px
+      .input-subscribe
+         @include btn ()
+         padding: 8px 16px
+         height: 40px
+         background-color: transparent
+         width: 100%
+         &:active, &:focus
+          border-color: $color-error
+      .label-subscribe
+        font-size: 13px
+        font-weight: 15px
+        width: 100%
+        margin-bottom: 20px
+      .btn_subscribe
+        @include btn()
+        font-size: 15px
+        font-weight: 27px
+        padding: 8px 16px
+        margin-bottom: 30px
+        height: 40px
+      .subscribe-success
+        padding: 10px 20px
+        width: 100%
+        background: rgba(108, 158, 44, 0.1)
+        border-radius: 10px
+        color: #6C9E2C
+      .subscribe-type
+        padding: 40px 0
+        display: flex
+        flex-direction: row
+        align-items: center
+        &.telegram
+          &:hover
+            cursor: pointer
+            color: $font-color-hover
+            .type-btn > .icons,
+            .icons
+              fill: $font-color-hover
+        .type-icon
+          margin-right: 20px
+        .type-name
+          font-weight: 700
+          font-size: 20px
+          line-height: 25px
+        .type-btn
+          margin-left: auto
+          .icons--arrow
+            transform: rotate(-90deg)
+
+
+@media (min-width: 768px)
+  .container
+    .form_to_subscribe
+      background-color: rgba(255, 255, 255, 0.5)
+      -webkit-backdrop-filter: blur(5px)
+      backdrop-filter: blur(5px)
+      display: flex
+      .form_to_subscribe-inner
+        max-width: 514px
+        height: auto
+        border-radius: 20px
+        box-shadow: 0px 5px 15px rgba(59, 51, 43, 0.18), 0px 2px 6px rgba(59, 51, 43, 0.12), 0px 0px 2px rgba(0, 0, 0, 0.04)
+        margin: auto
+        // left: calc(50% - 257px)
+        // top: auto
+  //   background-color: $bg-color
+  //   border-radius: 20px
+  //   padding: 20px
+  //   margin: 15px
+  //   font-size: 13px
+  //   line-height: 19px
+  //   .form__el
+  //     display: flex
+  //     flex-direction: column
+  //     span
+  //       margin-bottom: 5px
+  //     .form__input
+  //        @include btn ()
+  //        padding: 8px 16px
+  //        height: 40px
+  //        background-color: transparent
+  //        &:active, &:focus
+  //         border-color: $color-error
+  //     .form__input.help
+  //       height: 340px
+  //       margin-bottom: 10px
+  //     .form__input.error
+  //       border-color: $color-error
+  //   .form__el.surname,
+  //   .form__el.name
+  //     margin-bottom: 10px
+  //
+  //   .btn-send
+  //     @include btn ()
+  //     width: 100%
+  //     margin-top: 10px
+  //     height: 40px
+  //     padding: 8px 16px
+  //
+  // .form-sended
+  //   display: flex
+  //   flex-direction: column
+  //   .icons-send
+  //     fill: $font-color
+  //     margin-right: 20px
+  //     margin-top: -5px
+
+
+//
+// @media (min-width: 768px)
+//   .container-fluid
+//     .form
+//       padding: 40px 55px
+//       display: flex
+//       flex-direction: row
+//       flex-wrap: wrap
+//       justify-content: space-between
+//       margin: 15px 45px
+//       .form__el
+//         width: 49%
+//       .form__el.message
+//         width: 100%
+//       .btn-send
+//         width: auto
+//         min-width: 140px
+//     .form-sended
+//       justify-content: flex-start
+//
+//
+// @media (min-width: 1200px)
+//   .container-fluid
+//     .form
+//
+//       margin: 15px auto
+//       max-width: 825px

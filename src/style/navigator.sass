@@ -1,0 +1,353 @@
+
+.container-fluid
+  .navigator
+    .btn.btn-donate
+      @include btn ()
+      width: 104px
+    .btn.btn-help
+      @include btn ()
+      border: none
+      &:hover
+        border: none
+      &:active
+        border: none
+
+    .block__nav-category
+      display: flex
+      justify-content: space-between
+      flex-direction: row
+      flex-wrap: nowrap
+      align-items: center
+      margin: 0
+      height: 55px
+      padding: 19px 15px 17px
+      border: none
+      border-bottom: $border
+      .filter-wrapper
+        .nav-bar-logo
+          padding-left: 0
+          margin-bottom: 0
+        .nav-bar-filter
+          margin: 0
+          padding: 0
+      ul
+        list-style-type: none
+
+      .dropdown-item
+        font-weight: bold
+        font-size: 18px
+        padding: 15px 0
+        &:hover
+          color: $font-color-hover
+          background-color: transparent
+        &:active
+          color: $font-color
+          background-color: transparent
+        &:focus
+          color: $font-color
+          background-color: transparent
+        .panel-heading a
+          color: $font-color
+          text-decoration: none
+
+      .btn-nav
+        .icons
+          @include icons ()
+
+    .navbar
+        padding: 20px 15px
+
+    .nav-link
+      padding: 0
+
+    .dropdown-toggle::after
+      display: none
+    .dropdown-menu.mobail-menu
+      background-color: $bg-main-color
+    .dropdown-menu.mobail-menu.show
+      animation: OPEN 0.2s ease-out
+      min-width: 100vw
+      margin-left: -5px
+      width: 100%
+      padding: 25px 30px
+      border: none
+      border-bottom: $border
+      border-radius: 0
+      height: calc(100vh - 50px)
+      min-height: 350px
+      border-top: 2px solid #1D1D1B
+      border-bottom: none
+      display: flex
+      flex-direction: column
+      .item-help
+        display: flex
+        justify-content: space-between
+        border-top: $border
+        border-bottom: $border
+        margin-top: 35px
+        padding: 18px 0
+      .dropdown-item.panel-group.dropdown-accordion
+        margin: 0
+        margin-bottom: auto
+        padding: 0
+        .panel.panel-default
+          margin: 22px 0 32px
+          font-size: 18px
+          .navbar
+            padding: 0
+            margin-left: 20px
+            margin-top: 0
+            flex-direction: column
+            align-items: flex-start
+            font-size: 15px
+            display: flex
+            .nav-item
+              margin: 22px 0 0
+              white-space: pre-wrap
+              line-height: 0
+
+          a
+            color: $font-color
+            line-height: 22.5px
+            &:hover
+              color: $font-color-hover
+          img
+            width: auto
+            height: auto
+          .nav-item.with-bg a
+            color: $text-white
+          .nav-item.with-bg a:hover
+            color: $font-color-gray
+
+    .more-social
+      .dropdown-menu.show
+        margin: 0
+        padding: 20px 30px
+        border: $border
+        animation: OPEN 0.2s ease-out
+        .block__nav
+          .navbar
+            padding: 0
+            .nav-item
+              display: flex
+              justify-content: flex-start
+              margin-bottom: 20px
+              width: 100%
+              align-items: center
+              &:last-child
+                margin-bottom: 0
+              &:hover
+                cursor: pointer
+                a
+                  &:focus
+                    box-shadow: none
+                  .icons--rss:hover
+                      stroke: $color-rss
+
+                  .icons--youtube:hover
+                      fill: $color-youtube
+
+                  .icons--instagram:hover
+                      fill: $color-instagram
+
+                  .icons--zen:hover
+                      fill: $color-zen
+
+                  a.nav-link
+                    color: $font-color-hover
+
+                  .icons--rss
+                    @include icons--rss ()
+
+              button
+                padding: 0
+                margin-right: 12px
+              a
+                font-style: normal
+                font-weight: 400
+
+      .dropdown-toggle::before
+        display: none
+
+    .item-social
+      padding: 15px 0
+      display: flex
+      justify-content: space-between
+      .icons
+        fill: $font-color
+        stroke: none
+        &:focus
+          box-shadow: none
+      .icons--vk:hover
+          fill: $color-vk
+      .icons--tel:hover
+          fill: $color-tel
+      .icons--fb:hover
+          fill: $color-fb
+      .icons--twitter:hover
+          fill: $color-twitter
+      .icons--rss:hover
+          stroke: $color-rss
+      .icons--youtube:hover
+          fill: $color-youtube
+      .icons--instagram:hover
+          fill: $color-instagram
+      .icons--zen:hover
+          fill: $color-zen
+      .icons--rss
+        @include icons--rss ()
+
+
+    .block__nav.block__nav-category
+      .item-active
+        color: $font-color-hover
+        a
+          color: $font-color-hover !important
+
+@media (min-width: 768px)
+  .container-fluid
+    .navigator
+      .btn-group__nav
+        display: flex
+        align-self: baseline
+      .dropdown-menu.mobail-menu.show
+        max-width: 1200px
+
+      .block__nav-social
+        display: flex
+        padding: 1px 45px
+        justify-content: space-between
+        align-items: center
+        border-bottom: $border
+        .btn-group-donate
+          align-items: baseline
+          .btn
+            font-size: 11px
+            line-height: 18px
+          .btn-donate
+            margin-left: 20px
+        .social-desc
+          padding: 0
+          .btn-social
+            .more-social
+              .more-social__menu
+                .block__nav
+                  .navbar
+                    li:hover
+                      span
+                        color: $font-color-hover
+                    a
+                      flex-wrap: nowrap
+                      display: flex
+                      align-items: center
+                    span
+                      margin-left: 12px
+
+            .btn
+              padding: 5px
+              &:first-child
+                padding-left: 0
+              svg
+                width: 20px
+                height: 20px
+          .dropdown-menu .show
+            top: 30px
+            right: 0
+            .nav-link
+              font-size: 13px
+
+
+      .block__nav-category
+        padding: 0 45px
+        align-items: baseline
+        height: auto
+        .filter-wrapper
+          display: flex
+          flex-wrap: nowrap
+          justify-content: flex-start
+          width: 100%
+          .dropdown__more-nav-popup
+            margin: auto 0
+          .more-nav-popup
+            width: 0
+            min-width: 0
+            padding: 0
+            margin: 0
+          .nav-bar-logo
+            margin: 0
+            padding: 0
+            display: flex
+            min-width: 183px
+            .nav-item
+              padding: 15px 0
+              margin: 0
+              display: block
+              margin-right: 25px
+          .nav-bar-filter
+            display: flex
+            flex-wrap: wrap
+            margin: 0 auto
+            white-space: nowrap
+            flex-grow: 1
+            padding: 8px 0
+            .nav-item
+              img
+                object-fit: none
+                width: auto
+            .nav-item
+              margin: 0
+              padding: 10px 0
+              margin-right: 30px
+              font-size: 15px
+              font-weight: bold
+              &:first-child
+                margin-left: 0
+                margin-right: 25px
+              .block__nav.dropdown-menu.show
+                margin-top: 20px
+                animation: OPEN 0.2s ease-out
+              .block__nav.dropdown-menu.show.megamenu
+                margin-top: 58px
+
+
+          .dropdown-menu
+            border: $border
+            margin: 0
+            padding: 0
+            min-width: 300px
+            white-space: normal
+            .navbar
+              padding: 0
+              margin: 20px 30px
+              display: flex
+              flex-direction: column
+              align-items: baseline
+              .nav-item
+                margin: 0
+                margin-bottom: 20px
+                &:last-child
+                  margin-bottom: 0
+          a
+              text-decoration: none
+
+      .block__nav-category
+        position: relative
+
+
+
+
+@media (min-width: 1200px)
+  .container-fluid
+    .navigator
+      padding: 0
+      max-width: 1100px
+      margin: 0 auto
+      .block__nav
+        .block__nav-social
+          padding: 1px 0
+      .block__nav-category
+        padding: 0
+        .dropdown-menu.list-work_desc.show
+          left: 0 !important
+          width: 100%
+          max-width: 1110px

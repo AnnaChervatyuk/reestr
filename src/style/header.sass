@@ -1,0 +1,56 @@
+.container-fluid
+  .header_monitor
+    background-color: $bg-monitor
+    width: 100%
+.container_ori
+  .header_monitor
+    background: linear-gradient(0deg, #F8DFC1, #F8DFC1), #F8D5C1
+.container_news
+  .header_monitor
+    background-color: #E1F3F7
+.container-visual
+  .header_monitor
+    background-color: #EFF1FA
+    h1.filter_title
+      margin-bottom: 20px
+    .list_blockings
+      font-size: 13px
+      line-height: 20px
+      .list_blockings__item
+        margin-bottom: 10px
+        &:last-child
+          margin-bottom: 0
+        .list_blockings__title
+          margin-left: 20px
+
+
+
+
+
+@media (min-width: 768px)
+  .container-visual
+    .header_monitor
+      .monitoring_filter
+        h1.filter_title
+          margin-bottom: 30px
+        .list_blockings
+          font-size: 18px
+          line-height: 29px
+          .list_blockings__item
+            margin-bottom: 15px
+            &:last-child
+              margin-bottom: 0
+
+
+// @media (min-width: 1200px)
+//   .container-visual
+//     .header_monitor
+//       .monitoring_filter
+//         h1.filter_title
+//           margin-bottom: 30px
+//         .list_blockings
+//           font-size: 18px
+//           line-height: 29px
+//           margin-bottom: 15px
+//           &:last-child
+//             margin-bottom: 0

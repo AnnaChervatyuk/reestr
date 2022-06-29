@@ -1,0 +1,44 @@
+.container-fluid
+  .info_table
+    max-width: 1100px
+    margin: 30px auto 50px
+    .table_wrapper
+      padding: 0 15px
+      .table_row
+        border-bottom: 1px solid #EEF1F4
+        padding: 15px 0
+        display: block
+        flex-direction: column
+        &:first-child
+          border-top: 1px solid #EEF1F4
+        .td_title
+          font-size: 15px
+          line-height: 24px
+          font-weight: 700
+          margin-bottom: 5px
+
+@media (min-width: 768px)
+  .container-fluid
+    .info_table
+      padding: 30px 45px 50px
+      margin: 0
+      .table_wrapper
+        margin-bottom: 0
+        padding: 0
+        .table_row
+          display: flex
+          flex-direction: row
+          padding: 15px 0
+          .td_title
+            width: 270px
+            min-width: 270px
+            padding-right: 50px
+            box-sizing: content-box
+          .td_content
+            text-align: left
+
+@media (min-width: 1200px)
+  .container-fluid
+    .info_table
+      padding: 60px 0 0
+      margin: 0 auto 100px

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Роскомсвобода</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+      <link rel="stylesheet" href="app.css">
+   </head>
+   <body class="container container_site-info">
+      <div class="container-fluid">
+
+        <div class="header_monitor">
+
+         <div class="navigator">
+           <div class="block__nav d-none d-md-block d-lg-block">
+             <div class="block__nav-social">
+                <div class="item-social social-desc " id="social-desc">
+                       <div class="btn-social d-flex flex-wrap justify-content-center w-100" role="group" aria-label="Basic example" id="btn-social-group">
+                          <a class="btn" href="/">
+                             <svg class="icons icons--tel" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-tel"></use></svg>
+                          </a>
+                           <a class="btn" href="/">
+                             <svg class="icons icons--fb" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-fb"></use></svg>
+                          </a>
+                           <a class="btn" href="/">
+                             <svg class="icons icons--vk" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-vk"></use></svg>
+                          </a>
+                           <a class="btn" href="/">
+                             <svg class="icons icons--twitter" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-twitter"></use></svg>
+                          </a>
+
+                         <div class="dropdown more-social" id="more-social_drpdwn">
+                           <button class="btn  dropdown-toggle" type="button" id="dropdownMenu-social" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             <svg class="icons icons--more_horiz" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-more_horiz"></use></svg>
+                           </button>
+                           <div class="dropdown-menu more-social__menu" id="more-social" aria-labelledby="dropdownMenu2">
+                             <div class="block__nav">
+                               <ul class="nav navbar">
+                                  <li class="nav-item" id="btn-zen__item">
+                                     <a class="btn" href="/" id="btn-zen">
+                                        <svg class="icons icons--zen" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-zen"></use></svg>
+                                        <span>Дзен</span>
+                                     </a>
+                                  </li>
+                                  <li class="nav-item" id="btn-inst__item">
+                                     <a  class="btn" href="/" id="btn-inst">
+                                        <svg class="icons icons--instagram" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-instagram"></use></svg>
+                                        <span>Инстаграмм</span>
+                                     </a>
+                                  </li>
+                                  <li class="nav-item" id="btn-youtube__item">
+                                     <a  class="btn" href="/" id="btn-youtube">
+                                        <svg class="icons icons--youtube" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-youtube"></use></svg>
+                                        <span>YouTube</span>
+                                     </a>
+                                  </li>
+                                  <li class="nav-item" id="btn-rss__item">
+                                     <a class="btn" href="/"  id="btn-rss">
+                                        <svg class="icons icons--rss" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-rss"></use></svg>
+                                        <span>RSS</span>
+                                     </a>
+                                  </li>
+                               </ul>
+                             </div>
+                           </div>
+                         </div>
+                    </div>
+                </div>
+                <div class="btn-group btn-group-donate" role="group" aria-label="Basic example">
+                   <a href="" class="btn btn-help">Нужна юр.помощь?</a>
+                   <button type="button" class="btn btn-donate">Поддержать</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="block__nav block__nav-category">
+                <div class="twelve columns filter-wrapper">
+                  <ul class="nav-bar-logo" id="nav-bar-logo">
+                    <li class="nav-item nav-item__logo"><a class="nav-link nav-link__logo" href="/"><img src="./images/logo.svg" width="151" height="17" alt="Роскомсвобода"></a></li>
+                  </ul>
+                  <ul class="nav-bar-filter nav-bar-filter-menu" id="nav-bar-filter">
+                      <li class="nav-item item-active d-none d-md-block"><a href="#">Мониторинг реестров</a></li>
+                      <li class="nav-item d-none d-md-block"><a href="visual.html">Инфографика</a></li>
+                  </ul>
+              </div>
+
+            <div class="btn-group__nav" id="btn-group__nav">
+               <div class="btn-group " role="group" aria-label="Basic example">
+                  <button type="button" class="btn mobail-menu btn-nav d-block d-sm-block d-md-none" id="navbarDropdown_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <svg class="icons icons--menu" id="mobile-menu" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="sprite.svg#icon-menu"></use></svg>
+                  </button>
+                  <div class="dropdown-menu mobail-menu dropdown-menu-right" id="mobail-menu">
+                     <div class="dropdown-item panel-group dropdown-accordion" id="accordion">
+                        <div class="panel panel-default">
+                           <div class="panel-heading item-active">Мониторинг реестров
+                           </div>
+                        </div>
+                        <div class="panel panel-default">
+                           <div class="panel-heading">
+                              <a  href="visual.html">Инфографика</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="dropdown-item item-help">
+                        <button type="button" class="btn btn-donate">Поддержать</button>
+                        <button type="button" class="btn btn-help">Нужна юр.помощь?</button>
+                     </div>
+                     <div class="dropdown-item item-social social-mob" id="social-mob">
+                       <!-- блок для соц сетей, копируется с десктопа -->
+                     </div>
+               </div>
+            </div>
+          </div>
+         </div>
+       </div>
+
+         <div class="block_top">
+           <div class="top_return">
+             <a href="index.html">
+               <svg class="icons icons--return" width="44" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="sprite.svg#icon-return"></use>
+               </svg>
+               <h5>Назад</h5>
+             </a>
+           </div>
+         <div class="top_info">Реестр запрещённых сайтов</div>
+         <h3 class="top_header" id="top_header"></h3>
+         <div class="show_header-btn" id="show_header-btn"></div>
+       </div>
+     </div>
+
+
+     <div class="info_table">
+       <div class="table_wrapper">
+         <div class="table_row">
+           <div class="td_title">Статус</div>
+           <div class="td_content">Внесен в реестр запрещённых сайтов</div>
+         </div>
+         <div class="table_row">
+           <div class="td_title">Домен</div>
+           <div class="td_content">solidtorrents.to</div>
+         </div>
+         <div class="table_row">
+           <div class="td_title">IP-адрес</div>
+           <div class="td_content">172.67.168.137, 104.21.26.205, 2606:4700:3030::ac43:a889, 2606:4700:3034::6815:1acd</div>
+         </div>
+         <div class="table_row">
+           <div class="td_title">Количество других интернет-ресурсов на тех же IP</div>
+           <div class="td_content">0</div>
+         </div>
+         <div class="table_row">
+           <div class="td_title">Орган власти</div>
+           <div class="td_content">Мосгорсуд</div>
+         </div>
+         <div class="table_row">
+           <div class="td_title">Номер решения</div>
+           <div class="td_content">определение о предварительном обеспечении по заявлению № 2И-3262/2020</div>
+         </div>
+         <div class="table_row">
+           <div class="td_title">Дата принятия решения</div>
+           <div class="td_content">16.07.2020</div>
+         </div>
+         <div class="table_row">
+           <div class="td_title">Дата первой блокировки</div>
+           <div class="td_content">18.01.2022</div>
+         </div>
+         <div class="table_row">
+           <div class="td_title">Дата последнего обновления</div>
+           <div class="td_content">18.01.2022</div>
+         </div>
+       </div>
+
+     </div>
+
+     <div class="monitoring_ct" id="censorTrackerBanner">
+       <div class="monitor-bg"></div>
+       <div class="ct-content">
+         <div class="ct-quokka"></div>
+         <a href="" class="ct-descr">
+           <h6>Censor Tracker ></h6>
+           <div class="ct-text">Расширение, которое откроет заблокированные сайты и предупредит, если сайт в реестре ОРИ</div>
+         </a>
+       </div>
+     </div>
+
+
+     <div class="monitoring_group_banners">
+       <div class="monitoring_banner banner-drc">
+         <div class="banner-bg"></div>
+         <h3 class="banner-title">Юридическая помощь в&nbsp;цифровом пространстве</h3>
+         <div class="banner-text">Если вы считаете, что доступ к какому-либо ресурсу был ограничен неправомерно, то можете составить заявление или получить юридическую консультацию в «Центре Цифровых Прав».</div>
+         <a href=""  target="_blank" class="btn banner-btn" >Получить консультацию</a>
+       </div>
+       <div class="monitoring_banner banner-vpn">
+         <div class="banner-bg"></div>
+         <h3 class="banner-title">VPN, которые мы рекомендуем</h3>
+         <div class="banner-text">VPN позволит восстановить доступ к нужным сайтам и обойти все сложности, возникающие при блокировке по IP-адресу.</div>
+         <a href=""  target="_blank" class="btn banner-btn" >Выбрать VPN</a>
+       </div>
+     </div>
+
+
+
+         <div class="donate">
+            <div class="donate__header">
+               <h2>Поддержать нас</h2>
+            </div>
+            <div class="donate__content">
+               <div class="donate_pay">
+                 <div class="carousel-donate">
+                    <div class="carousel btn-group-toggle " data-toggle="buttons" data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false }'>
+                       <label class="btn btn-donate carousel-cell active">
+                       <input type="radio" name="donate" id="donate1" checked>100р
+                       </label>
+                       <label class="btn btn-donate carousel-cell">
+                       <input type="radio" name="donate" id="donate2">500р
+                       </label>
+                       <label class="btn btn-donate carousel-cell">
+                       <input type="radio" name="donate" id="donate3">1000р
+                       </label>
+                       <label class="btn btn-donate carousel-cell">
+                       <input type="radio" name="donate" id="donate4">5000р
+                       </label>
+                       <label class="btn btn-donate carousel-cell">
+                       <input type="radio" name="donate" id="donate5">другая сумма
+                       </label>
+                    </div>
+                    <div class="donate__frequency">
+                      <div class="donate__input">
+                        <input class="donate__check" type="radio" name="radio" id="radio_monthly" value="monthly" checked>
+                        <label class="donate__label" for="radio_monthly">Ежемесячно</label>
+                      </div>
+                      <div class="donate__input">
+                        <input class="donate__check" type="radio" name="radio" id="radio_oneTime" value="one-time">
+                        <label class="donate__label" for="radio_oneTime">Разово</label>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="donate__gift text-center">
+
+                      <!-- <img src="./images/gift1.png" class="gift-image" alt="стикеры в подарок"> -->
+                     <!--<p class="gift-text text-center">Набор стикеров в&nbsp;подарок</p> -->
+
+                      <img src="./images/tshort1.png" class="gift-image" alt="футболка и стикеры в подарок">
+                     <!--<p class="gift-text text-center">Футболка и набор стикеров в&nbsp;подарок</p> -->
+
+                     <!-- <img src="./images/tshort1box.png" class="gift-image" alt="Лутбокс, футболка и стикеры в подарок"> -->
+                     <!-- <p class="gift-text text-center">Лутбокс, футболка и&nbsp;стикеры в&nbsp;подарок</p> -->
+                  </div>
+                  <div class="donate__btn">
+                     <button type="button" class="btn btn-donate_pay">поддержать&nbsp;&rarr;</button>
+                     <p class="card-text text-center">Принимаем криптовалюту</p>
+                  </div>
+               </div>
+            </div>
+            <button type="button" class="btn btn-about_donate" >Почему мы просим поддержки&nbsp;&rarr;</button>
+         </div>
+         <div class="contacts">
+            <div class="contacts__content">
+               <h5>Контакты</h5>
+               <div class="contacts_list">
+                  <div class="contacts__address">
+                     <p class="address-title">По общим вопросам</p>
+                     <p class="address-text">roskomsvoboda@rublacklist.net</p>
+                  </div>
+                  <div class="contacts__address">
+                     <p class="address-title">По юридическим вопросам</p>
+                     <p class="address-text">legal@roskomsvoboda.org</p>
+                  </div>
+                  <div class="contacts__address">
+                     <p class="address-title">Для СМИ</p>
+                     <p class="address-text">+7&nbsp;903&nbsp;003-89-52</p>
+                  </div>
+               </div>
+            </div>
+            <div class="contacts__email">
+               <h5>Наша рассылка</h5>
+               <p class="card-text">Главное за&nbsp;неделю в&nbsp;области права. <a href="#">Пример рассылки</a>.</p>
+               <form class="form-inline">
+                  <div class="form-group">
+                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <button type="submit" class="btn btn-subscribe">Подписаться</button>
+               </form>
+            </div>
+         </div>
+         <div class="footer" >
+            <div class="btn-partners d-flex justify-content-between flex-row">
+                <a class="nav-link__logo-copyright" href="/"><img src="./images/logo_creative.png" alt="Время менять копирайт"></a>
+               <a class="nav-link__logo-unisender" href="/"><img src="./images/logo_uniSender.png" alt="UniSender"></a>
+            </div>
+            <div class="btn-group btn-footer d-flex justify-content-between" role="group" aria-label="Basic example" id="btn-footer">
+               <a class="btn" href="/">
+                  <svg class="icons icons--tel" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-tel"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--fb" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-fb"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--vk" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-vk"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--twitter" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-twitter"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--youtube" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-youtube"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--zen" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-zen"></use>
+                  </svg>
+               </a>
+               <a class="btn" href="/">
+                  <svg class="icons icons--instagram" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-instagram"></use>
+                  </svg>
+               </a>
+
+               <a class="btn" href="/">
+                  <svg class="icons icons--rss" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-rss"></use>
+                  </svg>
+               </a>
+            </div>
+         </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--  скрывающиеся элементы меню в планшете и десктопе -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> <!--всплывающее окно, например, меню мобилы-->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+      <script>
+      var listSites = ['https://solidtorrents.to/torrents/gogol-strashnaya-mest-2018-bdrip-1-46gb-rus-megape-7613e/5c899e512c360a3a2bcf938f/',
+      'https://solidtorrents.to/torrents/gogol-strashnaya-mest-2018-bdrip-1-46gb-rus-megape-7613e/5c899e512c360a3a2bcf938f/',
+      'https://solidtorrents.to/torrents/gogol-strashnaya-mest-2018-bdrip-1-46gb-rus-megape-7613e/5c899e512c360a3a2bcf938f/',
+      'https://solidtorrents.to/torrents/gogol-strashnaya-mest-2018-bdrip-1-46gb-rus-megape-7613e/5c899e512c360a3a2bcf938f/']
+
+      var nameSite = document.getElementById('top_header')
+      var btnShowHeader = document.getElementById('show_header-btn')
+      var isShowAll = false;
+      var listSitesLength = 0;
+      var listRenderedSitesLength = 0;
+      listSites.forEach((item, i) => {listSitesLength += item.length });
+
+      if (listSitesLength < 300) {
+        listSites.forEach((item, i) => {
+          nameSite.innerHTML += item
+          var mybr = document.createElement('br');
+          nameSite.appendChild(mybr);
+        });
+      } else {
+        listSites.forEach((item, i) => {
+          if (listRenderedSitesLength < 300) {
+            setName(item)
+          }
+        });
+        btnShowHeader.innerHTML = 'показать полный текст &darr;'
+      }
+
+      function setName (item) {
+        listRenderedSitesLength += item.length
+        if (listRenderedSitesLength < 300) {
+          nameSite.innerHTML += item
+          var mybr = document.createElement('br');
+          nameSite.appendChild(mybr);
+        } else {
+          var diff = listRenderedSitesLength - 300;
+          nameSite.innerHTML += item.slice(0, diff) + ' ...'
+        }
+      }
+
+      btnShowHeader.addEventListener('click', (e) => {
+        nameSite.innerHTML = ''
+        if (isShowAll) {
+          isShowAll = false
+          btnShowHeader.innerHTML = 'показать полный текст &darr;'
+          listRenderedSitesLength = 0
+          listSites.forEach((item, i) => {
+            if (listRenderedSitesLength < 300) {
+              setName(item)
+            }
+          });
+        } else {
+          isShowAll = true
+
+          btnShowHeader.innerHTML = 'свернуть &uarr;'
+          listSites.forEach((item, i) => {
+            nameSite.innerHTML += item
+            var mybr = document.createElement('br');
+            nameSite.appendChild(mybr);
+          });
+        }
+      })
+
+      </script>
+   </body>
+
+</html>

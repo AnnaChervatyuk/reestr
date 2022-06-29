@@ -1,0 +1,69 @@
+.container-fluid
+  .monitoring_group_banners
+    max-width: 1100px
+    margin: 100px 15px
+    .monitoring_banner
+      border-radius: 20px
+      padding: 40px 30px
+      margin-bottom: 30px
+      height: 460px
+      display: flex
+      flex-direction: column
+      position: relative
+      .banner-bg
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        opacity: 0.1
+        background-position: right bottom
+        background-repeat: no-repeat
+        background-size: 50%
+      .banner-title
+        margin-bottom: 15px
+      .banner-text
+        color: $font-small-color
+        font-size: 13px
+        line-height: 19px
+        margin-bottom: 120px
+      .banner-btn
+        @include btn()
+        font-size: 16px
+        line-height: 22px
+        height: 42px
+        padding: 8px 16px
+        margin-top: auto
+        width: fit-content
+        z-index: 1
+    .banner-drc
+      background-color: #F3F3FA
+      .banner-bg
+        background-image: url(./../public/images/bg_banner_drc.png)
+    .banner-vpn
+      background-color: #F7F0F4
+      .banner-bg
+        background-image: url(./../public/images/bg_banner_vpn.png)
+    .banner-ct
+      background-color: #F0F3F7
+      .banner-bg
+        background-image: url(./../public/images/bg_banner_ct.png)
+        opacity: 0.5
+
+@media (min-width: 768px)
+  .container-fluid
+    .monitoring_group_banners
+      margin: 100px 45px
+      display: grid
+      grid-template-columns: 1fr 1fr
+      .monitoring_banner
+        margin: 0 15px
+        &:first-child
+          margin-left: 0
+        &:last-child
+          margin-right: 0
+
+@media (min-width: 1200px)
+  .container-fluid
+    .monitoring_group_banners
+      margin: 100px auto

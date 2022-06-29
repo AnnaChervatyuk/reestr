@@ -1,0 +1,157 @@
+body
+    font-family: 'Inter', 'Arial', sans-serif
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    color: $font-color
+    overflow-x: auto
+    margin: 0
+    padding: 0
+    width: calc(100vw - 17px)
+    background-color: $bg-main-color
+
+a
+  color: $font-color
+  &:hover
+    color: $font-color-hover
+a.link_text
+  color: $font-color-hover
+  &:hover
+    text-decoration: none
+    border-bottom: 1px solid $font-color-hover
+
+button
+  color: $font-color-hover
+  &:hover
+    color: $font-color-hover
+
+img
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.container
+  padding: 0
+  margin: 0
+  min-width: 320px
+  width: 100%
+  max-width: none
+
+
+.container-fluid
+  padding: 0
+  margin: 0 auto
+  min-width: 320px
+  width: 100%
+
+.icons
+  fill: #000000
+  stroke-width: 2px
+.icons--close
+  stroke: #000000
+
+.icons:hover,
+.icons:focus
+  fill: #4661BC
+
+.icons--close:hover,
+.icons--close:focus
+  stroke: #4661BC
+
+
+.btn
+  color: $font-color
+.btn:focus
+  box-shadow: none
+
+.icons:active
+  fill: #4661BC
+  opacity: 0.8
+
+.hidden
+  display: none !important
+
+.line
+  border-bottom: 1px solid #EEF1F4
+  width: 100%
+  height: 1px
+
+h1
+  font-weight: 900
+  font-size: 28px
+  line-height: 34px
+
+h2
+  font-weight: 700
+  font-size: 32px
+  line-height: 41px
+
+h3
+  font-weight: 700
+  font-size: 22px
+  line-height: 27px
+
+h4
+  font-weight: 700
+  font-size: 20px
+  line-height: 25px
+
+h5
+  font-weight: 700
+  font-size: 18px
+  line-height: 29px
+
+h6
+  font-weight: 700
+  font-size: 15px
+  line-height: 24px
+
+
+.errors
+  text-align: center
+  padding: 20px 15px
+  display: flex
+  flex-direction: column
+  .error_img
+    margin: 0 auto 40px
+    max-width: 740px
+  .error_text
+    margin-bottom: 10px
+  .btn-group-error
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    margin: 30px auto 0
+    .btn
+      @include btn()
+      margin: 15px 15px
+      height: 40px
+      line-height: 20px
+      padding: 8px 16px
+    .btn-main
+      color: #FFFFFF
+      background-color: #1D1D1B
+
+
+@media (min-width: 768px)
+  h1
+    font-size: 45px
+    line-height: 54px
+
+  h3
+    font-size: 28px
+    line-height: 35px
+
+  h4
+    font-size: 22px
+    line-height: 27px
+  .errors
+    padding: 20px 45px
+    .btn-group-error
+      margin-bottom: 80px
+
+
+@media (min-width: 1200px)
+  h1
+    font-size: 50px
+    line-height: 60px

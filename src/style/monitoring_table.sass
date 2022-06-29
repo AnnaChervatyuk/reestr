@@ -1,0 +1,342 @@
+.container-fluid
+  .monitoring_table
+    max-width: 1100px
+    margin: 0 auto
+    .table_filter
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      padding: 20px 15px
+      flex-wrap: wrap
+      .table_setting
+        fill: $font-color
+        &.notification:hover
+          cursor: pointer
+        .notification-label
+          display: none
+      .table_setting.filter
+        order: 1
+        width: 50%
+      .table_setting.notification
+        order: 2
+        width: auto
+        text-align: right
+      .filters
+        display: flex
+        align-items: baseline
+        overflow-x: auto
+        order: 3
+        padding: 20px 0 0
+      .select
+        position: relative
+        display: flex
+        .btn-select
+          display: flex
+          padding: 0 10px
+          .btn-close
+            padding-left: 9px
+            border-left: 1px solid $font-color
+            margin-left: 9px
+            &:hover
+              cursor: pointer
+        .applied
+          background-color: #EEEEEE
+        .select__toggle
+          position: relative
+          background-color: transparent
+          display: flex
+          border: none
+          outline: none
+          cursor: pointer
+          align-items: center
+          width: 100%
+          font-size: 13px
+          padding: 3px 0
+          line-height: 19px
+          user-select: none
+          justify-content: space-between
+          color: $font-color
+          font-family: inherit
+          white-space: nowrap
+          &::after
+            content: ''
+            width: 12px
+            height: 8px
+            flex-shrink: 0
+            margin-left: 1rem
+            background-size: cover
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="8" width="12"%3E%3Cpath d="M6.58301 1.08366L11.333 5.75033C11.6663 6.08366 11.6663 6.58366 11.333 6.91699C10.9997 7.25033 10.4997 7.25033 10.1663 6.91699L6.08301 2.83366L1.99967 6.91699C1.83301 7.08366 1.66634 7.16699 1.41634 7.16699C0.916341 7.16699 0.583008 6.83366 0.583008 6.33366C0.583008 6.08366 0.66634 5.91699 0.833007 5.75033L5.58301 1.00033C5.74967 0.750325 6.24967 0.750326 6.583011.08366Z"/%3E%3C/svg%3E')
+            transform: rotate(180deg)
+          &:focus,
+          &:hover
+            outline: none
+            border: none
+            color:  $font-color-hover
+
+
+        .select__dropdown
+          display: none
+          position: fixed
+          border: 2px solid $font-color
+          max-height: 10rem
+          overflow-y: auto
+          border-radius: 4px
+          z-index: 2
+          background-color: #fff
+          font-size: 15px
+          font-family: inherit
+          font-weight: 400
+          line-height: 24px
+          width: 260px
+
+        .select__item
+          margin: 0
+          padding: 0
+          list-style: none
+          padding: 5px 15px
+
+
+        .select__list
+          padding: 10px 0
+          margin: 0
+
+
+        .select__item_selected
+          background-color: $color-bg-hover
+          display: flex
+          align-items: center
+          justify-content: space-between
+
+
+        .select__item:hover
+          background-color: #f5f5f5
+          cursor: pointer
+          transition: 0.2s background-color ease-in-out
+
+      .select_show .select__toggle::after
+        transform: rotate(360deg)
+      .select_show .select__dropdown
+        display: block
+
+
+    .table_wrapper
+      padding: 0
+      padding-left: 15px
+      font-size:  11px
+      line-height: 16px
+      .table_row
+        border-bottom: 1px solid #EEF1F4
+        padding: 25px 0
+        display: block
+        flex-direction: column
+        font-family: 'IBMPlexMono', monospace
+        overflow-x: auto
+        white-space: nowrap
+        // &:first-child
+        //   border-top: 1px solid #EEF1F4
+        .td_date
+          margin-bottom: 20px
+        .td_site
+          color: $font-color
+          font-family: 'Inter'
+          font-weight: 600
+          font-size: 14px
+          line-height: 21px
+          margin-bottom: 10px
+        .td_ip
+          margin-bottom: 10px
+        .td_comment,
+        .td_number
+          display: inline
+        .td_state
+          display: inline
+        .td_ori_name
+          margin-bottom: 10px
+        .table_td.td_state-unlock
+          color: #6C9E2C
+      .table_row-header
+        display: none
+      &.empty_list
+        text-align: center
+        margin: 25px 15px
+        border-top: 1px solid #EEF1F4
+        border-bottom: 1px solid #EEF1F4
+        padding: 25px
+        .empty_list-img
+          width: 120px
+          height: 120px
+          margin: 35px auto 25px auto
+        .empty_list-text
+          font-size: 15px
+          line-height: 24px
+        .empty_list-reset
+          font-size: 13px
+          line-height: 20px
+          margin-bottom: 35px
+          color: $font-color-hover
+    .btn_group
+      .btn_navigator
+        margin: 20px 15px
+        display: flex
+        flex-direction: row
+        justify-content: center
+        .btn
+          @include btn()
+        .btn_prev
+          width: 50px
+          height: 44px
+          display: inline
+          margin-right: 10px
+          padding: 10px
+          align-items: center
+        .btn_next
+          min-width: 270px
+          flex-grow: 1
+          height: 44px
+          padding: 10px
+
+      .btn_list-pages
+        margin: 33px 15px
+        display: flex
+        flex-direction: row
+        justify-content: center
+        .btn_page
+          width: 40px
+          height: 40px
+          border-radius: 0
+        .btn_page.btn_page-active,
+        .btn_page:hover
+          background-color: $color-bg-hover
+  .monitoring_table.company-info
+    margin-bottom: 50px
+    color: $color-mid-grey
+    .table_wrapper
+      .table_row
+        white-space: normal
+        .table_td
+          margin-bottom: 10px
+
+
+@media (min-width: 400px)
+  .container-fluid
+    .monitoring_table
+      .table_wrapper
+        .table_row
+          overflow-x: hidden
+          white-space: inherit
+
+
+@media (min-width: 768px)
+  .container-fluid
+    .monitoring_table
+      padding: 30px 45px
+      margin: 0
+      .table_filter
+        .table_setting.filter
+          order: 1
+          width: auto
+        .table_setting.notification
+          order: 3
+          width: auto
+        .filters
+          order: 2
+          padding: 0
+          flex-grow: 1
+          overflow: inherit
+          .select
+            margin-left: 30px
+            .select__dropdown
+              position: absolute
+              top: 2.5rem
+              left: 0
+    .company-info
+      margin-bottom: 100px
+      .table_wrapper
+        padding-left: 0
+
+@media (min-width: 1200px)
+  .container-fluid
+    .monitoring_table
+      padding: 30px 0
+      margin: 0 auto
+      .table_setting.filter
+        svg
+          fill: $color-mid-grey
+          &:hover
+            cursor: auto
+            fill: $color-mid-grey
+      .table_setting.notification
+        display: flex
+        &:hover
+          svg
+            fill: $font-color-hover
+          .notification-label
+            transition: all 2s ease-out
+            display: block
+            font-size: 14px
+            line-height: 21px
+            color: $font-color-hover
+
+      .table_wrapper
+        margin-bottom: 30px
+        .table_row
+          display: flex
+          flex-direction: row
+          justify-content: space-between
+          padding: 10px 0
+          .table_td
+            margin-bottom: 0
+            font-weight: 500
+            color: #000000
+            font-size: 14px
+            line-height: 20px
+          .td_date
+            width: 80px
+            order: 0
+          .td_state
+            width: 110px
+            order: 1
+          .td_site
+            width: 295px
+            order: 2
+            font-family: 'IBMPlexMono', monospace
+            line-height: 16px
+          .td_ip
+            width: 265px
+            order: 3
+          .td_comment
+            width: 280px
+            order: 4
+          .td_ori_name
+            width: 420px
+            order: 4
+          .td_number
+            width: 120px
+            order: 5
+        .table_row.table_row-header
+          .table_td
+            color: $color-mid-grey
+    .company-info
+      .table_wrapper
+        margin-bottom: 90px
+        .table_row
+          .td_site
+            order: 0
+            width: 300px
+          .td_comment
+            order: 1
+            width: 450px
+          .td_mail
+            order: 2
+            width: 135px
+          .td_state
+            order: 3
+    .monitoring_table.monitoring_table-new
+      .table_wrapper
+        .table_row
+          .td_date
+            width: 180px
+          .td_name
+            width: 195px
+          .td_owner
+            width: 545px
