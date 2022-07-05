@@ -8,7 +8,8 @@
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-   <link href="app.css" rel="stylesheet"></head>
+      <link rel="stylesheet" href="app.css">
+    </head>
    <body class="container">
       <div class="container-fluid">
          <div class="header_monitor">
@@ -96,8 +97,10 @@
                         <li class="nav-item nav-item__logo"><a class="nav-link nav-link__logo" href="/"><img src="./images/logo.svg" width="151" height="17" alt="Роскомсвобода"></a></li>
                      </ul>
                      <ul class="nav-bar-filter nav-bar-filter-menu" id="nav-bar-filter">
+                       <li class="nav-item d-none d-md-block logo-slash">/</li>
                         <li class="nav-item item-active d-none d-md-block"><a href="#">Мониторинг реестров</a></li>
                         <li class="nav-item d-none d-md-block"><a href="visual.html">Инфографика</a></li>
+                        <li class="nav-item d-none d-md-block"><a href="api.html">API</a></li>
                      </ul>
                   </div>
                   <div class="btn-group__nav" id="btn-group__nav">
@@ -117,6 +120,11 @@
                               <div class="panel panel-default">
                                  <div class="panel-heading">
                                     <a href="visual.html" >Инфографика</a>
+                                 </div>
+                              </div>
+                              <div class="panel panel-default">
+                                 <div class="panel-heading">
+                                    <a href="api.html" >API</a>
                                  </div>
                               </div>
                            </div>
@@ -706,5 +714,5 @@
 
 
       </script>
-   <script src="bundle.js"></script></body>
+   <script src="/bundle.js"></script></body>
 </html>

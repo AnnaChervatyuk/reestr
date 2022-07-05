@@ -9,7 +9,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
       <link rel="stylesheet" href="app.css">
-   </head>
+    </head>
    <body class="container container_news">
       <div class="container-fluid">
          <div class="header_monitor">
@@ -97,8 +97,11 @@
                         <li class="nav-item nav-item__logo"><a class="nav-link nav-link__logo" href="/"><img src="./images/logo.svg" width="151" height="17" alt="Роскомсвобода"></a></li>
                      </ul>
                      <ul class="nav-bar-filter nav-bar-filter-menu" id="nav-bar-filter">
+                       <li class="nav-item d-none d-md-block logo-slash">/</li>
                         <li class="nav-item item-active d-none d-md-block"><a href="#">Мониторинг реестров</a></li>
                         <li class="nav-item d-none d-md-block"><a href="visual.html">Инфографика</a></li>
+                        <li class="nav-item d-none d-md-block"><a href="api.html">API</a></li>
+
                      </ul>
                   </div>
                   <div class="btn-group__nav" id="btn-group__nav">
@@ -118,6 +121,12 @@
                               <div class="panel panel-default">
                                  <div class="panel-heading">
                                     <a href="visual.html">Инфографика</a>
+                                 </div>
+                              </div>
+
+                              <div class="panel panel-default">
+                                 <div class="panel-heading">
+                                    <a href="api.html" >API</a>
                                  </div>
                               </div>
                            </div>
@@ -366,5 +375,5 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--  скрывающиеся элементы меню в планшете и десктопе -->
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> <!--всплывающее окно, например, меню мобилы-->
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-   <script src="bundle.js"></script></body>
+   <script src="/bundle.js"></script></body>
 </html>

@@ -9,8 +9,8 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
       <link rel="stylesheet" href="app.css">
-    </head>
-   <body class="container container_ori">
+   </head>
+   <body class="container container_api">
       <div class="container-fluid">
          <div class="header_monitor">
             <div class="navigator">
@@ -56,7 +56,7 @@
                                           </a>
                                        </li>
                                        <li class="nav-item" id="btn-inst__item">
-                                          <a  class="btn" href="/" id="btn-inst">
+                                          <a class="btn" href="/" id="btn-inst">
                                              <svg class="icons icons--instagram" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                 <use xlink:href="sprite.svg#icon-instagram"></use>
                                              </svg>
@@ -64,7 +64,7 @@
                                           </a>
                                        </li>
                                        <li class="nav-item" id="btn-youtube__item">
-                                          <a  class="btn" href="/" id="btn-youtube">
+                                          <a class="btn" href="/" id="btn-youtube">
                                              <svg class="icons icons--youtube" width="31" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                 <use xlink:href="sprite.svg#icon-youtube"></use>
                                              </svg>
@@ -72,7 +72,7 @@
                                           </a>
                                        </li>
                                        <li class="nav-item" id="btn-rss__item">
-                                          <a class="btn" href="/"  id="btn-rss">
+                                          <a class="btn" href="/" id="btn-rss">
                                              <svg class="icons icons--rss" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                 <use xlink:href="sprite.svg#icon-rss"></use>
                                              </svg>
@@ -94,13 +94,19 @@
                <div class="block__nav block__nav-category">
                   <div class="twelve columns filter-wrapper">
                      <ul class="nav-bar-logo" id="nav-bar-logo">
-                        <li class="nav-item nav-item__logo"><a class="nav-link nav-link__logo" href="/"><img src="./images/logo.svg" width="151" height="17" alt="Роскомсвобода"></a></li>
+                        <li class="nav-item nav-item__logo">
+                           <a class="nav-link nav-link__logo" href="/">
+                             <img src="./images/logo.svg" width="151" height="17" alt="Роскомсвобода">
+                           </a>
+                        </li>
                      </ul>
                      <ul class="nav-bar-filter nav-bar-filter-menu" id="nav-bar-filter">
                        <li class="nav-item d-none d-md-block logo-slash">/</li>
-                        <li class="nav-item item-active d-none d-md-block"><a href="#">Мониторинг реестров</a></li>
+                        <li class="nav-item d-none d-md-block">
+                           <a href="index.html">Мониторинг реестров</a>
+                        </li>
                         <li class="nav-item d-none d-md-block"><a href="visual.html">Инфографика</a></li>
-                        <li class="nav-item d-none d-md-block"><a href="api.html">API</a></li>
+                        <li class="nav-item item-active d-none d-md-block">API</li>
 
                      </ul>
                   </div>
@@ -114,16 +120,17 @@
                         <div class="dropdown-menu mobail-menu dropdown-menu-right" id="mobail-menu">
                            <div class="dropdown-item panel-group dropdown-accordion" id="accordion">
                               <div class="panel panel-default">
-                                 <div class="panel-heading item-active">Мониторинг реестров</div>
-                              </div>
-                              <div class="panel panel-default">
                                  <div class="panel-heading">
-                                    <a href="visual.html">Инфографика</a>
+                                    <a href="index.html">Мониторинг реестров</a>
                                  </div>
                               </div>
                               <div class="panel panel-default">
-                                 <div class="panel-heading">
-                                    <a href="api.html" >API</a>
+                                 <div class="panel-heading"><a href="api.html" >Инфографика</a>
+                                 </div>
+                              </div>
+                              <div class="panel panel-default">
+                                 <div class="panel-heading item-active">
+                                    API
                                  </div>
                               </div>
                            </div>
@@ -140,111 +147,57 @@
                </div>
             </div>
             <div class="monitoring_filter">
-               <h1 class="filter_title">Мониторинг реестров</h1>
-               <div class="search__block">
-                  <input type="email" class="search__input" placeholder="Домен, адрес или IP-адрес">
-                  <button type="button" class="btn btn-search btn-search-mob">
-                     <svg class="icons icons--search" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <use xlink:href="sprite.svg#icon-search"></use>
-                     </svg>
-                  </button>
-                  <button type="button" class="btn btn-search btn-search-tablet">Найти</button>
-               </div>
-               <div class="filters__block">
-                  <div class="btn-group-filter">
-                     <div class="btn btn-filter ">
-                        <a href="index.html">
-                        <span class="filter-item"><span class="filter-title">Запрещенные сайты</span><span class="filter_count">548 138</span></span>
-                        </a>
-                     </div>
-                     <div class="btn btn-filter btn-filter__active">
-                        <span class="filter-item"><span class="filter-title">Организаторы распространения информации</span><span class="filter_count">548</span></span>
-                     </div>
-                     <div class="btn btn-filter ">
-                        <a href="news.html">
-                        <span class="filter-item"><span class="filter-title">Новостные агрегаторы</span><span class="filter_count">54</span></span>
-                        </a>
-                     </div>
-                  </div>
+               <h1 class="filter_title">API</h1>
+               <div class="filter_descr">
+                 Данные обновляются каждые три часа. Экспорт результов выдачи поиска отключен в связи с злоупотреблением. Используйте API.
                </div>
             </div>
          </div>
-         <div class="monitoring_table">
-            <div class="table_wrapper">
-               <div class="table_row table_row-header">
-                  <div class="table_td td_date">Дата</div>
-                  <div class="table_td td_state">Состояние</div>
-                  <div class="table_td td_site">Ресурс</div>
-                  <div class="table_td td_ori_name">Распространитель</div>
-                  <div class="table_td td_number">Номер в реестре</div>
-               </div>
-               <div class="table_row">
-                  <div class="table_td td_date">15.01.2022</div>
-                  <div class="table_td td_site"><a href="site_info-ori.html">http://chel.pro/5274</a></div>
-                  <div class="table_td td_ori_name">Проворов АР</div>
-                  <div class="table_td td_state">Заблокирован</div>
-                  <div class="table_td td_number">161-PP</div>
-               </div>
-               <div class="table_row">
-                  <div class="table_td td_date">15.01.2022</div>
-                  <div class="table_td td_site"><a href="site_info-ori.html">gazeta.sarov.info deputat.sarov.info kolfond.sarov.info www.sarov.info</a></div>
-                  <div class="table_td td_ori_name">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ ИСТОКИ</div>
-                  <div class="table_td td_state">Заблокирован</div>
-                  <div class="table_td td_number">133-PP</div>
-               </div>
-               <div class="table_row">
-                  <div class="table_td td_date">15.01.2022</div>
-                  <div class="table_td td_site"><a href="site_info-ori.html">drugvokrug.net drugvokrug.ru другвокруг.рф другвокруг.рус drugvokrug.kz</a></div>
-                  <div class="table_td td_ori_name">My Friends Social Limited</div>
-                  <div class="table_td td_state">Заблокирован</div>
-                  <div class="table_td td_number">122-PP</div>
-               </div>
-               <div class="table_row">
-                  <div class="table_td td_date">15.01.2022</div>
-                  <div class="table_td td_site"><a href="site_info-ori.html">http://bankdocumentov-vk.ru/kupit-trudovuyu-knizhku-so-stagem/</a></div>
-                  <div class="table_td td_ori_name">Асташов КА</div>
-                  <div class="table_td td_state td_state-unlock">Разблокирован</div>
-                  <div class="table_td td_number ">234-PP</div>
-               </div>
-            </div>
-            <div class="btn_group">
-               <div class="btn_navigator">
-                  <div class="btn btn_prev">
-                     &larr;
-                  </div>
-                  <div class="btn btn_next">
-                     Следующая&nbsp;&rarr;
-                  </div>
-               </div>
-               <div class="btn_list-pages">
-                  <div class="btn btn_page btn_page-active">1</div>
-                  <div class="btn btn_page">2</div>
-                  <div class="btn btn_page">3</div>
-                  <div class="btn btn_page">4</div>
-                  <div class="btn btn_page">5</div>
-                  <div class="btn btn_page">6</div>
-               </div>
-            </div>
+         <div class="section_api-content">
+           <div class="api_item">
+             <h2 class="api_item-title">Общая статистика</h2>
+             <div class="api_item-descr">Статистика заблокированных ресурсов, разблокированных, заблокированных за компанию сейчас и разблокированных из заблокированных за компанию по ведомствам.</div>
+             <div class="api_item-link"><a href="reestr.rublacklist.net/api/v2/json" target="_blank">reestr.rublacklist.net/api/v2/<b>json</b></a></div>
+             <div class="api_item-link"><a href="reestr.rublacklist.net/api/v2/csv" target="_blank">reestr.rublacklist.net/api/v2/<b>csv</b></a></div>
+           </div>
+           <div class="api_item">
+             <h2 class="api_item-title">Cписок доменов в реестре </h2>
+             <div class="api_item-link"><a href="reestr.rublacklist.net/api/v2/domains/json" target="_blank">reestr.rublacklist.net/api/v2/domains/<b>json</b></a></div>
+           </div>
+           <div class="api_item">
+             <h2 class="api_item-title">Cписок IP-адресов</h2>
+             <div class="api_item-descr">Напрямую заблокированных Роскомнадзором</div>
+             <div class="api_item-link"><a href="reestr.rublacklist.net/api/v2/current/json" target="_blank">reestr.rublacklist.net/api/v2/current/<b>json</b></a></div>
+             <div class="api_item-link"><a href="reestr.rublacklist.net/api/v2/current/csv" target="_blank">reestr.rublacklist.net/api/v2/current/<b>csv</b></a></div>
+           </div>
+           <div class="api_item">
+             <h2 class="api_item-title">Cписок IP-адресов</h2>
+             <div class="api_item-descr">Находящихся сейчас в реестре</div>
+             <div class="api_item-link"><a href="reestr.rublacklist.net/api/v2/ips/json" target="_blank">reestr.rublacklist.net/api/v2/ips/<b>json</b></a></div>
+             <div class="api_item-link"><a href="reestr.rublacklist.net/api/v2/ips/csv" target="_blank">reestr.rublacklist.net/api/v2/ips/<b>csv</b></a></div>
+           </div>
+           <div class="api_item">
+             <h2 class="api_item-title">Выдача содержания реестра на текущий момент</h2>
+             <div class="api_item-link"><a href="reestr.rublacklist.net/api/v2/current/json" target="_blank">reestr.rublacklist.net/api/v2/current/<b>json</b></a></div>
+             <div class="api_item-link"><a href="reestr.rublacklist.net/api/v2/current/csv" target="_blank">reestr.rublacklist.net/api/v2/current/<b>csv</b></a></div>
+           </div>
+
          </div>
-         <div class="monitoring_all">
-            <h2 class="monitoring_all-header">315</h2>
-            <div class="monitoring_all-text">записей в реестре организаторов распространения информации на данный момент</div>
-            <hr class="line"/>
-            <div class="monitoring_all-text"><a href="" class="link_text">Показать заблокированых</a> за отказ быть включенными в реестр организаторов распространения информации</div>
-         </div>
+
          <div class="monitoring_group_banners">
             <div class="monitoring_banner banner-drc">
                <div class="banner-bg"></div>
                <h3 class="banner-title">Юридическая помощь в&nbsp;цифровом пространстве</h3>
                <div class="banner-text">Если вы считаете, что доступ к какому-либо ресурсу был ограничен неправомерно, то можете составить заявление или получить юридическую консультацию в «Центре Цифровых Прав».</div>
-               <a href=""  target="_blank" class="btn banner-btn" >Получить консультацию</a>
+               <a href="" target="_blank" class="btn banner-btn">Получить консультацию</a>
             </div>
             <div class="monitoring_banner banner-vpn">
                <div class="banner-bg"></div>
                <h3 class="banner-title">VPN, которые мы рекомендуем</h3>
                <div class="banner-text">VPN позволит восстановить доступ к нужным сайтам и обойти все сложности, возникающие при блокировке по IP-адресу.</div>
-               <a href=""  target="_blank" class="btn banner-btn" >Выбрать VPN</a>
+               <a href="" target="_blank" class="btn banner-btn">Выбрать VPN</a>
             </div>
+            <!-- <div class="monitoring_banner banner-ct"><div class="banner-bg"></div><h3 class="banner-title">Censor Tracker — расширение Роскомсвободы</h3><div class="banner-text">Откроет заблокированные сайты.<br>Предупредит, если сайт входит в реестр организаторов распространения информации.</div><a href=""  target="_blank" class="btn banner-btn" >Установить</a></div> -->
          </div>
          <div class="donate">
             <div class="donate__header">
@@ -255,20 +208,15 @@
                   <div class="carousel-donate">
                      <div class="carousel btn-group-toggle " data-toggle="buttons" data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false }'>
                         <label class="btn btn-donate carousel-cell active">
-                        <input type="radio" name="donate" id="donate1" checked>100р
-                        </label>
+                        <input type="radio" name="donate" id="donate1" checked>100р </label>
                         <label class="btn btn-donate carousel-cell">
-                        <input type="radio" name="donate" id="donate2">500р
-                        </label>
+                        <input type="radio" name="donate" id="donate2">500р </label>
                         <label class="btn btn-donate carousel-cell">
-                        <input type="radio" name="donate" id="donate3">1000р
-                        </label>
+                        <input type="radio" name="donate" id="donate3">1000р </label>
                         <label class="btn btn-donate carousel-cell">
-                        <input type="radio" name="donate" id="donate4">5000р
-                        </label>
+                        <input type="radio" name="donate" id="donate4">5000р </label>
                         <label class="btn btn-donate carousel-cell">
-                        <input type="radio" name="donate" id="donate5">другая сумма
-                        </label>
+                        <input type="radio" name="donate" id="donate5">другая сумма </label>
                      </div>
                      <div class="donate__frequency">
                         <div class="donate__input">
@@ -295,7 +243,7 @@
                   </div>
                </div>
             </div>
-            <button type="button" class="btn btn-about_donate" >Почему мы просим поддержки&nbsp;&rarr;</button>
+            <button type="button" class="btn btn-about_donate">Почему мы просим поддержки&nbsp;&rarr;</button>
          </div>
          <div class="contacts">
             <div class="contacts__content">
@@ -317,7 +265,7 @@
             </div>
             <div class="contacts__email">
                <h5>Наша рассылка</h5>
-               <p class="card-text">Главное за&nbsp;неделю в&nbsp;области права. <a href="#">Пример рассылки</a>.</p>
+               <p class="card-text">Главное за&nbsp;неделю в&nbsp;области права. <a href="#">Пример рассылки</a>. </p>
                <form class="form-inline">
                   <div class="form-group">
                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -326,10 +274,14 @@
                </form>
             </div>
          </div>
-         <div class="footer" >
+         <div class="footer">
             <div class="btn-partners d-flex justify-content-between flex-row">
-               <a class="nav-link__logo-copyright" href="/"><img src="./images/logo_creative.png" alt="Время менять копирайт"></a>
-               <a class="nav-link__logo-unisender" href="/"><img src="./images/logo_uniSender.png" alt="UniSender"></a>
+               <a class="nav-link__logo-copyright" href="/">
+               <img src="./images/logo_creative.png" alt="Время менять копирайт">
+               </a>
+               <a class="nav-link__logo-unisender" href="/">
+               <img src="./images/logo_uniSender.png" alt="UniSender">
+               </a>
             </div>
             <div class="btn-group btn-footer d-flex justify-content-between" role="group" aria-label="Basic example" id="btn-footer">
                <a class="btn" href="/">
@@ -376,8 +328,10 @@
          </div>
       </div>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--  скрывающиеся элементы меню в планшете и десктопе -->
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> <!--всплывающее окно, например, меню мобилы-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <!--  скрывающиеся элементы меню в планшете и десктопе -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <!--всплывающее окно, например, меню мобилы-->
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-   <script src="/bundle.js"></script></body>
+   </body>
 </html>

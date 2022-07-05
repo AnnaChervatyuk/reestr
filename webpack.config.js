@@ -100,6 +100,10 @@ module.exports = {
         filename: 'table_preloader.html',
         template: 'src/public/table_preloader.html'
         }),
+      new HtmlWebpackPlugin({
+        filename: 'api.html',
+        template: 'src/public/api.html'
+        }),
 
   ],
 
