@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url(./fonts/IBMPlexMono-Medium.ttf);
+}
 @keyframes OPEN {
   0% {
     opacity: 0;
@@ -140,6 +144,19 @@ h6 {
   font-weight: 700;
   font-size: 15px;
   line-height: 24px;
+}
+
+.arrow {
+  border: solid #1D1D1B;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  vertical-align: middle;
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 .errors {
@@ -1595,12 +1612,15 @@ h6 {
   max-width: 1100px;
   margin: 0 auto;
 }
+.container-fluid .monitoring_filter .filter_title {
+  margin-bottom: 10px;
+}
 .container-fluid .monitoring_filter .filter_descr {
   font-size: 13px;
   line-height: 20px;
 }
 .container-fluid .monitoring_filter .search__block {
-  padding: 20px 0 30px;
+  padding: 20px 0;
   display: flex;
   flex-wrap: nowrap;
 }
@@ -1679,6 +1699,7 @@ h6 {
   user-select: none;
   transition: 0.2s ease;
   border-bottom: none;
+  line-height: 15px;
 }
 .container-fluid .monitoring_filter .filters__block .btn-group-filter .btn-filter .filter-item:hover {
   color: #4661BC;
@@ -1734,9 +1755,6 @@ h6 {
     font-size: 18px;
     line-height: 29px;
   }
-  .container-fluid .monitoring_filter .search__block {
-    padding: 30px 0 20px;
-  }
   .container-fluid .monitoring_filter .search__block .search__input {
     margin-right: 10px;
     border: 2px solid #1D1D1B;
@@ -1756,7 +1774,7 @@ h6 {
     font-size: 13px;
     color: #1D1D1B;
     border-color: #1D1D1B;
-    padding: 0 30px;
+    padding: 0 35px;
     height: 40px;
     font-size: 18px;
     font-weight: 500;
@@ -2209,6 +2227,9 @@ h6 {
   height: 44px;
   padding: 10px;
 }
+.container-fluid .monitoring_table .btn_group .btn_navigator .btn_next .icon-arrow-btn {
+  transform: rotate(180deg);
+}
 .container-fluid .monitoring_table .btn_group .btn_list-pages {
   margin: 33px 15px;
   display: flex;
@@ -2425,7 +2446,9 @@ h6 {
 .container-fluid .monitoring_ct .ct-content .ct-descr h6 {
   padding: 0;
   margin: 0;
-  margin-bottom: 6;
+}
+.container-fluid .monitoring_ct .ct-content .ct-descr h6 .arrow {
+  margin-left: 10px;
 }
 .container-fluid .monitoring_ct .ct-content .ct-descr .ct-text {
   padding: 0;
@@ -2445,6 +2468,8 @@ h6 {
 }
 .container-fluid .monitoring_ct .ct-content .btn-close svg {
   stroke: rgba(29, 29, 27, 0.15);
+  vertical-align: bottom;
+  text-align: center;
 }
 .container-fluid .monitoring_ct .ct-content .btn-close:hover {
   cursor: pointer;
@@ -2466,15 +2491,27 @@ h6 {
 @media (min-width: 768px) {
   .container-fluid .monitoring_ct .ct-content {
     padding: 0 45px;
+    min-height: 0px;
+  }
+  .container-fluid .monitoring_ct .ct-content .ct-descr {
+    margin: 15px 13px 15px 155px;
   }
   .container-fluid .monitoring_ct .ct-content .ct-descr h6 {
     font-size: 16px;
   }
+  .container-fluid .monitoring_ct .ct-content .ct-descr .ct-text {
+    line-height: 13px;
+  }
   .container-fluid .monitoring_ct .ct-content .ct-quokka {
     left: 48px;
+    height: 100%;
+    background-size: cover;
+    min-height: 0;
+    background-position: inherit;
   }
   .container-fluid .monitoring_ct .ct-content .btn-close {
     right: 45px;
+    top: 15px;
   }
   .container-fluid .monitoring_ct .ct-content .btn-close svg {
     margin-top: 12px;
@@ -2740,7 +2777,7 @@ h6 {
 .section_api-content .api_item .api_item-title {
   font-size: 24px;
   line-height: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .section_api-content .api_item .api_item-descr {
   margin-bottom: 20px;
@@ -2766,7 +2803,6 @@ h6 {
     line-height: 29px;
   }
   .section_api-content .api_item .api_item-title {
-    margin-bottom: 30px;
     font-size: 32px;
     line-height: 40px;
   }

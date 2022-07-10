@@ -44,7 +44,8 @@
         h6
           padding: 0
           margin: 0
-          margin-bottom: 6
+          .arrow
+            margin-left: 10px
 
         .ct-text
           padding: 0
@@ -62,6 +63,8 @@
         text-align: center
         svg
           stroke: rgba(29, 29, 27, 0.15)
+          vertical-align: bottom
+          text-align: center
         &:hover
           cursor: pointer
           svg
@@ -83,13 +86,22 @@
     .monitoring_ct
       .ct-content
         padding: 0 45px
+        min-height: 0px
         .ct-descr
+          margin: 15px 13px 15px 155px
           h6
             font-size: 16px
+          .ct-text
+            line-height: 13px
         .ct-quokka
           left: 48px
+          height: 100%
+          background-size: cover
+          min-height: 0
+          background-position: inherit
         .btn-close
           right: 45px
+          top: 15px
           svg
             margin-top: 12px
 

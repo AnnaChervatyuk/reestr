@@ -94,6 +94,12 @@
 </svg>
 
 
+<svg id="icon-arrow-btn" width="12" height="11" viewBox="0 0 12 11">
+<path d="M5.63912 10.1971L0.6693 5.22727L5.63912 0.257457L6.59792 1.20561L3.26873 4.5348H11.6317V5.91974H3.26873L6.59792 9.24361L5.63912 10.1971Z"/>
+</svg>
+
+
+
 
 
 <symbol id="icon-equalizer" width="24" height="24">
