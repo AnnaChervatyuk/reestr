@@ -1,0 +1,91 @@
+.container_screenshot
+  border: 1px solid #EEF1F4
+  border-radius: 5px
+  .header_monitor
+    background-color: #FFEDBF
+    width: 100%
+    .block_top
+      margin: 0 auto
+      .top_header
+        margin: 0
+        line-break: anywhere
+        font-weight: 700
+  .container-fluid
+    .info_table
+      margin: 30px auto
+      .table_wrapper
+        padding: 0
+        .table_row
+          display: flex
+          .td_title
+            box-sizing: content-box
+  .footer__screenshot
+    background: #F1F4F8
+    border-top: 1px solid #EEF1F4
+    margin: 0
+    padding: 20px 0
+    .footer__screenshot-inner
+      margin: 0 auto
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      flex-wrap: nowrap
+      align-items: center
+      .site-name
+        font-size: 16px
+        line-height: 24px
+        color: #000000
+        opacity: 0.6
+      img
+        max-width: 157px
+
+.container_screenshot.screen-desk
+  width: 1200px
+  .header_monitor
+    .block_top
+      width: 1100px
+      padding: 40px 0
+      .top_header
+        font-size: 28px
+        line-height: 35px
+  .container-fluid
+    .info_table
+      padding: 30px 0
+      .table_wrapper
+        .table_row
+          flex-direction: row
+          display: flex
+          .td_title
+            width: 270px
+            min-width: 270px
+            padding-right: 50px
+  .footer__screenshot
+    .footer__screenshot-inner
+      max-width: 1100px
+
+.container_screenshot.screen-mob
+  width: 600px
+  .container-fluid
+    .footer__screenshot
+      .footer__screenshot-inner
+        width: 540px
+    .info_table
+      padding: 0
+      .table_wrapper
+        width: 540px
+        margin: 0 auto
+        .table_row
+          flex-direction: column
+          display: flex
+          .td_title
+            width: 270px
+            min-width: 270px
+            padding-right: 50px
+            margin-bottom: 0
+  .header_monitor
+    .block_top
+      width: 540px
+      padding: 20px 0
+      .top_header
+        font-size: 22px
+        line-height: 27px

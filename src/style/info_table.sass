@@ -2,6 +2,25 @@
   .info_table
     max-width: 1100px
     margin: 30px auto 50px
+    .screenshot
+      display: flex
+      color: $font-color-hover
+      font-size: 15px
+      line-height: 24px
+      margin-bottom: 15px
+      margin-left: auto
+      width: fit-content
+      width: -moz-fit-content
+      padding: 0 15px
+      .screenshot__icon
+        margin-right: 10px
+      .screenshot__btn
+        box-sizing: border-box
+        border-bottom: 1px solid transparent
+        &:hover
+          border-bottom: 1px solid $font-color-hover
+      &:hover
+        cursor: pointer
     .table_wrapper
       padding: 0 15px
       .table_row
@@ -22,6 +41,8 @@
     .info_table
       padding: 30px 45px 50px
       margin: 0
+      .screenshot
+        padding: 0
       .table_wrapper
         margin-bottom: 0
         padding: 0
