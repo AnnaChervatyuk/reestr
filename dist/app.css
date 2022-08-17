@@ -2871,6 +2871,8 @@ h6 {
   margin: 0;
   line-break: anywhere;
   font-weight: 700;
+  width: 100%;
+  word-wrap: break-word;
 }
 .container_screenshot .container-fluid .info_table {
   margin: 30px auto;
@@ -2880,6 +2882,8 @@ h6 {
 }
 .container_screenshot .container-fluid .info_table .table_wrapper .table_row {
   display: flex;
+  align-items: baseline;
+  padding: 5px 0 15px 0;
 }
 .container_screenshot .container-fluid .info_table .table_wrapper .table_row .td_title {
   box-sizing: content-box;
@@ -2903,6 +2907,7 @@ h6 {
   line-height: 24px;
   color: #000000;
   opacity: 0.6;
+  margin-top: -15px;
 }
 .container_screenshot .footer__screenshot .footer__screenshot-inner img {
   max-width: 157px;
@@ -2951,6 +2956,7 @@ h6 {
 .container_screenshot.screen-mob .container-fluid .info_table .table_wrapper .table_row {
   flex-direction: column;
   display: flex;
+  padding: 2px 0 19px 0;
 }
 .container_screenshot.screen-mob .container-fluid .info_table .table_wrapper .table_row .td_title {
   width: 270px;
