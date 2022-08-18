@@ -192,9 +192,32 @@
                      <use xlink:href="sprite.svg#icon-equalizer"></use>
                   </svg>
                </div>
+
+
                <div class="filters hidden" id="all_filters">
 
-                  <div class="select__state select">
+                  <form>
+                    <div class="block_select">
+                       <select id="selectState" class="selectpicker form-control border-0" onChange="setFilter()">
+                         <option selected disabled value="allState">Статус в реестре</option>
+                         <option value="anyState">Любой&nbsp;статус</option>
+                         <option value="disabledState">Разблокирован</option>
+                         <option value="enabledState">Заблокирован</option>
+                       </select>
+                     </div>
+                     <div  class="block_select">
+                       <select id="selectGovernment" class="selectpicker form-control border-0" onChange="setFilter()">
+                         <option selected disabled value="allGoverment">Госорган</option>
+                         <option value="allGoverment">Любой</option>
+                         <option value="anyGoverment">Мосгорсуд</option>
+                         <option value="fnc">ФНС</option>
+                         <option value="yfssp">ОСП по Центральному АО №1 УФССП России по Москве</option>
+                         <option value="roskomnadzor">Роскомнадзор</option>
+                       </select>
+                     </div>
+                  </form>
+
+                  <!-- <div class="select__state select">
                      <div class="btn-select">
                         <button type="button" class="select__toggle" name="state" value="auto" data-select="toggle-state" id="btn_select_state">
                         Статус в реестре
@@ -212,9 +235,9 @@
                            <li class="select__item" data-select="option" data-value="enabled" data-index="2">Заблокирован</li>
                         </ul>
                      </div>
-                  </div>
+                  </div> -->
 
-                  <div class="select__government select ">
+                  <!-- <div class="select__government select ">
                      <div class="btn-select">
                         <button type="button" class="select__toggle" name="government" value="auto" data-select="toggle-government" id="btn_select_government">
                         Госорган
@@ -234,7 +257,7 @@
                            <li class="select__item" data-select="option" data-value="roskomnadzor" data-index="4">Роскомнадзор</li>
                         </ul>
                      </div>
-                  </div>
+                  </div> -->
 
 
                   <div class="select__duration select">
@@ -568,13 +591,21 @@
       </script>
 
       <script>
-         const BTN_DRPDN_STATE = document.getElementById("btn_select_state")
+        function setFilter () {
+          var selectedItemState = document.getElementById("selectState").value;
+          var selectedItemGovernment = document.getElementById("selectGovernment").value;
+          console.log('selectedItemState', selectedItemState)
+          console.log('selectedItemGovernment', selectedItemGovernment)
+        }
+
+
+         // const BTN_DRPDN_STATE = document.getElementById("btn_select_state")
          const BTN_DRPDN_GOVERMENT = document.getElementById("btn_select_government")
          const BTN_DRPDN_DURATION = document.getElementById("btn_select_duration")
 
          var class_name_selected, selector_option_selected, select, selector_data_toggle, selected, options, elToggle
 
-         const BTN_CLOSE_SELECT_STATE = document.getElementById("btnCloseSelectState")
+         // const BTN_CLOSE_SELECT_STATE = document.getElementById("btnCloseSelectState")
          const BTN_CLOSE_SELECT_GOVERMENT = document.getElementById("btnCloseSelectGovernment")
          const BTN_CLOSE_SELECT_DURATION = document.getElementById("btnCloseSelecTime")
 
@@ -586,13 +617,13 @@
            if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
          })
 
-         BTN_DRPDN_STATE.addEventListener('click', (e) => {
-           closeAllDrpd()
-           select = document.querySelector('.select__state');
-           select.classList.toggle("select_show")
-           setVars('state')
-           if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_STATE, '.select__state')
-         })
+         // BTN_DRPDN_STATE.addEventListener('click', (e) => {
+         //   closeAllDrpd()
+         //   select = document.querySelector('.select__state');
+         //   select.classList.toggle("select_show")
+         //   setVars('state')
+         //   if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_STATE, '.select__state')
+         // })
 
          BTN_DRPDN_DURATION.addEventListener('click', (e) => {
            closeAllDrpd()
@@ -602,10 +633,10 @@
            if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_DURATION, '.select__duration')
          })
 
-         BTN_CLOSE_SELECT_STATE.addEventListener('click', (e) => {
-           setVars('state')
-           update(options[0], 'state');
-         })
+         // BTN_CLOSE_SELECT_STATE.addEventListener('click', (e) => {
+         //   setVars('state')
+         //   update(options[0], 'state');
+         // })
 
          BTN_CLOSE_SELECT_GOVERMENT.addEventListener('click', (e) => {
            setVars('government')
@@ -618,10 +649,10 @@
            selected = document.querySelector(selector_option_selected);
 
            switch (props) {
-             case 'state':
-               selector_data_toggle = '[data-select="toggle-state"]';
-               options = document.querySelectorAll('.select__list-state > .select__item');
-               break;
+             // case 'state':
+             //   selector_data_toggle = '[data-select="toggle-state"]';
+             //   options = document.querySelectorAll('.select__list-state > .select__item');
+             //   break;
              case 'government':
                selector_data_toggle = '[data-select="toggle-government"]';
                options = document.querySelectorAll('.select__list-goverment > .select__item');
