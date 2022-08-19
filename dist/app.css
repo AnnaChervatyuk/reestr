@@ -95,6 +95,19 @@ img {
   box-shadow: none;
 }
 
+.btn_more_ip {
+  display: block;
+  color: #4661BC;
+  border-bottom: 1px solid transparent;
+  font-size: 15px;
+  line-height: 24px;
+  width: fit-content;
+}
+.btn_more_ip:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #4661BC;
+}
+
 .icons:active {
   fill: #4661BC;
   opacity: 0.8;
@@ -1460,7 +1473,8 @@ h6 {
     max-width: 825px;
   }
 }
-.container .form_to_subscribe {
+.container .form_to_subscribe,
+.container .popup_download_csv {
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -1470,30 +1484,54 @@ h6 {
   left: 0;
   overflow: auto;
 }
-.container .form_to_subscribe .form_to_subscribe-inner {
+.container .form_to_subscribe .form_to_subscribe-inner,
+.container .form_to_subscribe .popup_download_csv-inner,
+.container .popup_download_csv .form_to_subscribe-inner,
+.container .popup_download_csv .popup_download_csv-inner {
   background-color: #ffffff;
   padding: 40px 30px;
   position: relative;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .btn-close {
+.container .form_to_subscribe .form_to_subscribe-inner .btn-close,
+.container .form_to_subscribe .popup_download_csv-inner .btn-close,
+.container .popup_download_csv .form_to_subscribe-inner .btn-close,
+.container .popup_download_csv .popup_download_csv-inner .btn-close {
   position: absolute;
   top: 0;
   right: 0;
   width: 50px;
   height: 50px;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .btn-close .icons--close {
+.container .form_to_subscribe .form_to_subscribe-inner .btn-close:hover,
+.container .form_to_subscribe .popup_download_csv-inner .btn-close:hover,
+.container .popup_download_csv .form_to_subscribe-inner .btn-close:hover,
+.container .popup_download_csv .popup_download_csv-inner .btn-close:hover {
+  cursor: pointer;
+}
+.container .form_to_subscribe .form_to_subscribe-inner .btn-close .icons--close,
+.container .form_to_subscribe .popup_download_csv-inner .btn-close .icons--close,
+.container .popup_download_csv .form_to_subscribe-inner .btn-close .icons--close,
+.container .popup_download_csv .popup_download_csv-inner .btn-close .icons--close {
   margin: auto;
   display: block;
   margin-top: 17px;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-title {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-title,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-title,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-title,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-title {
   font-weight: 700;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-text {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-text,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-text,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-text,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-text {
   margin-bottom: 40px;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe {
+.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe,
+.container .form_to_subscribe .popup_download_csv-inner .input-subscribe,
+.container .popup_download_csv .form_to_subscribe-inner .input-subscribe,
+.container .popup_download_csv .popup_download_csv-inner .input-subscribe {
   border: 2px solid #1D1D1B;
   padding: 0;
   height: 27px;
@@ -1508,28 +1546,53 @@ h6 {
   background-color: transparent;
   width: 100%;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:hover {
+.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:hover,
+.container .form_to_subscribe .popup_download_csv-inner .input-subscribe:hover,
+.container .popup_download_csv .form_to_subscribe-inner .input-subscribe:hover,
+.container .popup_download_csv .popup_download_csv-inner .input-subscribe:hover {
   color: #4661BC;
   border-color: #4661BC;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:active {
+.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:active,
+.container .form_to_subscribe .popup_download_csv-inner .input-subscribe:active,
+.container .popup_download_csv .form_to_subscribe-inner .input-subscribe:active,
+.container .popup_download_csv .popup_download_csv-inner .input-subscribe:active {
   color: #4661BC;
   border-color: #4661BC;
   opacity: 0.8;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:focus {
+.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:focus,
+.container .form_to_subscribe .popup_download_csv-inner .input-subscribe:focus,
+.container .popup_download_csv .form_to_subscribe-inner .input-subscribe:focus,
+.container .popup_download_csv .popup_download_csv-inner .input-subscribe:focus {
   box-shadow: none;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:active, .container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:focus {
+.container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:active, .container .form_to_subscribe .form_to_subscribe-inner .input-subscribe:focus,
+.container .form_to_subscribe .popup_download_csv-inner .input-subscribe:active,
+.container .form_to_subscribe .popup_download_csv-inner .input-subscribe:focus,
+.container .popup_download_csv .form_to_subscribe-inner .input-subscribe:active,
+.container .popup_download_csv .form_to_subscribe-inner .input-subscribe:focus,
+.container .popup_download_csv .popup_download_csv-inner .input-subscribe:active,
+.container .popup_download_csv .popup_download_csv-inner .input-subscribe:focus {
   border-color: #B61414;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .label-subscribe {
+.container .form_to_subscribe .form_to_subscribe-inner .label-subscribe,
+.container .form_to_subscribe .popup_download_csv-inner .label-subscribe,
+.container .popup_download_csv .form_to_subscribe-inner .label-subscribe,
+.container .popup_download_csv .popup_download_csv-inner .label-subscribe {
   font-size: 13px;
   font-weight: 15px;
   width: 100%;
   margin-bottom: 20px;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .btn_subscribe {
+.container .form_to_subscribe .form_to_subscribe-inner .btn_subscribe,
+.container .form_to_subscribe .form_to_subscribe-inner .btn_download,
+.container .form_to_subscribe .popup_download_csv-inner .btn_subscribe,
+.container .form_to_subscribe .popup_download_csv-inner .btn_download,
+.container .popup_download_csv .form_to_subscribe-inner .btn_subscribe,
+.container .popup_download_csv .form_to_subscribe-inner .btn_download,
+.container .popup_download_csv .popup_download_csv-inner .btn_subscribe,
+.container .popup_download_csv .popup_download_csv-inner .btn_download {
   border: 2px solid #1D1D1B;
   padding: 0;
   height: 27px;
@@ -1545,62 +1608,114 @@ h6 {
   margin-bottom: 30px;
   height: 40px;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .btn_subscribe:hover {
+.container .form_to_subscribe .form_to_subscribe-inner .btn_subscribe:hover,
+.container .form_to_subscribe .form_to_subscribe-inner .btn_download:hover,
+.container .form_to_subscribe .popup_download_csv-inner .btn_subscribe:hover,
+.container .form_to_subscribe .popup_download_csv-inner .btn_download:hover,
+.container .popup_download_csv .form_to_subscribe-inner .btn_subscribe:hover,
+.container .popup_download_csv .form_to_subscribe-inner .btn_download:hover,
+.container .popup_download_csv .popup_download_csv-inner .btn_subscribe:hover,
+.container .popup_download_csv .popup_download_csv-inner .btn_download:hover {
   color: #4661BC;
   border-color: #4661BC;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .btn_subscribe:active {
+.container .form_to_subscribe .form_to_subscribe-inner .btn_subscribe:active,
+.container .form_to_subscribe .form_to_subscribe-inner .btn_download:active,
+.container .form_to_subscribe .popup_download_csv-inner .btn_subscribe:active,
+.container .form_to_subscribe .popup_download_csv-inner .btn_download:active,
+.container .popup_download_csv .form_to_subscribe-inner .btn_subscribe:active,
+.container .popup_download_csv .form_to_subscribe-inner .btn_download:active,
+.container .popup_download_csv .popup_download_csv-inner .btn_subscribe:active,
+.container .popup_download_csv .popup_download_csv-inner .btn_download:active {
   color: #4661BC;
   border-color: #4661BC;
   opacity: 0.8;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .btn_subscribe:focus {
+.container .form_to_subscribe .form_to_subscribe-inner .btn_subscribe:focus,
+.container .form_to_subscribe .form_to_subscribe-inner .btn_download:focus,
+.container .form_to_subscribe .popup_download_csv-inner .btn_subscribe:focus,
+.container .form_to_subscribe .popup_download_csv-inner .btn_download:focus,
+.container .popup_download_csv .form_to_subscribe-inner .btn_subscribe:focus,
+.container .popup_download_csv .form_to_subscribe-inner .btn_download:focus,
+.container .popup_download_csv .popup_download_csv-inner .btn_subscribe:focus,
+.container .popup_download_csv .popup_download_csv-inner .btn_download:focus {
   box-shadow: none;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-success {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-success,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-success,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-success,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-success {
   padding: 10px 20px;
   width: 100%;
   background: rgba(108, 158, 44, 0.1);
   border-radius: 10px;
   color: #6C9E2C;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-type,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-type,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-type {
   padding: 40px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type.telegram:hover {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type.telegram:hover,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-type.telegram:hover,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-type.telegram:hover,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-type.telegram:hover {
   cursor: pointer;
   color: #4661BC;
 }
 .container .form_to_subscribe .form_to_subscribe-inner .subscribe-type.telegram:hover .type-btn > .icons,
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type.telegram:hover .icons {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type.telegram:hover .icons,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-type.telegram:hover .type-btn > .icons,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-type.telegram:hover .icons,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-type.telegram:hover .type-btn > .icons,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-type.telegram:hover .icons,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-type.telegram:hover .type-btn > .icons,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-type.telegram:hover .icons {
   fill: #4661BC;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type .type-icon {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type .type-icon,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-type .type-icon,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-type .type-icon,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-type .type-icon {
   margin-right: 20px;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type .type-name {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type .type-name,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-type .type-name,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-type .type-name,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-type .type-name {
   font-weight: 700;
   font-size: 20px;
   line-height: 25px;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type .type-btn {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type .type-btn,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-type .type-btn,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-type .type-btn,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-type .type-btn {
   margin-left: auto;
 }
-.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type .type-btn .icons--arrow {
+.container .form_to_subscribe .form_to_subscribe-inner .subscribe-type .type-btn .icons--arrow,
+.container .form_to_subscribe .popup_download_csv-inner .subscribe-type .type-btn .icons--arrow,
+.container .popup_download_csv .form_to_subscribe-inner .subscribe-type .type-btn .icons--arrow,
+.container .popup_download_csv .popup_download_csv-inner .subscribe-type .type-btn .icons--arrow {
   transform: rotate(-90deg);
 }
 
 @media (min-width: 768px) {
-  .container .form_to_subscribe {
+  .container .form_to_subscribe,
+.container .popup_download_csv {
     background-color: rgba(255, 255, 255, 0.5);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     display: flex;
   }
-  .container .form_to_subscribe .form_to_subscribe-inner {
+  .container .form_to_subscribe .form_to_subscribe-inner,
+.container .form_to_subscribe .popup_download_csv-inner,
+.container .popup_download_csv .form_to_subscribe-inner,
+.container .popup_download_csv .popup_download_csv-inner {
     max-width: 514px;
     height: auto;
     border-radius: 20px;
@@ -2618,28 +2733,35 @@ h6 {
   max-width: 1100px;
   margin: 30px auto 50px;
 }
-.container-fluid .info_table .screenshot {
+.container-fluid .info_table .action_table {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 15px;
+}
+.container-fluid .info_table .action_table .action_el {
   display: flex;
   color: #4661BC;
   font-size: 15px;
   line-height: 24px;
-  margin-bottom: 15px;
-  margin-left: auto;
   width: fit-content;
   width: -moz-fit-content;
   padding: 0 15px;
+  margin-left: 20px;
 }
-.container-fluid .info_table .screenshot .screenshot__icon {
+.container-fluid .info_table .action_table .action_el:first-child {
+  margin-left: auto;
+}
+.container-fluid .info_table .action_table .action_el .action_el__icon {
   margin-right: 10px;
 }
-.container-fluid .info_table .screenshot .screenshot__btn {
+.container-fluid .info_table .action_table .action_el .action_el__btn {
   box-sizing: border-box;
   border-bottom: 1px solid transparent;
 }
-.container-fluid .info_table .screenshot .screenshot__btn:hover {
+.container-fluid .info_table .action_table .action_el .action_el__btn:hover {
   border-bottom: 1px solid #4661BC;
 }
-.container-fluid .info_table .screenshot:hover {
+.container-fluid .info_table .action_table .action_el:hover {
   cursor: pointer;
 }
 .container-fluid .info_table .table_wrapper {
@@ -2666,7 +2788,7 @@ h6 {
     padding: 30px 45px 50px;
     margin: 0;
   }
-  .container-fluid .info_table .screenshot {
+  .container-fluid .info_table .action_el {
     padding: 0;
   }
   .container-fluid .info_table .table_wrapper {
