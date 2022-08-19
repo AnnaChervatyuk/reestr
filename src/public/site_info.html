@@ -143,13 +143,23 @@
 
 
      <div class="info_table">
-       <div class="screenshot">
-         <div class="screenshot__icon">
-           <svg class="icons icons--screenshot" width="18" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <use xlink:href="sprite.svg#icon-screenshot"></use>
-           </svg>
+       <div class="action_table">
+         <div class="action_el">
+           <div class="action_el__icon">
+             <svg class="icons icons--screenshot" width="18" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="sprite.svg#icon-screenshot"></use>
+             </svg>
+           </div>
+           <div class="action_el__btn">Скриншот записи</div>
          </div>
-         <div class="screenshot__btn">Скриншот записи</div>
+         <div class="action_el" id="btn_download_csv">
+           <div class="action_el__icon">
+             <svg class="icons icons--screenshot" width="18" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="sprite.svg#icon-download"></use>
+             </svg>
+           </div>
+           <div class="action_el__btn">CSV</div>
+         </div>
        </div>
        <div class="table_wrapper">
          <div class="table_row">
@@ -162,7 +172,7 @@
          </div>
          <div class="table_row">
            <div class="td_title">IP-адрес</div>
-           <div class="td_content">172.67.168.137, 104.21.26.205, 2606:4700:3030::ac43:a889, 2606:4700:3034::6815:1acd</div>
+           <div class="td_content">172.67.168.137, 104.21.26.205, 2606:4700:3030::ac43:a889, 2606:4700:3034::6815:1acd <span class="btn_more_ip">ещё&nbsp;215</span></div>
          </div>
          <div class="table_row">
            <div class="td_title">Количество других интернет-ресурсов на тех же IP</div>
@@ -357,6 +367,18 @@
          </div>
       </div>
 
+      <div class="popup_download_csv hidden" id="poup_download_csv">
+         <div class="popup_download_csv-inner">
+            <div class="btn-close" id="poup_download_csv-close">
+               <svg class="icons icons--close" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="sprite.svg#icon-close"></use>
+               </svg>
+            </div>
+            <h1 class="subscribe-title">Скачивание записи в CSV</h1>
+            <div class="btn btn_download" id="poup_download_csv-btn">Скачать</div>
+         </div>
+      </div>
+
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--  скрывающиеся элементы меню в планшете и десктопе -->
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> <!--всплывающее окно, например, меню мобилы-->
@@ -424,6 +446,19 @@
           });
         }
       })
+      </script>
+
+      <script>
+        var btnDownloadCsv = document.getElementById('btn_download_csv')
+        var popupDownloadCsv = document.getElementById('poup_download_csv')
+        var btnDownload = document.getElementById("poup_download_csv-btn")
+        var btnClosePopupDownload = document.getElementById("poup_download_csv-close")
+        btnDownloadCsv.addEventListener("click", (event) => {
+          popupDownloadCsv.classList.toggle("hidden")
+        })
+        btnClosePopupDownload.addEventListener("click", (event) => {
+          popupDownloadCsv.classList.toggle("hidden")
+        })
 
       </script>
    </body>
