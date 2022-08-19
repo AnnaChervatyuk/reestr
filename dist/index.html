@@ -205,7 +205,7 @@
                          <option value="enabledState">Заблокирован</option>
                        </select>
                      </div>
-                     <div  class="block_select">
+                     <div class="block_select">
                        <select id="selectGovernment" class="selectpicker form-control border-0" onChange="setFilter()">
                          <option selected disabled value="allGoverment">Госорган</option>
                          <option value="allGoverment">Любой</option>
@@ -216,50 +216,6 @@
                        </select>
                      </div>
                   </form>
-
-                  <!-- <div class="select__state select">
-                     <div class="btn-select">
-                        <button type="button" class="select__toggle" name="state" value="auto" data-select="toggle-state" id="btn_select_state">
-                        Статус в реестре
-                        </button>
-                        <span class="btn-close btn-close-select hidden" id="btnCloseSelectState">
-                           <svg class="icons icons--close" width="10" height="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                              <use xlink:href="sprite.svg#icon-close"></use>
-                           </svg>
-                        </span>
-                     </div>
-                     <div class="select__dropdown">
-                        <ul class="select__list select__list-state">
-                           <li class="select__item select__item_selected select__item_selected-state" data-select="option" data-value="auto" data-index="0">Любой&nbsp;статус</li>
-                           <li class="select__item" data-select="option" data-value="disabled" data-index="1">Разблокирован</li>
-                           <li class="select__item" data-select="option" data-value="enabled" data-index="2">Заблокирован</li>
-                        </ul>
-                     </div>
-                  </div> -->
-
-                  <!-- <div class="select__government select ">
-                     <div class="btn-select">
-                        <button type="button" class="select__toggle" name="government" value="auto" data-select="toggle-government" id="btn_select_government">
-                        Госорган
-                        </button>
-                        <span class="btn-close btn-close-select hidden" id="btnCloseSelectGovernment">
-                           <svg class="icons icons--close" width="10" height="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                              <use xlink:href="sprite.svg#icon-close"></use>
-                           </svg>
-                        </span>
-                     </div>
-                     <div class="select__dropdown">
-                        <ul class="select__list select__list-goverment">
-                           <li class="select__item select__item_selected select__item_selected-government" data-select="option" data-value="auto" data-index="0">Любой&nbsp;госорган</li>
-                           <li class="select__item" data-select="option" data-value="mosgorsud" data-index="1">Мосгорсуд</li>
-                           <li class="select__item" data-select="option" data-value="fnc" data-index="2">ФНС</li>
-                           <li class="select__item" data-select="option" data-value="yfssp" data-index="3">ОСП по Центральному АО №1 УФССП России по Москве</li>
-                           <li class="select__item" data-select="option" data-value="roskomnadzor" data-index="4">Роскомнадзор</li>
-                        </ul>
-                     </div>
-                  </div> -->
-
-
                   <div class="select__duration select">
                      <div class="btn-select">
                         <button type="button" class="select__toggle" name="duration" value="auto" data-select="toggle-duration" id="btn_select_duration">
@@ -556,11 +512,11 @@
         btnFilter.addEventListener("click", (event) => {
           allFilters.classList.toggle("hidden")
         })
-        if ($('body').innerWidth() > 767) {
+        if ($('body').innerWidth() > 739) {
           allFilters.classList.remove("hidden")
         }
         window.addEventListener("resize", (e) => {
-          if (document.documentElement.clientWidth > 767) {
+          if (document.documentElement.clientWidth > 739) {
             allFilters.classList.remove("hidden")
           }
         })
@@ -598,159 +554,6 @@
           console.log('selectedItemGovernment', selectedItemGovernment)
         }
 
-
-         // const BTN_DRPDN_STATE = document.getElementById("btn_select_state")
-         const BTN_DRPDN_GOVERMENT = document.getElementById("btn_select_government")
-         const BTN_DRPDN_DURATION = document.getElementById("btn_select_duration")
-
-         var class_name_selected, selector_option_selected, select, selector_data_toggle, selected, options, elToggle
-
-         // const BTN_CLOSE_SELECT_STATE = document.getElementById("btnCloseSelectState")
-         const BTN_CLOSE_SELECT_GOVERMENT = document.getElementById("btnCloseSelectGovernment")
-         const BTN_CLOSE_SELECT_DURATION = document.getElementById("btnCloseSelecTime")
-
-         BTN_DRPDN_GOVERMENT.addEventListener('click', (e) => {
-           closeAllDrpd()
-           select = document.querySelector('.select__government');
-           select.classList.toggle("select_show")
-           setVars('government')
-           if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
-         })
-
-         // BTN_DRPDN_STATE.addEventListener('click', (e) => {
-         //   closeAllDrpd()
-         //   select = document.querySelector('.select__state');
-         //   select.classList.toggle("select_show")
-         //   setVars('state')
-         //   if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_STATE, '.select__state')
-         // })
-
-         BTN_DRPDN_DURATION.addEventListener('click', (e) => {
-           closeAllDrpd()
-           select = document.querySelector('.select__duration');
-           select.classList.toggle("select_show")
-           // setVars('duration') //TODO: скопировать логику с рабочей версии реестра
-           if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_DURATION, '.select__duration')
-         })
-
-         // BTN_CLOSE_SELECT_STATE.addEventListener('click', (e) => {
-         //   setVars('state')
-         //   update(options[0], 'state');
-         // })
-
-         BTN_CLOSE_SELECT_GOVERMENT.addEventListener('click', (e) => {
-           setVars('government')
-           update(options[0], 'government');
-         })
-
-         function setVars (props) {
-           class_name_selected = 'select__item_selected-' + props;
-           selector_option_selected = '.select__item_selected-' + props;
-           selected = document.querySelector(selector_option_selected);
-
-           switch (props) {
-             // case 'state':
-             //   selector_data_toggle = '[data-select="toggle-state"]';
-             //   options = document.querySelectorAll('.select__list-state > .select__item');
-             //   break;
-             case 'government':
-               selector_data_toggle = '[data-select="toggle-government"]';
-               options = document.querySelectorAll('.select__list-goverment > .select__item');
-               break;
-           }
-
-           elToggle = document.querySelector(selector_data_toggle);
-           options.forEach((item, i) => {
-               item.addEventListener('click', (e) => {
-                   if (item.classList.contains(class_name_selected)) {
-                     return;
-                   }
-                   update(item, props);
-                   hide();
-               })
-           });
-         }
-
-         function closeAllDrpd () {
-             for (var i = 0; i < document.querySelectorAll('.select').length; i++) {
-               if (document.querySelectorAll('.select')[i].classList.contains('select_show')) {
-                 document.querySelectorAll('.select')[i].classList.remove('select_show')
-               }
-             }
-         }
-
-         function setCoords (el, select) {
-           var coordBtn =  el.getBoundingClientRect()
-           var documentWidth = document.documentElement.clientWidth
-           var drpnWidth = document.querySelector(`${select} > .select__dropdown`).offsetWidth
-           document.querySelector(`${select} > .select__dropdown`).style.top = coordBtn.y + 35 +  "px"
-           document.querySelector(`${select} > .select__dropdown`).style.left = coordBtn.x + "px"
-           if (coordBtn.x + drpnWidth > documentWidth) {
-             document.querySelector(`${select} > .select__dropdown`).style.left = documentWidth - drpnWidth + "px"
-           }
-         }
-
-         function update(option, props) {
-           var btn = (props == "state") ? BTN_CLOSE_SELECT_STATE : BTN_CLOSE_SELECT_GOVERMENT
-           var class_selector = (props == "state") ? '.select__state > .btn-select' : '.select__government > .btn-select'
-
-           if (option.dataset['index'] > 0 && btn.classList.contains("hidden")) {
-             document.querySelector(class_selector).classList.add("applied");
-             btn.classList.remove("hidden")
-
-           } else if (option.dataset['index'] == 0 && !btn.classList.contains("hidden")) {
-             document.querySelector(class_selector).classList.remove("applied");
-             btn.classList.add("hidden")
-           }
-
-           options.forEach((item, i) => {
-               item.classList.remove(class_name_selected)
-           });
-
-           option = option.closest('.select__item');
-           if (selected) {
-             selected.classList.remove(class_name_selected);
-           }
-           option.classList.add(class_name_selected);
-           elToggle.textContent = option.textContent;
-           elToggle.value = option.dataset['value'];
-           elToggle.dataset.index = option.dataset['index'];
-
-           return option.dataset['value'];
-         }
-
-         function hide() {
-           select.classList.remove('select_show');
-         }
-
-         document.addEventListener('click', (e) => {
-           if (!e.target.closest('.select')) {
-             document.querySelectorAll('.select_show').forEach(select => {
-               select.classList.remove('select_show');
-             });
-           }
-         });
-
-         document.querySelector('.filters').addEventListener('scroll', (e) => {
-           closeAllDrpd()
-         })
-
-
-         document.addEventListener('scroll', (e) => {
-           if (document.documentElement.clientWidth < 768) {
-             setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
-             setCoords(BTN_DRPDN_STATE, '.select__state')
-             setCoords(BTN_DRPDN_DURATION, '.select__duration')
-           }
-         })
-
-          window.addEventListener("resize", (e) => {
-            if (document.documentElement.clientWidth < 768) {
-              setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
-              setCoords(BTN_DRPDN_STATE, '.select__state')
-              setCoords(BTN_DRPDN_DURATION, '.select__duration')
-            }
-          })
 
 
 

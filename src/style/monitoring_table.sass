@@ -8,6 +8,7 @@
       justify-content: space-between
       padding: 20px 15px
       flex-wrap: wrap
+      align-items: center
       .table_setting
         fill: $font-color
         &.notification:hover
@@ -28,22 +29,24 @@
         order: 3
         padding: 20px 0 0
         .block_select
-          max-width: 200px
-          // width: auto
+          max-width: 300px
+          min-width: 200px
+          border: 1px solid transparent
+          margin-left: 30px
+          &:first-child
+            margin-left: 0
+          &:hover
+            cursor: pointer
+            border: 1px solid #f5f5f5
         form
           display: flex
         .form-control
           font-size: 0.9em
-          // option
-            max-width: 260px
-            width: 260px
-            // padding: 5px 15px
-            // line-height: 15px
+          color: #1D1D1B
           option:checked
             background-color: $color-bg-hover
           option:hover
             background-color: #f5f5f5
-            cursor: pointer
             transition: 0.2s background-color ease-in-out
 
         .form-control:hover,
@@ -55,6 +58,10 @@
       .select
         position: relative
         display: flex
+        padding: 6px 0 6px 12px
+        border: 1px solid transparent
+        &:hover
+          border: 1px solid #f5f5f5
         .btn-select
           display: flex
           padding: 0 10px
@@ -64,6 +71,7 @@
             margin-left: 9px
             &:hover
               cursor: pointer
+
         .applied
           background-color: #EEEEEE
         .select__toggle
@@ -75,7 +83,7 @@
           cursor: pointer
           align-items: center
           width: 100%
-          font-size: 13px
+          font-size: 0.9em
           padding: 3px 0
           line-height: 19px
           user-select: none
@@ -85,8 +93,8 @@
           white-space: nowrap
           &::after
             content: ''
-            width: 12px
-            height: 8px
+            width: 10px
+            height: 6px
             flex-shrink: 0
             margin-left: 1rem
             background-size: cover
@@ -96,7 +104,7 @@
           &:hover
             outline: none
             border: none
-            color:  $font-color-hover
+            cursor: auto
 
 
         .select__dropdown
@@ -114,34 +122,34 @@
           line-height: 24px
           width: 260px
 
-        .select__item
-          margin: 0
-          padding: 0
-          list-style: none
-          padding: 5px 15px
+        // .select__item
+        //   margin: 0
+        //   padding: 0
+        //   list-style: none
+        //   padding: 5px 15px
+        //
+        //
+        // .select__list
+        //   padding: 10px 0
+        //   margin: 0
 
 
-        .select__list
-          padding: 10px 0
-          margin: 0
+        // .select__item_selected
+        //   background-color: $color-bg-hover
+        //   display: flex
+        //   align-items: center
+        //   justify-content: space-between
 
 
-        .select__item_selected
-          background-color: $color-bg-hover
-          display: flex
-          align-items: center
-          justify-content: space-between
+        // .select__item:hover
+        //   background-color: #f5f5f5
+        //   cursor: pointer
+        //   transition: 0.2s background-color ease-in-out
 
-
-        .select__item:hover
-          background-color: #f5f5f5
-          cursor: pointer
-          transition: 0.2s background-color ease-in-out
-
-      .select_show .select__toggle::after
-        transform: rotate(360deg)
-      .select_show .select__dropdown
-        display: block
+      // .select_show .select__toggle::after
+      //   transform: rotate(360deg)
+      // .select_show .select__dropdown
+      //   display: block
 
 
     .table_wrapper
@@ -260,6 +268,14 @@
     .monitoring_table
       padding: 30px 45px
       margin: 0
+    .company-info
+      margin-bottom: 100px
+      .table_wrapper
+        padding-left: 0
+
+@media (min-width: 939px)
+  .container-fluid
+    .monitoring_table
       .table_filter
         .table_setting.filter
           order: 1
@@ -278,10 +294,7 @@
               position: absolute
               top: 2.5rem
               left: 0
-    .company-info
-      margin-bottom: 100px
-      .table_wrapper
-        padding-left: 0
+
 
 @media (min-width: 1200px)
   .container-fluid
@@ -296,6 +309,7 @@
             fill: $color-mid-grey
       .table_setting.notification
         display: flex
+        align-items: center
         &:hover
           svg
             fill: $font-color-hover
