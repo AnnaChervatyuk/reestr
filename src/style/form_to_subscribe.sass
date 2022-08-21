@@ -1,6 +1,5 @@
 .container
-  .form_to_subscribe,
-  .popup_download_csv
+  .popup
     height: 100vh
     width: 100vw
     margin: 0
@@ -9,8 +8,7 @@
     bottom: 0
     left: 0
     overflow: auto
-    .form_to_subscribe-inner,
-    .popup_download_csv-inner
+    .popup-inner
       background-color: $bg-main-color
       padding: 40px 30px
       position: relative
@@ -26,9 +24,9 @@
           margin: auto
           display: block
           margin-top: 17px
-      .subscribe-title
+      .popup-title
         font-weight: 700
-      .subscribe-text
+      .popup-text
         margin-bottom: 40px
       .input-subscribe
          @include btn ()
@@ -80,19 +78,54 @@
           .icons--arrow
             transform: rotate(-90deg)
 
+.container
+  .popup.popup_download_csv
+    .popup-inner
+      .captcha
+        margin: 40px 0
+        width: 100%
+        max-width: 400px
+        .g-recaptcha iframe, body > div[style]:last-of-type
+          transform: scale(0.85)
+          transform-origin: left top
+      .btn_download
+        margin-top: 40px
+        margin-bottom: 0
+        &:hover
+          border-color: $font-color
+          color: $font-color
+          cursor: auto
+
+@media (min-width: 400px)
+  .container
+    .popup.popup_download_csv
+      .popup-inner
+        .captcha
+          .g-recaptcha iframe, body > div[style]:last-of-type
+            transform: scale(1.15)
+
+@media (min-width: 420px)
+  .container
+    .popup.popup_download_csv
+      .popup-inner
+        .captcha
+          .g-recaptcha iframe, body > div[style]:last-of-type
+            transform: scale(1.20)
 
 @media (min-width: 768px)
   .container
-    .form_to_subscribe,
-    .popup_download_csv
+    .popup
       background-color: rgba(255, 255, 255, 0.5)
       -webkit-backdrop-filter: blur(5px)
       backdrop-filter: blur(5px)
       display: flex
-      .form_to_subscribe-inner,
-      .popup_download_csv-inner
+      .popup-inner
         max-width: 514px
         height: auto
         border-radius: 20px
         box-shadow: 0px 5px 15px rgba(59, 51, 43, 0.18), 0px 2px 6px rgba(59, 51, 43, 0.12), 0px 0px 2px rgba(0, 0, 0, 0.04)
         margin: auto
+        padding: 40px
+        .popup-title
+          font-size: 28px
+          line-height: 35px

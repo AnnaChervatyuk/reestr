@@ -9,6 +9,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
       <link rel="stylesheet" href="app.css">
+      <script src="https://www.google.com/recaptcha/api.js"></script>
    <link href="app.css" rel="stylesheet"></head>
    <body class="container container_site-info">
       <div class="container-fluid">
@@ -367,15 +368,19 @@
          </div>
       </div>
 
-      <div class="popup_download_csv hidden" id="poup_download_csv">
-         <div class="popup_download_csv-inner">
+      <div class="popup popup_download_csv" id="poup_download_csv">
+         <div class="popup-inner popup_download_csv-inner">
             <div class="btn-close" id="poup_download_csv-close">
                <svg class="icons icons--close" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <use xlink:href="sprite.svg#icon-close"></use>
                </svg>
             </div>
-            <h1 class="subscribe-title">Скачивание записи в CSV</h1>
-            <div class="btn btn_download" id="poup_download_csv-btn">Скачать</div>
+            <h1 class="popup-title subscribe-title">Скачивание записи в CSV</h1>
+            <div class="captcha">
+              <div class="g-recaptcha" data-sitekey="0000000000000000000000"></div>
+            </div>
+            <div class="line"></div>
+            <div class="btn btn_download btn-disabled" id="poup_download_csv-btn">Скачать</div> 
          </div>
       </div>
 
