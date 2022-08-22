@@ -2694,17 +2694,14 @@ h6 {
   width: fit-content;
   width: -moz-fit-content;
   padding: 0 15px;
-  margin-left: 20px;
-}
-.container-fluid .info_table .action_table .action_el:first-child {
-  margin-left: auto;
 }
 .container-fluid .info_table .action_table .action_el .action_el__icon {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .container-fluid .info_table .action_table .action_el .action_el__btn {
   box-sizing: border-box;
   border-bottom: 1px solid transparent;
+  font-variant-caps: all-small-caps;
 }
 .container-fluid .info_table .action_table .action_el .action_el__btn:hover {
   border-bottom: 1px solid #4661BC;
@@ -2738,6 +2735,9 @@ h6 {
   }
   .container-fluid .info_table .action_el {
     padding: 0;
+  }
+  .container-fluid .info_table .action_el:first-child {
+    margin-left: auto;
   }
   .container-fluid .info_table .table_wrapper {
     margin-bottom: 0;
