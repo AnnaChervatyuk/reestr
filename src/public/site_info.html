@@ -153,13 +153,13 @@
            </div>
            <div class="action_el__btn">Скриншот записи</div>
          </div>
-         <div class="action_el" id="btn_download_csv">
+         <div class="action_el" id="btn_download_json">
            <div class="action_el__icon">
              <svg class="icons icons--screenshot" width="18" height="18" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <use xlink:href="sprite.svg#icon-download"></use>
              </svg>
            </div>
-           <div class="action_el__btn">CSV</div>
+           <div class="action_el__btn">JSON</div>
          </div>
        </div>
        <div class="table_wrapper">
@@ -368,19 +368,19 @@
          </div>
       </div>
 
-      <div class="popup popup_download_csv" id="poup_download_csv">
-         <div class="popup-inner popup_download_csv-inner">
-            <div class="btn-close" id="poup_download_csv-close">
+      <div class="popup popup_download_json hidden" id="poup_download_json">
+         <div class="popup-inner popup_download_json-inner">
+            <div class="btn-close" id="poup_download_json-close">
                <svg class="icons icons--close" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <use xlink:href="sprite.svg#icon-close"></use>
                </svg>
             </div>
-            <h1 class="popup-title subscribe-title">Скачивание записи в CSV</h1>
+            <h1 class="popup-title subscribe-title">Скачивание записи в JSON</h1>
             <div class="captcha">
               <div class="g-recaptcha" data-sitekey="0000000000000000000000"></div>
             </div>
             <div class="line"></div>
-            <div class="btn btn_download btn-disabled" id="poup_download_csv-btn">Скачать</div> 
+            <div class="btn btn_download btn-disabled" id="poup_download_json-btn">Скачать</div>
          </div>
       </div>
 
@@ -454,15 +454,15 @@
       </script>
 
       <script>
-        var btnDownloadCsv = document.getElementById('btn_download_csv')
-        var popupDownloadCsv = document.getElementById('poup_download_csv')
-        var btnDownload = document.getElementById("poup_download_csv-btn")
-        var btnClosePopupDownload = document.getElementById("poup_download_csv-close")
-        btnDownloadCsv.addEventListener("click", (event) => {
-          popupDownloadCsv.classList.toggle("hidden")
+        var btnDownloadjson = document.getElementById('btn_download_json')
+        var popupDownloadjson = document.getElementById('poup_download_json')
+        var btnDownload = document.getElementById("poup_download_json-btn")
+        var btnClosePopupDownload = document.getElementById("poup_download_json-close")
+        btnDownloadjson.addEventListener("click", (event) => {
+          popupDownloadjson.classList.toggle("hidden")
         })
         btnClosePopupDownload.addEventListener("click", (event) => {
-          popupDownloadCsv.classList.toggle("hidden")
+          popupDownloadjson.classList.toggle("hidden")
         })
 
       </script>

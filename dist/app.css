@@ -1622,32 +1622,32 @@ h6 {
   transform: rotate(-90deg);
 }
 
-.container .popup.popup_download_csv .popup-inner .captcha {
+.container .popup.popup_download_json .popup-inner .captcha {
   margin: 40px 0;
   width: 100%;
   max-width: 400px;
 }
-.container .popup.popup_download_csv .popup-inner .captcha .g-recaptcha iframe, .container .popup.popup_download_csv .popup-inner .captcha body > div[style]:last-of-type {
+.container .popup.popup_download_json .popup-inner .captcha .g-recaptcha iframe, .container .popup.popup_download_json .popup-inner .captcha body > div[style]:last-of-type {
   transform: scale(0.85);
   transform-origin: left top;
 }
-.container .popup.popup_download_csv .popup-inner .btn_download {
+.container .popup.popup_download_json .popup-inner .btn_download {
   margin-top: 40px;
   margin-bottom: 0;
 }
-.container .popup.popup_download_csv .popup-inner .btn_download:hover {
+.container .popup.popup_download_json .popup-inner .btn_download:hover {
   border-color: #1D1D1B;
   color: #1D1D1B;
   cursor: auto;
 }
 
 @media (min-width: 400px) {
-  .container .popup.popup_download_csv .popup-inner .captcha .g-recaptcha iframe, .container .popup.popup_download_csv .popup-inner .captcha body > div[style]:last-of-type {
+  .container .popup.popup_download_json .popup-inner .captcha .g-recaptcha iframe, .container .popup.popup_download_json .popup-inner .captcha body > div[style]:last-of-type {
     transform: scale(1.15);
   }
 }
 @media (min-width: 420px) {
-  .container .popup.popup_download_csv .popup-inner .captcha .g-recaptcha iframe, .container .popup.popup_download_csv .popup-inner .captcha body > div[style]:last-of-type {
+  .container .popup.popup_download_json .popup-inner .captcha .g-recaptcha iframe, .container .popup.popup_download_json .popup-inner .captcha body > div[style]:last-of-type {
     transform: scale(1.2);
   }
 }
