@@ -216,20 +216,12 @@
                        </select>
                      </div>
                   </form>
-                  <div class="select__duration select">
-                     <div class="btn-select">
-                        <button type="button" class="select__toggle" name="duration" value="auto" data-select="toggle-duration" id="btn_select_duration">
-                        Временной интервал
-                        </button>
-                        <span class="btn-close btn-close-select hidden" id="btnCloseSelecTime">
-                           <svg class="icons icons--close" width="10" height="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                              <use xlink:href="sprite.svg#icon-close"></use>
-                           </svg>
-                        </span>
-                     </div>
-                     <div class="select__dropdown ">
-                        <!-- КОПИРУЕТСЯ ВЕРСТКА И ЛОГИКА С РАБОЧЕГО САЙТА-->
-                     </div>
+                  <div class="block_select">
+                    <input id="datepicker" class="form-control border-0" placeholder="Временной интервал"/>
+                    <input id="dateStartInput" hidden name="date_start"
+                           value="{% if FILTER_DATE_START %}{{ FILTER_DATE_START }}{% endif %}">
+                    <input id="dateEndInput" hidden name="date_end"
+                           value="{% if FILTER_DATE_END %}{{ FILTER_DATE_END }}{% endif %}">
                   </div>
 
                </div>
