@@ -316,20 +316,6 @@ h6 {
     margin-bottom: 0;
   }
 }
-.container-fluid .navigator .btn-group-donate .btn-lang {
-  padding-right: 20px;
-  margin-right: 20px;
-  position: relative;
-}
-.container-fluid .navigator .btn-group-donate .btn-lang::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  right: 0;
-  width: 1px;
-  height: 8px;
-  background-color: #000000;
-}
 .container-fluid .navigator .btn.btn-donate {
   border: 2px solid #1D1D1B;
   padding: 0;
@@ -478,6 +464,15 @@ h6 {
   margin-top: 35px;
   padding: 18px 0;
 }
+.container-fluid .navigator .dropdown-menu.mobail-menu.show .item-lang {
+  border-top: 0;
+  margin-top: 0;
+}
+.container-fluid .navigator .dropdown-menu.mobail-menu.show .item-lang .btn-lang {
+  margin: auto;
+  font-size: 13px;
+  padding: 0;
+}
 .container-fluid .navigator .dropdown-menu.mobail-menu.show .dropdown-item.panel-group.dropdown-accordion {
   margin: 0;
   margin-bottom: auto;
@@ -623,6 +618,20 @@ h6 {
 }
 
 @media (min-width: 768px) {
+  .container-fluid .navigator .btn-group-donate .btn-lang {
+    padding-right: 20px;
+    margin-right: 20px;
+    position: relative;
+  }
+  .container-fluid .navigator .btn-group-donate .btn-lang::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: 0;
+    width: 1px;
+    height: 10px;
+    background-color: #000000;
+  }
   .container-fluid .navigator .btn-group__nav {
     display: flex;
     align-self: baseline;
