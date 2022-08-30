@@ -1,6 +1,19 @@
 
 .container-fluid
   .navigator
+    .btn-group-donate
+      .btn-lang
+        padding-right: 20px
+        margin-right: 20px
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          top: 2px
+          right: 0
+          width: 1px
+          height: 8px
+          background-color: #000000
     .btn.btn-donate
       @include btn ()
       width: 104px
@@ -225,6 +238,7 @@
           .btn
             font-size: 11px
             line-height: 18px
+            font-weight: 600
           .btn-donate
             margin-left: 20px
         .social-desc
