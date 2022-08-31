@@ -12,6 +12,9 @@
       .amount_found
         color: #6B6B66
         font-size: 13px
+        order: 2
+        margin-left: auto
+        margin-right: 10px
       .table_setting
         fill: $font-color
         &.notification:hover
@@ -20,16 +23,16 @@
           display: none
       .table_setting.filter
         order: 1
-        width: 50%
+        width: 30%
       .table_setting.notification
-        order: 2
+        order: 3
         width: auto
         text-align: right
       .filters
         display: flex
         align-items: baseline
         overflow-x: auto
-        order: 3
+        order: 4
         padding: 20px 0 0
         .block_select
           max-width: 300px
@@ -306,7 +309,7 @@
           width: auto
         .amount_found
           order: 3
-          margin-right: 50px
+          margin-right: 20px
         .filters
           order: 2
           padding: 0
@@ -326,6 +329,8 @@
       padding: 30px 0
       margin: 0 auto
       .table_setting.filter
+        .amount_found
+          margin-right: 50px
         svg
           fill: $color-mid-grey
           &:hover

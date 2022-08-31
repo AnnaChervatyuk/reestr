@@ -2091,6 +2091,9 @@ h6 {
 .container-fluid .monitoring_table .table_filter .amount_found {
   color: #6B6B66;
   font-size: 13px;
+  order: 2;
+  margin-left: auto;
+  margin-right: 10px;
 }
 .container-fluid .monitoring_table .table_filter .table_setting {
   fill: #1D1D1B;
@@ -2103,10 +2106,10 @@ h6 {
 }
 .container-fluid .monitoring_table .table_filter .table_setting.filter {
   order: 1;
-  width: 50%;
+  width: 30%;
 }
 .container-fluid .monitoring_table .table_filter .table_setting.notification {
-  order: 2;
+  order: 3;
   width: auto;
   text-align: right;
 }
@@ -2114,7 +2117,7 @@ h6 {
   display: flex;
   align-items: baseline;
   overflow-x: auto;
-  order: 3;
+  order: 4;
   padding: 20px 0 0;
 }
 .container-fluid .monitoring_table .table_filter .filters .block_select {
@@ -2412,7 +2415,7 @@ h6 {
   }
   .container-fluid .monitoring_table .table_filter .amount_found {
     order: 3;
-    margin-right: 50px;
+    margin-right: 20px;
   }
   .container-fluid .monitoring_table .table_filter .filters {
     order: 2;
@@ -2433,6 +2436,9 @@ h6 {
   .container-fluid .monitoring_table {
     padding: 30px 0;
     margin: 0 auto;
+  }
+  .container-fluid .monitoring_table .table_setting.filter .amount_found {
+    margin-right: 50px;
   }
   .container-fluid .monitoring_table .table_setting.filter svg {
     fill: #9C9D9E;
