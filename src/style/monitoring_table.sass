@@ -9,6 +9,9 @@
       padding: 20px 15px
       flex-wrap: wrap
       align-items: center
+      .amount_found
+        color: #6B6B66
+        font-size: 13px
       .table_setting
         fill: $font-color
         &.notification:hover
@@ -197,6 +200,7 @@
             word-break: break-all
         .td_ip
           margin-bottom: 10px
+          word-break: break-all
         .td_comment,
         .td_number
           display: inline
@@ -298,8 +302,11 @@
           order: 1
           width: auto
         .table_setting.notification
-          order: 3
+          order: 4
           width: auto
+        .amount_found
+          order: 3
+          margin-right: 50px
         .filters
           order: 2
           padding: 0
@@ -327,6 +334,7 @@
       .table_setting.notification
         display: flex
         align-items: center
+        position: relative
         &:hover
           svg
             fill: $font-color-hover
@@ -336,6 +344,11 @@
             font-size: 14px
             line-height: 21px
             color: $font-color-hover
+            position: absolute
+            top: 0
+            right: 50px
+            background: #ffffff
+            width: 300px
 
       .table_wrapper
         margin-bottom: 30px

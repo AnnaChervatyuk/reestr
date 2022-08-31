@@ -2088,6 +2088,10 @@ h6 {
   flex-wrap: wrap;
   align-items: center;
 }
+.container-fluid .monitoring_table .table_filter .amount_found {
+  color: #6B6B66;
+  font-size: 13px;
+}
 .container-fluid .monitoring_table .table_filter .table_setting {
   fill: #1D1D1B;
 }
@@ -2267,6 +2271,7 @@ h6 {
 }
 .container-fluid .monitoring_table .table_wrapper .table_row .td_ip {
   margin-bottom: 10px;
+  word-break: break-all;
 }
 .container-fluid .monitoring_table .table_wrapper .table_row .td_comment,
 .container-fluid .monitoring_table .table_wrapper .table_row .td_number {
@@ -2402,8 +2407,12 @@ h6 {
     width: auto;
   }
   .container-fluid .monitoring_table .table_filter .table_setting.notification {
-    order: 3;
+    order: 4;
     width: auto;
+  }
+  .container-fluid .monitoring_table .table_filter .amount_found {
+    order: 3;
+    margin-right: 50px;
   }
   .container-fluid .monitoring_table .table_filter .filters {
     order: 2;
@@ -2435,6 +2444,7 @@ h6 {
   .container-fluid .monitoring_table .table_setting.notification {
     display: flex;
     align-items: center;
+    position: relative;
   }
   .container-fluid .monitoring_table .table_setting.notification:hover svg {
     fill: #4661BC;
@@ -2445,6 +2455,11 @@ h6 {
     font-size: 14px;
     line-height: 21px;
     color: #4661BC;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    background: #ffffff;
+    width: 300px;
   }
   .container-fluid .monitoring_table .table_wrapper {
     margin-bottom: 30px;
