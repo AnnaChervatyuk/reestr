@@ -2249,6 +2249,10 @@ h6 {
   font-size: 11px;
   line-height: 16px;
 }
+.container-fluid .monitoring_table .table_wrapper a.table_row:hover {
+  text-decoration: none;
+  background-color: #F6F6F6;
+}
 .container-fluid .monitoring_table .table_wrapper .table_row {
   border-bottom: 1px solid #EEF1F4;
   padding: 25px 0;
@@ -2268,8 +2272,6 @@ h6 {
   font-size: 14px;
   line-height: 21px;
   margin-bottom: 10px;
-}
-.container-fluid .monitoring_table .table_wrapper .table_row .td_site a {
   word-break: break-all;
 }
 .container-fluid .monitoring_table .table_wrapper .table_row .td_ip {
@@ -2437,6 +2439,9 @@ h6 {
     padding: 30px 0;
     margin: 0 auto;
   }
+  .container-fluid .monitoring_table .table_filter {
+    padding: 20px 0;
+  }
   .container-fluid .monitoring_table .table_setting.filter .amount_found {
     margin-right: 50px;
   }
@@ -2469,6 +2474,7 @@ h6 {
   }
   .container-fluid .monitoring_table .table_wrapper {
     margin-bottom: 30px;
+    padding: 0;
   }
   .container-fluid .monitoring_table .table_wrapper .table_row {
     display: flex;
@@ -2478,7 +2484,7 @@ h6 {
   }
   .container-fluid .monitoring_table .table_wrapper .table_row .table_td {
     margin-bottom: 0;
-    font-weight: 500;
+    font-weight: 400;
     color: #000000;
     font-size: 14px;
     line-height: 20px;
@@ -2799,6 +2805,9 @@ h6 {
   grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
   grid-gap: 0px 10px;
   margin-bottom: 10px;
+}
+.container-fluid .info_table .table_wrapper .table_row .td_content .grid span {
+  width: fit-content;
 }
 
 @media (min-width: 768px) {
