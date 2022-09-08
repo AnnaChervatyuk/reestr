@@ -2439,6 +2439,15 @@ h6 {
     padding: 30px 0;
     margin: 0 auto;
   }
+  .container-fluid .monitoring_table .table_wrapper.empty_list {
+    margin: 25px 0;
+  }
+  .container-fluid .monitoring_table .btn_group .btn_navigator {
+    margin: 20px 0;
+  }
+  .container-fluid .monitoring_table .btn_group .btn_list-pages {
+    margin: 33px 0;
+  }
   .container-fluid .monitoring_table .table_filter {
     padding: 20px 0;
   }
