@@ -122,7 +122,10 @@ module.exports = {
         filename: 'screenshot_mobile.html',
         template: 'src/public/screenshot_mobile.html'
         }),
-
+      new HtmlWebpackPlugin({
+        filename: 'email.html',
+        template: 'src/public/email.html'
+        }),
 
 
   ],
