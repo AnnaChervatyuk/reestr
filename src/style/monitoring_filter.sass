@@ -31,60 +31,7 @@
           @include icons ()
       .btn-search-tablet
         display: none
-    .filters__block
-      .btn-group-filter
-        display: flex
-        flex-direction: column
-        flex-wrap: wrap
 
-        .btn-filter
-          margin: 0
-          padding: 0
-          border: 0
-          .filter-item
-            @include btn()
-            width: 100%
-            padding: 10px 15px
-            height: auto
-            display: flex
-            flex-direction: row
-            flex-wrap: nowrap
-            align-items: center
-            user-select: none
-            transition: 0.2s ease
-            border-bottom: none
-            line-height: 15px
-            .filter-title
-              flex-grow: 1
-              text-align: left
-            .filter_count 
-              color: $bg-main-color
-              background-color: $font-color
-              padding: 2px 4px
-              border-radius: 2px
-              margin-left: 9px
-              font-size: 11px
-              line-height: 11px
-            &:active,
-            &:focus,
-            &:hover
-              color: $bg-main-color
-              background-color: $font-color
-              border-color: $font-color
-          a
-            text-decoration: none
-
-        .btn-filter:last-child
-          .filter-item
-            border-bottom: $border
-
-        .btn-filter__active
-          .filter-item
-            color: $bg-main-color
-            background-color: $font-color
-            .filter_count
-              background-color: $bg-main-color
-              color: $font-color
 
 
 @media (min-width: 768px)
@@ -111,21 +58,7 @@
           font-weight: 500
           width: auto
 
-      .filters__block
-        .btn-group-filter
-          flex-direction: row
-          flex-wrap: nowrap
-          overflow-x: auto
-          .btn-filter
-            margin-left: -2px
-            &:first-child
-              margin-left: 0
-            .filter-item
-              white-space: nowrap
-              border: 2px solid $border-color
-              border-left: none
-              &:first-child
-                border-left: 2px solid $border-color
+
 
 @media (min-width: 1200px)
   .container-fluid

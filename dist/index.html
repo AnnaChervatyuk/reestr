@@ -465,39 +465,63 @@
             </div>
             <h1 class="popup-title subscribe-title">Оповестим о блокировке</h1>
             <div class="popup-text subscribe-text">Пришлём письмо, если ваш сайт или страница попадут в Единый реестр запрещенной информации Роскомнадзора.</div>
-            <div class="line"></div>
-            <div class="subscribe-type telegram">
-               <div class="type-icon">
-                  <svg class="icons icons--telegram" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                     <use xlink:href="sprite.svg#icon-telegram"></use>
-                  </svg>
-               </div>
-               <div class="type-name">В Telegram</div>
-               <div class="type-btn">
-                  <svg class="icons icons--arrow" width="13" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                     <use xlink:href="sprite.svg#icon-arrow"></use>
-                  </svg>
+            <div class="tabs tabs-subscr">
+               <div class="tabs_btn-group">
+                  <div class="btn btn-tab btn-tab__active" id="subscr_setting">
+                     <span class="tab-item"><span class="tab-title">Подписка</span></span>
+                  </div>
+                  <div class="btn btn-tab" id="subscr-management">
+                     <span class="tab-item"><span class="tab-title">Управление подписками</span></span>
+                  </div>
                </div>
             </div>
             <div class="line"></div>
-            <div class="subscribe-type mail">
-               <div class="type-icon">
-                  <svg class="icons icons--email" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                     <use xlink:href="sprite.svg#icon-email"></use>
-                  </svg>
-               </div>
-               <div class="type-name">По почте</div>
+            <div class="subscr_setting__block" id="subscrSettingBlock">
+              <div class="subscribe-type telegram">
+                 <div class="type-icon">
+                    <svg class="icons icons--telegram" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                       <use xlink:href="sprite.svg#icon-telegram"></use>
+                    </svg>
+                 </div>
+                 <div class="type-name">В Telegram</div>
+                 <div class="type-btn">
+                    <svg class="icons icons--arrow" width="13" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                       <use xlink:href="sprite.svg#icon-arrow"></use>
+                    </svg>
+                 </div>
+              </div>
+              <div class="line"></div>
+              <div class="subscribe-type mail">
+                 <div class="type-icon">
+                    <svg class="icons icons--email" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                       <use xlink:href="sprite.svg#icon-email"></use>
+                    </svg>
+                 </div>
+                 <div class="type-name">По почте</div>
+              </div>
+              <div class="subscribe-success hidden" id="subscribeSuccess">Готово! Дадим знать, если такая запись появится в реестре</div>
+
+              <label for="email" class="label-subscribe">Email
+              <input type="email" class="input-subscribe" placeholder="" name="email">
+              </label>
+              <label for="domain"  class="label-subscribe">Домен или IP-адрес
+              <input type="email" class="input-subscribe" placeholder="" name="domain">
+              </label>
+              <div class="btn btn_subscribe" id="btnSubscribe">Подписаться</div>
             </div>
-            <label for="email" class="label-subscribe">Email
-            <input type="email" class="input-subscribe" placeholder="" name="email">
-            </label>
-            <label for="domain"  class="label-subscribe">Домен или IP-адрес
-            <input type="email" class="input-subscribe" placeholder="" name="domain">
-            </label>
-            <div class="btn btn_subscribe" id="btnSubscribe">Подписаться</div>
-            <div class="subscribe-success hidden" id="subscribeSuccess">Готово! Дадим знать, если такая запись появится в реестре</div>
+            <div class="subscr_managment__block hidden" id="subscrManagementBlock">
+              <div class="subscribe-success hidden" id="sendEmailSuccess">Проверьте почту. Ссылка на вход отправлена на sdfsdfdsfadsfsf@dsfsdfsdfsdf.ru</div>
+              <label for="email" class="label-subscribe">Email, на который оформлена подписка
+              <input type="email" class="input-subscribe" placeholder="" name="email">
+              </label>
+              <div class="btn btn_subscribe" id="btnSendLink">Отправить ссылку для входа</div>
+            </div>
          </div>
       </div>
+
+
+
+
       <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> <!--горизонатльынй скролл блока Наша работа -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--  скрывающиеся элементы меню в планшете и десктопе -->
@@ -527,6 +551,9 @@
          var btnSubscribe = document.getElementById("btnSubscribe")
          var btnCloseFormSubscribe = document.getElementById("btnCloseFormSubscribe")
          var subscribeSuccess = document.getElementById("subscribeSuccess")
+         var subscrManagement = document.getElementById("subscr-management")
+         var subscrSetting = document.getElementById("subscr_setting")
+
           btnToSubscribe.addEventListener("click", (event) => { //открыть попап с подпиской
             formToSubscribe.classList.toggle("hidden")
           })
@@ -542,6 +569,25 @@
           btnCloseCtBanner.addEventListener("click", (event) => { //скрыть баннер censor Tracker
             censorTrackerBanner.classList.toggle("hidden")
           })
+
+          function toggleSubscrBlock () {
+            document.getElementById("subscrSettingBlock").classList.toggle("hidden")
+            document.getElementById("subscrManagementBlock").classList.toggle("hidden")
+            subscrManagement.classList.toggle("btn-tab__active")
+            subscrSetting.classList.toggle("btn-tab__active")
+
+          }
+          subscrManagement.addEventListener("click", (event) => {
+            toggleSubscrBlock()
+          })
+          subscrSetting.addEventListener("click", (event) => {
+            toggleSubscrBlock()
+          })
+
+          btnSendLink.addEventListener("click", (event) => {
+            document.getElementById("sendEmailSuccess").classList.toggle("hidden")
+          })
+
       </script>
 
       <script>

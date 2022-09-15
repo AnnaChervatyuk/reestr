@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
       <link rel="stylesheet" href="app.css">
    </head>
-   <body class="container">
+   <body class="container container_not-found">
       <div class="container-fluid">
          <div class="header_monitor">
             <div class="navigator"> <!-- копировать блок с роскомсвободы -->
@@ -86,7 +86,6 @@
                         </div>
                      </div>
                      <div class="btn-group btn-group-donate" role="group" aria-label="Basic example">
-                        <a href="" class="btn btn-lang">ENG</a>
                         <a href="" class="btn btn-help">Нужна юр.помощь?</a>
                         <a class="btn btn-donate">Поддержать</a>
                      </div>
@@ -102,6 +101,7 @@
                         <li class="nav-item item-active d-none d-md-block"><a href="#">Мониторинг реестров</a></li>
                         <li class="nav-item d-none d-md-block"><a href="visual.html">Инфографика</a></li>
                         <li class="nav-item d-none d-md-block"><a href="api.html">API</a></li>
+
                      </ul>
                   </div>
                   <div class="btn-group__nav" id="btn-group__nav">
@@ -133,10 +133,6 @@
                               <button type="button" class="btn btn-donate">Поддержать</button>
                               <button type="button" class="btn btn-help">Нужна юр.помощь?</button>
                            </div>
-                           <div class="dropdown-item item-help item-lang">
-                              <a class="btn btn-lang">ENG</a>
-                           </div>
-
                            <div class="dropdown-item item-social social-mob" id="social-mob">
                               <!-- блок для соц сетей, копируется с десктопа -->
                            </div>
@@ -145,173 +141,36 @@
                   </div>
                </div>
             </div>
-            <div class="monitoring_filter">
-               <h1 class="filter_title">Мониторинг реестров</h1>
-               <div class="search__block">
-                  <input type="email" class="search__input" placeholder="Домен, адрес или IP-адрес">
-                  <button type="button" class="btn btn-search btn-search-mob">
-                     <svg class="icons icons--search" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <use xlink:href="sprite.svg#icon-search"></use>
-                     </svg>
-                  </button>
-                  <button type="button" class="btn btn-search btn-search-tablet">Найти</button>
-               </div>
-               <div class="filters__block">
-                  <div class="btn-group-filter">
-                     <div class="btn btn-filter btn-filter__active">
-                        <span class="filter-item"><span class="filter-title">Запрещенные сайты</span><span class="filter_count">548 138</span></span>
-                     </div>
-                     <div class="btn btn-filter ">
-                        <a href="ori.html">
-                        <span class="filter-item"><span class="filter-title">Организаторы распространения информации</span><span class="filter_count">548</span></span>
-                        </a>
-                     </div>
-                     <div class="btn btn-filter ">
-                        <a href="news.html">
-                        <span class="filter-item"><span class="filter-title">Новостные агрегаторы</span><span class="filter_count">54</span></span>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
+
          </div>
-         <div class="monitoring_ct" id="censorTrackerBanner">
-            <div class="monitor-bg"></div>
-            <div class="ct-content">
-               <div class="ct-quokka"></div>
-               <a href="" class="ct-descr">
-                  <h6>Censor Tracker<span class="arrow arrow-right"></span></h6>
-                  <div class="ct-text">Расширение, которое откроет заблокированные сайты и предупредит, если сайт в реестре ОРИ</div>
-               </a>
-               <div class="btn-close" id="btnCloseCtBanner">
-                  <svg class="icons icons--close" width="13" height="13" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                     <use xlink:href="sprite.svg#icon-close"></use>
-                  </svg>
-               </div>
-            </div>
-         </div>
-         <div class="monitoring_table">
-            <div class="table_filter">
-               <div class="table_setting filter" id="btn_filter">
-                  <svg class="icons icons--equalizer" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                     <use xlink:href="sprite.svg#icon-equalizer"></use>
-                  </svg>
-               </div>
 
 
-               <div class="filters hidden" id="all_filters">
 
-                  <form>
-                    <div class="block_select">
-                       <select id="selectState" class="selectpicker form-control border-0" onChange="setFilter()">
-                         <option selected disabled value="allState">Статус в реестре</option>
-                         <option value="anyState">Любой&nbsp;статус</option>
-                         <option value="disabledState">Разблокирован</option>
-                         <option value="enabledState">Заблокирован</option>
-                       </select>
-                     </div>
-                     <div class="block_select">
-                       <select id="selectGovernment" class="selectpicker form-control border-0" onChange="setFilter()">
-                         <option selected disabled value="allGoverment">Госорган</option>
-                         <option value="allGoverment">Любой</option>
-                         <option value="anyGoverment">Мосгорсуд</option>
-                         <option value="fnc">ФНС</option>
-                         <option value="yfssp">ОСП по Центральному АО №1 УФССП России по Москве</option>
-                         <option value="roskomnadzor">Роскомнадзор</option>
-                       </select>
-                     </div>
-                  </form>
-                  <div class="block_select">
-                    <input id="datepicker" class="form-control border-0" placeholder="Временной интервал"/>
-                    <input id="dateStartInput" hidden name="date_start"
-                           value="{% if FILTER_DATE_START %}{{ FILTER_DATE_START }}{% endif %}">
-                    <input id="dateEndInput" hidden name="date_end"
-                           value="{% if FILTER_DATE_END %}{{ FILTER_DATE_END }}{% endif %}">
-                  </div>
 
-               </div>
-               <div class='amount_found'>Найдено <b>58 500</b> записей</div>
-               <div class="table_setting notification" id="btnToSubscribe">
-                  <svg class="icons icons--bell" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                     <use xlink:href="sprite.svg#icon-bell"></use>
-                  </svg>
-                  <span class="notification-label">Оповестить о внесении в реестр</span>
-               </div>
-            </div>
-            <div class="table_wrapper">
-               <div class="table_row table_row-header">
-                  <div class="table_td td_date">Дата</div>
-                  <div class="table_td td_state">Состояние</div>
-                  <div class="table_td td_site">Ресурс</div>
-                  <div class="table_td td_ip">IP-адрес</div>
-                  <div class="table_td td_comment">Госорган</div>
-               </div>
-               <div class="table_row">
-                  <div class="table_td td_date">15.01.2022</div>
-                  <div class="table_td td_site"><a href="site_info.html">http://chel.pro/5274</a></div>
-                  <div class="table_td td_ip">2606:4700:3034::6815:20b5, 2a05:d014:d13:26cc:864d:9de5:7669:ea57, 2606:4700:3033::6815:2048, 2606:4700:3034::ac43:b863</div>
-                  <div class="table_td td_state">Заблокирован</div>
-                  <div class="table_td td_comment">(ОСП по Центральному АО №1 УФССП России по Москве - Москва)</div>
-               </div>
-               <div class="table_row">
-                  <div class="table_td td_date">15.01.2022</div>
-                  <div class="table_td td_site"><a href="site_info.html">vsesezony.dvaserialy.online</a></div>
-                  <div class="table_td td_ip">172.067.184.099, 104.201.032.702, 2606:4700:3033::6815:2048, 2606:4700:3034::ac43:b863</div>
-                  <div class="table_td td_state">Заблокирован</div>
-                  <div class="table_td td_comment">(ФНС)</div>
-               </div>
-               <div class="table_row">
-                  <div class="table_td td_date">15.01.2022</div>
-                  <div class="table_td td_site"><a href="site_info.html">http://fullhd.filmotopka.online/1094-univer-novaja-obschaga-35.html, <br>
-                     http://fullhd.filmotopka.online/677-milicioner-s-rublevki-188.html, <br>
-                     http://fullhd.filmotopka.online/677-milicioner-s-rublevki-194.html</a>
-                  </div>
-                  <div class="table_td td_ip">172.067.184.099, 104.201.032.702, 2606:4700:3033::6815:2048, 2606:4700:3034::ac43:b863</div>
-                  <div class="table_td td_state">Заблокирован</div>
-                  <div class="table_td td_comment">(ОСП по Центральному АО №1 УФССП России по Москве - Москва)</div>
-               </div>
-               <div class="table_row">
-                  <div class="table_td td_date">15.01.2022</div>
-                  <div class="table_td td_site"><a href="site_info.html">http://bankdocumentov-vk.ru/kupit-trudovuyu-knizhku-so-stagem/</a></div>
-                  <div class="table_td td_ip">172.067.184.099, 104.201.032.702, 2606:4700:3033::6815:2048, 2606:4700:3034::ac43:b863</div>
-                  <div class="table_td td_state td_state-unlock">Разблокирован</div>
-                  <div class="table_td td_comment ">(Мосгорсуд)</div>
-               </div>
-            </div>
-            <div class="btn_group">
-               <div class="btn_navigator">
-                  <div class="btn btn_prev">
-                    <svg class="icons icon-arrow-btn" width="12" height="11" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                       <use xlink:href="sprite.svg#icon-arrow-btn"></use>
-                    </svg>
-                  </div>
-                  <div class="btn btn_next">
-                     Следующая
-                     <svg class="icons icon-arrow-btn" width="12" height="11" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <use xlink:href="sprite.svg#icon-arrow-btn"></use>
-                     </svg>
-                  </div>
-               </div>
-               <div class="btn_list-pages">
-                  <div class="btn btn_page btn_page-active">1</div>
-                  <div class="btn btn_page">2</div>
-                  <div class="btn btn_page">3</div>
-                  <div class="btn btn_page">4</div>
-                  <div class="btn btn_page">5</div>
-                  <div class="btn btn_page">6</div>
-               </div>
-            </div>
-            <div class="table_wrapper empty_list">
-               <div class="empty_list-img"><img src="./images/empty_list.svg" width="120" height="120" alt="not found"></div>
-               <div class="empty_list-text">Ничего не нашлось</div>
-               <div class="empty_list-reset">Сбростить параметры поиска</div>
-            </div>
+         <div class="page_not_found">
+           <img src="./images/page_not_found.gif" width="375" height="240" alt="">
+           <h3>Ссылка, по которой вы перешли, устарела</h3>
+           <div class="descr">Скорее всего в целях безопасности это была одноразовая ссылка для входа, запросите её ещё раз.</div>
+           <div class="line"></div>
+           <a class="link" href="subscription.html">Управление подписками о внесении в реестр</a>
+           <div class="line"></div>
+           <a class="link" href="index.html">На главную</a>
+           <div class="line"></div>
          </div>
-         <div class="monitoring_all">
-            <h2 class="monitoring_all-header">548 138</h2>
-            <div class="monitoring_all-text">записей в реестре запрещенных сайтов на данный момент</div>
-            <a class="btn monitoring_all-btn" >Статистика блокировок&nbsp;&rarr;</a>
-         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          <div class="monitoring_group_banners">
             <div class="monitoring_banner banner-drc">
                <div class="banner-bg"></div>
@@ -376,7 +235,7 @@
                   </div>
                </div>
             </div>
-            <a class="btn btn-about_donate" >Почему мы просим поддержки&nbsp;&rarr;</a>
+            <button type="button" class="btn btn-about_donate" >Почему мы просим поддержки&nbsp;&rarr;</button>
          </div>
          <div class="contacts"> <!-- копировать блок с роскомсвободы -->
             <div class="contacts__content">
@@ -456,72 +315,48 @@
             </div>
          </div>
       </div>
-      <div class="popup form_to_subscribe hidden" id="formToSubscribe">
-         <div class="popup-inner form_to_subscribe-inner">
+      <div class="form_to_subscribe hidden" id="formToSubscribe">
+         <div class="form_to_subscribe-inner">
             <div class="btn-close btn-close-subscribe" id="btnCloseFormSubscribe">
                <svg class="icons icons--close" width="27" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <use xlink:href="sprite.svg#icon-close"></use>
                </svg>
             </div>
-            <h1 class="popup-title subscribe-title">Оповестим о блокировке</h1>
-            <div class="popup-text subscribe-text">Пришлём письмо, если ваш сайт или страница попадут в Единый реестр запрещенной информации Роскомнадзора.</div>
-            <div class="tabs tabs-subscr">
-               <div class="tabs_btn-group">
-                  <div class="btn btn-tab btn-tab__active" id="subscr_setting">
-                     <span class="tab-item"><span class="tab-title">Подписка</span></span>
-                  </div>
-                  <div class="btn btn-tab" id="subscr-management">
-                     <span class="tab-item"><span class="tab-title">Управление подписками</span></span>
-                  </div>
+            <h1 class="subscribe-title">Оповестим о блокировке</h1>
+            <div class="subscribe-text">Пришлём письмо, если ваш сайт или страница попадут в Единый реестр запрещенной информации Роскомнадзора.</div>
+            <div class="line"></div>
+            <div class="subscribe-type telegram">
+               <div class="type-icon">
+                  <svg class="icons icons--telegram" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-telegram"></use>
+                  </svg>
+               </div>
+               <div class="type-name">В Telegram</div>
+               <div class="type-btn">
+                  <svg class="icons icons--arrow" width="13" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-arrow"></use>
+                  </svg>
                </div>
             </div>
             <div class="line"></div>
-            <div class="subscr_setting__block" id="subscrSettingBlock">
-              <div class="subscribe-type telegram">
-                 <div class="type-icon">
-                    <svg class="icons icons--telegram" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                       <use xlink:href="sprite.svg#icon-telegram"></use>
-                    </svg>
-                 </div>
-                 <div class="type-name">В Telegram</div>
-                 <div class="type-btn">
-                    <svg class="icons icons--arrow" width="13" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                       <use xlink:href="sprite.svg#icon-arrow"></use>
-                    </svg>
-                 </div>
-              </div>
-              <div class="line"></div>
-              <div class="subscribe-type mail">
-                 <div class="type-icon">
-                    <svg class="icons icons--email" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                       <use xlink:href="sprite.svg#icon-email"></use>
-                    </svg>
-                 </div>
-                 <div class="type-name">По почте</div>
-              </div>
-              <div class="subscribe-success hidden" id="subscribeSuccess">Готово! Дадим знать, если такая запись появится в реестре</div>
-
-              <label for="email" class="label-subscribe">Email
-              <input type="email" class="input-subscribe" placeholder="" name="email">
-              </label>
-              <label for="domain"  class="label-subscribe">Домен или IP-адрес
-              <input type="email" class="input-subscribe" placeholder="" name="domain">
-              </label>
-              <div class="btn btn_subscribe" id="btnSubscribe">Подписаться</div>
+            <div class="subscribe-type mail">
+               <div class="type-icon">
+                  <svg class="icons icons--email" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <use xlink:href="sprite.svg#icon-email"></use>
+                  </svg>
+               </div>
+               <div class="type-name">По почте</div>
             </div>
-            <div class="subscr_managment__block hidden" id="subscrManagementBlock">
-              <div class="subscribe-success hidden" id="sendEmailSuccess">Проверьте почту. Ссылка на вход отправлена на sdfsdfdsfadsfsf@dsfsdfsdfsdf.ru</div>
-              <label for="email" class="label-subscribe">Email, на который оформлена подписка
-              <input type="email" class="input-subscribe" placeholder="" name="email">
-              </label>
-              <div class="btn btn_subscribe" id="btnSendLink">Отправить ссылку для входа</div>
-            </div>
+            <label for="email" class="label-subscribe">Email
+            <input type="email" class="input-subscribe" placeholder="" name="email">
+            </label>
+            <label for="domain"  class="label-subscribe">Домен или IP-адрес
+            <input type="email" class="input-subscribe" placeholder="" name="domain">
+            </label>
+            <div class="btn btn_subscribe" id="btnSubscribe">Подписаться</div>
+            <div class="subscribe-success hidden" id="subscribeSuccess">Готово! Дадим знать, если такая запись появится в реестре</div>
          </div>
       </div>
-
-
-
-
       <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> <!--горизонатльынй скролл блока Наша работа -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--  скрывающиеся элементы меню в планшете и десктопе -->
@@ -534,11 +369,11 @@
         btnFilter.addEventListener("click", (event) => {
           allFilters.classList.toggle("hidden")
         })
-        if ($('body').innerWidth() > 739) {
+        if ($('body').innerWidth() > 767) {
           allFilters.classList.remove("hidden")
         }
         window.addEventListener("resize", (e) => {
-          if (document.documentElement.clientWidth > 739) {
+          if (document.documentElement.clientWidth > 767) {
             allFilters.classList.remove("hidden")
           }
         })
@@ -551,9 +386,6 @@
          var btnSubscribe = document.getElementById("btnSubscribe")
          var btnCloseFormSubscribe = document.getElementById("btnCloseFormSubscribe")
          var subscribeSuccess = document.getElementById("subscribeSuccess")
-         var subscrManagement = document.getElementById("subscr-management")
-         var subscrSetting = document.getElementById("subscr_setting")
-
           btnToSubscribe.addEventListener("click", (event) => { //открыть попап с подпиской
             formToSubscribe.classList.toggle("hidden")
           })
@@ -569,35 +401,161 @@
           btnCloseCtBanner.addEventListener("click", (event) => { //скрыть баннер censor Tracker
             censorTrackerBanner.classList.toggle("hidden")
           })
-
-          function toggleSubscrBlock () {
-            document.getElementById("subscrSettingBlock").classList.toggle("hidden")
-            document.getElementById("subscrManagementBlock").classList.toggle("hidden")
-            subscrManagement.classList.toggle("btn-tab__active")
-            subscrSetting.classList.toggle("btn-tab__active")
-
-          }
-          subscrManagement.addEventListener("click", (event) => {
-            toggleSubscrBlock()
-          })
-          subscrSetting.addEventListener("click", (event) => {
-            toggleSubscrBlock()
-          })
-
-          btnSendLink.addEventListener("click", (event) => {
-            document.getElementById("sendEmailSuccess").classList.toggle("hidden")
-          })
-
       </script>
 
       <script>
-        function setFilter () {
-          var selectedItemState = document.getElementById("selectState").value;
-          var selectedItemGovernment = document.getElementById("selectGovernment").value;
-          console.log('selectedItemState', selectedItemState)
-          console.log('selectedItemGovernment', selectedItemGovernment)
-        }
+         const BTN_DRPDN_STATE = document.getElementById("btn_select_state")
+         const BTN_DRPDN_GOVERMENT = document.getElementById("btn_select_government")
+         const BTN_DRPDN_DURATION = document.getElementById("btn_select_duration")
 
+         var class_name_selected, selector_option_selected, select, selector_data_toggle, selected, options, elToggle
+
+         const BTN_CLOSE_SELECT_STATE = document.getElementById("btnCloseSelectState")
+         const BTN_CLOSE_SELECT_GOVERMENT = document.getElementById("btnCloseSelectGovernment")
+         const BTN_CLOSE_SELECT_DURATION = document.getElementById("btnCloseSelecTime")
+
+         BTN_DRPDN_GOVERMENT.addEventListener('click', (e) => {
+           closeAllDrpd()
+           select = document.querySelector('.select__government');
+           select.classList.toggle("select_show")
+           setVars('government')
+           if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
+         })
+
+         BTN_DRPDN_STATE.addEventListener('click', (e) => {
+           closeAllDrpd()
+           select = document.querySelector('.select__state');
+           select.classList.toggle("select_show")
+           setVars('state')
+           if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_STATE, '.select__state')
+         })
+
+         BTN_DRPDN_DURATION.addEventListener('click', (e) => {
+           closeAllDrpd()
+           select = document.querySelector('.select__duration');
+           select.classList.toggle("select_show")
+           // setVars('duration') //TODO: скопировать логику с рабочей версии реестра
+           if (document.documentElement.clientWidth < 768) setCoords(BTN_DRPDN_DURATION, '.select__duration')
+         })
+
+         BTN_CLOSE_SELECT_STATE.addEventListener('click', (e) => {
+           setVars('state')
+           update(options[0], 'state');
+         })
+
+         BTN_CLOSE_SELECT_GOVERMENT.addEventListener('click', (e) => {
+           setVars('government')
+           update(options[0], 'government');
+         })
+
+         function setVars (props) {
+           class_name_selected = 'select__item_selected-' + props;
+           selector_option_selected = '.select__item_selected-' + props;
+           selected = document.querySelector(selector_option_selected);
+
+           switch (props) {
+             case 'state':
+               selector_data_toggle = '[data-select="toggle-state"]';
+               options = document.querySelectorAll('.select__list-state > .select__item');
+               break;
+             case 'government':
+               selector_data_toggle = '[data-select="toggle-government"]';
+               options = document.querySelectorAll('.select__list-goverment > .select__item');
+               break;
+           }
+
+           elToggle = document.querySelector(selector_data_toggle);
+           options.forEach((item, i) => {
+               item.addEventListener('click', (e) => {
+                   if (item.classList.contains(class_name_selected)) {
+                     return;
+                   }
+                   update(item, props);
+                   hide();
+               })
+           });
+         }
+
+         function closeAllDrpd () {
+             for (var i = 0; i < document.querySelectorAll('.select').length; i++) {
+               if (document.querySelectorAll('.select')[i].classList.contains('select_show')) {
+                 document.querySelectorAll('.select')[i].classList.remove('select_show')
+               }
+             }
+         }
+
+         function setCoords (el, select) {
+           var coordBtn =  el.getBoundingClientRect()
+           var documentWidth = document.documentElement.clientWidth
+           var drpnWidth = document.querySelector(`${select} > .select__dropdown`).offsetWidth
+           document.querySelector(`${select} > .select__dropdown`).style.top = coordBtn.y + 35 +  "px"
+           document.querySelector(`${select} > .select__dropdown`).style.left = coordBtn.x + "px"
+           if (coordBtn.x + drpnWidth > documentWidth) {
+             document.querySelector(`${select} > .select__dropdown`).style.left = documentWidth - drpnWidth + "px"
+           }
+         }
+
+         function update(option, props) {
+           var btn = (props == "state") ? BTN_CLOSE_SELECT_STATE : BTN_CLOSE_SELECT_GOVERMENT
+           var class_selector = (props == "state") ? '.select__state > .btn-select' : '.select__government > .btn-select'
+
+           if (option.dataset['index'] > 0 && btn.classList.contains("hidden")) {
+             document.querySelector(class_selector).classList.add("applied");
+             btn.classList.remove("hidden")
+
+           } else if (option.dataset['index'] == 0 && !btn.classList.contains("hidden")) {
+             document.querySelector(class_selector).classList.remove("applied");
+             btn.classList.add("hidden")
+           }
+
+           options.forEach((item, i) => {
+               item.classList.remove(class_name_selected)
+           });
+
+           option = option.closest('.select__item');
+           if (selected) {
+             selected.classList.remove(class_name_selected);
+           }
+           option.classList.add(class_name_selected);
+           elToggle.textContent = option.textContent;
+           elToggle.value = option.dataset['value'];
+           elToggle.dataset.index = option.dataset['index'];
+
+           return option.dataset['value'];
+         }
+
+         function hide() {
+           select.classList.remove('select_show');
+         }
+
+         document.addEventListener('click', (e) => {
+           if (!e.target.closest('.select')) {
+             document.querySelectorAll('.select_show').forEach(select => {
+               select.classList.remove('select_show');
+             });
+           }
+         });
+
+         document.querySelector('.filters').addEventListener('scroll', (e) => {
+           closeAllDrpd()
+         })
+
+
+         document.addEventListener('scroll', (e) => {
+           if (document.documentElement.clientWidth < 768) {
+             setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
+             setCoords(BTN_DRPDN_STATE, '.select__state')
+             setCoords(BTN_DRPDN_DURATION, '.select__duration')
+           }
+         })
+
+          window.addEventListener("resize", (e) => {
+            if (document.documentElement.clientWidth < 768) {
+              setCoords(BTN_DRPDN_GOVERMENT, '.select__government')
+              setCoords(BTN_DRPDN_STATE, '.select__state')
+              setCoords(BTN_DRPDN_DURATION, '.select__duration')
+            }
+          })
 
 
 

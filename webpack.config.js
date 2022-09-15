@@ -130,6 +130,10 @@ module.exports = {
         filename: 'subscription.html',
         template: 'src/public/subscription.html'
         }),
+      new HtmlWebpackPlugin({
+        filename: 'page_not_found.html',
+        template: 'src/public/page_not_found.html'
+        }),
 
 
 

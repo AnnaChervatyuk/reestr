@@ -1,0 +1,42 @@
+.page_not_found
+  max-width: 375px
+  margin: 80px auto 170px
+  padding: 0 20px
+  img
+    margin-bottom: 30px
+  h3
+    text-align: center
+    margin-bottom: 10px
+  .descr
+    font-size: 13px
+    line-height: 160%
+    text-align: center
+    color: #6B6B66
+    margin-bottom: 30px
+  .link
+    padding: 15px 0
+    display: block
+    line-height: 160%
+    color: #4661BC
+    font-size: 12px
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: calc(50% - 3px)
+      right: 0
+      width: 12px
+      height: 8px
+      flex-shrink: 0
+      margin-left: 1rem
+      background-size: cover
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="8" width="12"%3E%3Cpath d="M6.58301 1.08366L11.333 5.75033C11.6663 6.08366 11.6663 6.58366 11.333 6.91699C10.9997 7.25033 10.4997 7.25033 10.1663 6.91699L6.08301 2.83366L1.99967 6.91699C1.83301 7.08366 1.66634 7.16699 1.41634 7.16699C0.916341 7.16699 0.583008 6.83366 0.583008 6.33366C0.583008 6.08366 0.66634 5.91699 0.833007 5.75033L5.58301 1.00033C5.74967 0.750325 6.24967 0.750326 6.583011.08366Z"/%3E%3C/svg%3E')
+      transform: rotate(90deg)
+
+@media (min-width: 768px)
+  .page_not_found
+    padding: 0
+    .descr
+      font-size: 18px
+    .link
+      font-size: 15px
