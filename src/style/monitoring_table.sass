@@ -2,6 +2,13 @@
   .monitoring_table
     max-width: 1100px
     margin: 0 auto
+    .btn.delete
+      font-size: 13px
+      line-height: 150%
+      color: #B61414
+      margin-left: auto
+      display: block
+      margin-right: 15px
     .table_filter
       display: flex
       flex-direction: row
@@ -150,9 +157,6 @@
       padding-left: 15px
       font-size:  11px
       line-height: 16px
-      a.table_row:hover
-        text-decoration: none
-        background-color: #F6F6F6
       .table_row
         border-bottom: 1px solid #EEF1F4
         padding: 25px 0
@@ -161,8 +165,17 @@
         font-family: 'IBMPlexMono', monospace
         overflow-x: auto
         white-space: nowrap
-        // &:first-child
-        //   border-top: 1px solid #EEF1F4
+        position: relative
+        .table_td
+          &.btn-action-subsr
+            position: absolute
+            top: 25px
+            right: 15px
+            .btn
+              padding: 0
+              opacity: 0.15
+              &:hover
+                opacity: 1
         .td_date
           margin-bottom: 20px
         .td_site
@@ -185,6 +198,14 @@
           margin-bottom: 10px
         .table_td.td_state-unlock
           color: #6C9E2C
+        .table_td.not_found
+          color: #6B6B66
+      .table_row.deleted
+        .table_td
+          color: #9C9D9E
+          text-decoration: line-through
+          &.btn-return
+            text-decoration: none
       .table_row-header
         display: none
       &.empty_list
@@ -252,7 +273,6 @@
 
 @media (min-width: 400px)
   .container-fluid
-    .monitoring_table
       .table_wrapper
         .table_row
           overflow-x: hidden
@@ -264,6 +284,10 @@
     .monitoring_table
       padding: 30px 45px
       margin: 0
+    .monitoring_table
+      .btn.delete
+        padding: 0
+        margin-right: 0
     .company-info
       margin-bottom: 100px
       .table_wrapper
@@ -348,8 +372,9 @@
             margin-bottom: 0
             font-weight: 400
             color: #000000
-            font-size: 14px
-            line-height: 20px
+            font-size: 13px
+            line-height: 150%
+            overflow-x: hidden
           .td_date
             width: 80px
             order: 0
@@ -400,3 +425,18 @@
             width: 195px
           .td_owner
             width: 545px
+    .monitoring_table.subscription_table
+      .table_wrapper
+        margin-bottom: 60px
+        .table_row-header
+          .table_td
+            color: #4661BC
+        .table_row
+          display: grid
+          grid-template-columns: 150px 600px 280px 20px
+          overflow: hidden
+          .table_td
+            &.btn-action-subsr
+              position: relative
+              top: 0
+              right: 0

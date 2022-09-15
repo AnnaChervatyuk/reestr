@@ -126,6 +126,12 @@ module.exports = {
         filename: 'email.html',
         template: 'src/public/email.html'
         }),
+      new HtmlWebpackPlugin({
+        filename: 'subscription.html',
+        template: 'src/public/subscription.html'
+        }),
+
+
 
 
   ],
