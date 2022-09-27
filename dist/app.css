@@ -1684,6 +1684,7 @@ h6 {
   background-color: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
+  z-index: 1;
 }
 .container .popup.popup_delete_subscr .popup-inner {
   max-width: 514px;
@@ -1966,7 +1967,7 @@ h6 {
   padding: 8px 16px;
   margin-top: auto;
   width: fit-content;
-  z-index: 1;
+  z-index: 0;
 }
 .container-fluid .monitoring_group_banners .monitoring_banner .banner-btn:hover {
   color: #4661BC;
