@@ -72,6 +72,7 @@ $(() => {
     series: [{ valueField: 'totalBlocked', name: 'Заблокировано' },
       { valueField: 'totalUnblocked', name: 'Разблокировано' },
       { valueField: 'totalBlockedTrain', name: 'Заблокировано неправомерно' }],
+    rotated: true,
     legend: {
       verticalAlignment: 'bottom',
       horizontalAlignment: 'center',
