@@ -1,72 +1,21 @@
 
 $(() => {
-  const dataSource = [{
-    state: 'Генпрокуратура',
-    totalBlocked: 67994,
-    totalUnblocked: 104891,
-    totalBlockedTrain: 896258,
-  }, {
-    state: 'МВД',
-    totalBlocked: 17665,
-    totalUnblocked: 46705,
-    totalBlockedTrain: 1253973,
-  }, {
-    state: 'Минкомсвязь',
-    totalBlocked: 43275,
-    totalUnblocked: 65,
-    totalBlockedTrain: 346902,
-  }, {
-    state: 'Мосгорсуд',
-    totalBlocked: 44210,
-    totalUnblocked: 116775,
-    totalBlockedTrain: 295063,
-  }, {
-    state: 'Росалкогольрегулирование',
-    totalBlocked: 3965,
-    totalUnblocked: 8147,
-    totalBlockedTrain: 84010,
-  }, {
-    state: 'Росздравнадзор',
-    totalBlocked: 8639,
-    totalUnblocked: 5852,
-    totalBlockedTrain: 12139,
-  }, {
-    state: 'Роскомнадзор',
-    totalBlocked: 26148,
-    totalUnblocked: 39758,
-    totalBlockedTrain: 584774,
-  }, {
-    state: 'Росмолодежь',
-    totalBlocked: 290,
-    totalUnblocked: 117,
-    totalBlockedTrain: 927,
-  }, {
-    state: 'Роспотребнадзор',
-    totalBlocked: 0,
-    totalUnblocked: 0,
-    totalBlockedTrain: 0,
-  }, {
-    state: 'ФНС',
-    totalBlocked: 292058,
-    totalUnblocked: 62625,
-    totalBlockedTrain: 2832674,
-  }, {
-    state: 'ФСКН',
-    totalBlocked: 453,
-    totalUnblocked: 26962,
-    totalBlockedTrain: 906268,
-  }, {
-    state: 'Суд',
-    totalBlocked: 20240,
-    totalUnblocked: 147474,
-    totalBlockedTrain: 3795718,
-  }];
+    function getRandomInt() {
+      return Math.floor(Math.random() * 200000);
+    }
+    const listDepartments = ['Генпрокуратура', 'МВД', 'Минкомсвязь','Мосгорсуд', 'Росалкогольрегулирование','Росздравнадзор','Роскомнадзор','Росмолодежь','Роспотребнадзор','ФНС','ФСКН','Суд']
+
+    const blockingDistributionDataSource = listDepartments.map((node)=>{
+      let el = {departament:node, totalBlocked:getRandomInt(), totalUnblocked:getRandomInt(), totalBlockedTrain:getRandomInt()}
+      return el
+    }).sort((a, b) => (a.totalBlocked +a.totalUnblocked + a.totalBlockedTrain)- (b.totalBlocked +b.totalUnblocked + b.totalBlockedTrain))
+
   const chartTypes = ['stackedBar', 'fullStackedBar']
   var choosedType = 0;
-  const chart = $('#chart').dxChart({
-    dataSource,
+  const blockingDistributionChart = $('#blocking_distribution_chart').dxChart({
+    dataSource: blockingDistributionDataSource,
     commonSeriesSettings: {
-      argumentField: 'state',
+      argumentField: 'departament',
       type: chartTypes[0],
     },
     series: [{ valueField: 'totalBlocked', name: 'Заблокировано' },
@@ -89,7 +38,7 @@ $(() => {
       },
       position: 'left',
     },
-    title: 'блокировки',
+    title: 'Распределение блокировок',
     tooltip: {
       enabled: true,
       location: 'edge',
@@ -119,7 +68,105 @@ $(() => {
   const changeChartType = () => {
     btn_change_type.option('text', chartTypes[choosedType])
     choosedType = (choosedType == 0) ?  1 : 0
-    chart.option('commonSeriesSettings.type', chartTypes[choosedType]);
-
+    blockingDistributionChart.option('commonSeriesSettings.type', chartTypes[choosedType]);
   }
-});
+
+  const listDepartment = ['Роскомнадзор', 'Суд', 'Роспотребнадзор']
+  const listСategory = ['Сategory_1', 'Сategory_2', 'Сategory_3', 'Сategory_4', 'Сategory_5', 'Сategory_6', 'Сategory_7']
+  let dataSourceСategory = []
+  listDepartment.forEach((node)=>{
+    let el;
+    listСategory.forEach((item, i) => {
+      el = {departament: node, [item]: getRandomInt()}
+      dataSourceСategory.push(el)
+    });
+  })
+
+    const categoryСhart = $('#category_chart').dxChart({
+      dataSource: dataSourceСategory,
+      commonSeriesSettings: {
+        argumentField: 'departament',
+        type: 'area',
+      },
+      series: listСategory.map((node)=>{let el = { valueField: node, name: node }; return el}),
+      legend: {
+        verticalAlignment: 'bottom',
+        horizontalAlignment: 'center',
+      },
+      argumentAxis: {
+        label: {
+          wordWrap: 'none',
+          overlappingBehavior: 'stagger',
+        },
+      },
+      valueAxis: {
+        title: {
+          text: 'Количество',
+        },
+        position: 'left',
+      },
+      title: 'Блокировка по категориям',
+      tooltip: {
+        enabled: true,
+        location: 'edge',
+        customizeTooltip(arg) {
+          return {
+            text: `${arg.seriesName}: ${arg.valueText}`,
+          };
+        },
+      },
+      onLegendClick(e) {
+          const series = e.target;
+          if (series.isVisible()) {
+            series.hide();
+          } else {
+            series.show();
+          }
+        },
+    }).dxChart('instance');
+
+
+
+    const listCompany = ['DigitalOcean', 'CloudFlare', 'Amazon','GoDaddy', 'Google','Azure']
+    const dataSourceIPStatistics = listCompany.map((node)=>{
+      let el = {nameCompany:node, totalBlocked:getRandomInt(), }
+      return el
+    }).sort((a, b) => a.totalBlocked - b.totalBlocked)
+
+    const ipStatisticsChart = $('#ip_statistics_chart').dxChart({
+      dataSource: dataSourceIPStatistics,
+      commonSeriesSettings: {
+        argumentField: 'nameCompany',
+        type: 'bar',
+      },
+      series: [{ valueField: 'totalBlocked', name: 'Заблокировано'}],
+      rotated: true,
+      legend: {
+        visible: false,
+      },
+      argumentAxis: {
+        label: {
+          wordWrap: 'none',
+          overlappingBehavior: 'stagger',
+        },
+      },
+      title: 'Статистика по IP-адресам',
+      tooltip: {
+        enabled: true,
+        location: 'edge',
+        customizeTooltip(arg) {
+          return {
+            text: `${arg.seriesName}: ${arg.valueText}`,
+          };
+        },
+      },
+      onLegendClick(e) {
+          const series = e.target;
+          if (series.isVisible()) {
+            series.hide();
+          } else {
+            series.show();
+          }
+        },
+    }).dxChart('instance');
+  });
