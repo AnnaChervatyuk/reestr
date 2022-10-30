@@ -18,7 +18,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
       <link rel="stylesheet" href="app.css">
-   </head>
+   <link href="app.css" rel="stylesheet"></head>
    <body class="container container-visual">
       <div class="container-fluid">
          <div class="header_monitor">
@@ -182,8 +182,8 @@
          <div class="section_blockings">
 
            <div class="section_blocking">
+              <div class="btn_change_type" id="btn_change_type"></div>
                <div id="blocking_distribution_chart"></div>
-               <div id="btn_change_type"></div>
             </div>
 
           <div class="section_blocking">
@@ -195,9 +195,8 @@
              <div class="demo-container">
                <div id="category_chart"></div>
                <div id="btn_change_category"></div>
-
              </div>
-            </div>
+          </div>
 
             <div class="section_blocking">
               <div id="ip_statistics_chart"></div>
@@ -357,5 +356,5 @@
 
 
 
-   </body>
+   <script src="bundle.js"></script></body>
 </html>

@@ -5,6 +5,11 @@
   padding: 20px 15px
   .section_blocking
     margin-bottom: 100px
+    position: relative
+    .btn_change_type
+      position: absolute
+      right: 0
+      top: -30px
     &:last-child
       margin-bottom: 0
     .section_blocking__title
@@ -59,7 +64,11 @@
   padding: 20px
 
 
-
+@media (min-width:600px) 
+  .section_blockings
+    .section_blocking
+      .btn_change_type
+        top: 5px
 
 @media (min-width: 768px)
   .section_blockings

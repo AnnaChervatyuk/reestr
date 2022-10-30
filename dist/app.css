@@ -2894,6 +2894,12 @@ h6 {
 }
 .section_blockings .section_blocking {
   margin-bottom: 100px;
+  position: relative;
+}
+.section_blockings .section_blocking .btn_change_type {
+  position: absolute;
+  right: 0;
+  top: -30px;
 }
 .section_blockings .section_blocking:last-child {
   margin-bottom: 0;
@@ -2957,6 +2963,11 @@ h6 {
   padding: 20px;
 }
 
+@media (min-width: 600px) {
+  .section_blockings .section_blocking .btn_change_type {
+    top: 5px;
+  }
+}
 @media (min-width: 768px) {
   .section_blockings .section_blocking .section_blocking__chart .chart_wrapper-agency {
     height: 800px;

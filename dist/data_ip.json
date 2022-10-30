@@ -1,0 +1,6 @@
+[{"ip_count": "331229", "company_name": "DigitalOcean", "percent_from_all": "37.964"},
+   {"ip_count": "69717", "company_name": "CloudFlare", "percent_from_all": "7.991"},
+   {"ip_count": "10908", "company_name": "Amazon", "percent_from_all": "1.25"},
+   {"ip_count": "298", "company_name": "Google", "percent_from_all": "0.034"},
+   {"ip_count": "425", "company_name": "GoDaddy", "percent_from_all": "0.049"}, 
+  {"ip_count": "28", "company_name": "Azure", "percent_from_all": "0.003"}]

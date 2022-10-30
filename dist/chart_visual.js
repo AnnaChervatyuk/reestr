@@ -4,10 +4,8 @@ function getRandomInt() {
   return Math.floor(Math.random() * 200000);
 }
 
-const chartTypes = ['stackedBar', 'fullStackedBar']
+const chartTypes = [{type:'stackedBar', name: 'число', icon:'percent'}, {type:'fullStackedBar', name: 'процент', icon:'percent'}]
 var choosedType = 0;
-
-const listColors = ['#4661BC']
 
 $.getJSON( "./data.json", function( json ) {
     let dataJSON = json;
@@ -68,12 +66,13 @@ $.getJSON( "./data.json", function( json ) {
         barGroupPadding: 0.2,
     		commonSeriesSettings: {
           argumentField: 'departament',
-    			type: chartTypes[0],
+    			type: chartTypes[0].type,
           barPadding: 0,
           aggregation: {
             enabled: false,
           },
     		},
+
     		series: [{
     				valueField: 'blocked',
     				name: 'Заблокировано',
@@ -112,6 +111,7 @@ $.getJSON( "./data.json", function( json ) {
     				text: '',
     			},
     			position: 'left',
+          type: 'logarithmic',
     		},
     		title: 'Распределение блокировок',
     		tooltip: {
@@ -133,34 +133,33 @@ $.getJSON( "./data.json", function( json ) {
     		},
     	}).dxChart('instance');
 
+      // var container = $("#btn_change_type");
+      // chartTypes.forEach(function(buttonOptions) {
+      //     var wrapper = $("<div >");
+      //     var buttonContainer = $("<div >");
+      //     container.append(container.append(buttonContainer));
+      //     buttonContainer.dxButton({
+      //         text: buttonOptions.name,
+      //         type: buttonOptions.type,
+      //         onClick: function(e) {
+      //           blockingDistributionChart.option('commonSeriesSettings.type', buttonOptions.type);
+      //         }
+      //     });
+      // });
+
     	const btn_change_type = $('#btn_change_type').dxButton({
-    		icon: 'chart',
-    		text: chartTypes[1],
-        // text: `&{return chartTypes[1] ? 'показать абсолютные значения' : 'показать относительные значения'}`
+    		text: chartTypes[1].name,
     		onClick() {
     			changeChartType()
     		},
     	}).dxButton('instance');
 
     	const changeChartType = () => {
-    		btn_change_type.option('text', chartTypes[choosedType])
+    		btn_change_type.option('text', chartTypes[choosedType].name)
     		choosedType = (choosedType == 0) ? 1 : 0
-    		blockingDistributionChart.option('commonSeriesSettings.type', chartTypes[choosedType]);
+    		blockingDistributionChart.option('commonSeriesSettings.type', chartTypes[choosedType].type);
     	}
 
-    	const listDepartment = ['Роскомнадзор', 'Суд', 'Роспотребнадзор']
-    	const listСategory = ['Сategory_1', 'Сategory_2', 'Сategory_3', 'Сategory_4', 'Сategory_5', 'Сategory_6', 'Сategory_7']
-    	let dataSourceСategory = []
-    	listDepartment.forEach((node) => {
-    		let el;
-    		listСategory.forEach((item, i) => {
-    			el = {
-    				departament: node,
-    				[item]: getRandomInt()
-    			}
-    			dataSourceСategory.push(el)
-    		});
-    	})
 
 
   		const chartPeriod = $('#blocking_period_chart').dxChart({
@@ -178,7 +177,7 @@ $.getJSON( "./data.json", function( json ) {
         argumentAxis: {
           argumentType: 'datetime',
           aggregationInterval: 'week',
-          valueMarginsEnabled: true, //false
+          valueMarginsEnabled: true,
           label: {
             visible: false,
           },
@@ -254,129 +253,146 @@ $.getJSON( "./data.json", function( json ) {
        });
 
 
+      //  const listDepartment = ['Роскомнадзор', 'Суд', 'Роспотребнадзор']
+     	// const listСategory = ['Сategory_1', 'Сategory_2', 'Сategory_3', 'Сategory_4', 'Сategory_5', 'Сategory_6', 'Сategory_7']
+     	// let dataSourceСategory = []
+     	// listDepartment.forEach((node) => {
+     	// 	let el;
+     	// 	listСategory.forEach((item, i) => {
+     	// 		el = {
+     	// 			departament: node,
+     	// 			[item]: getRandomInt()
+     	// 		}
+     	// 		dataSourceСategory.push(el)
+     	// 	});
+     	// })
 
+      //
+    	// const chartTypesArea = ['stackedsplinearea', 'fullstackedsplinearea']
+    	// var choosedTypeArea = 0;
+    	// const categoryСhart = $('#category_chart').dxChart({
+    	// 	dataSource: dataSourceСategory,
+    	// 	commonSeriesSettings: {
+    	// 		argumentField: 'departament',
+    	// 		type: chartTypesArea[0],
+    	// 	},
+    	// 	series: listСategory.map((node) => {
+    	// 		let el = {
+    	// 			valueField: node,
+    	// 			name: node
+    	// 		};
+    	// 		return el
+    	// 	}),
+    	// 	legend: {
+    	// 		verticalAlignment: 'bottom',
+    	// 		horizontalAlignment: 'center',
+    	// 	},
+      //
+    	// 	argumentAxis: {
+      //     aggregatedPointsPosition: 'crossTicks',
+      //
+    	// 		valueMarginsEnabled: false,
+    	// 		label: {
+    	// 			wordWrap: 'none',
+    	// 			overlappingBehavior: 'stagger',
+    	// 		},
+    	// 	},
+    	// 	valueAxis: {
+      //
+    	// 		title: {
+    	// 			text: 'Количество',
+    	// 		},
+    	// 		position: 'left',
+    	// 	},
+    	// 	title: 'Блокировка по категориям',
+    	// 	tooltip: {
+    	// 		enabled: true,
+    	// 		location: 'edge',
+    	// 		customizeTooltip(arg) {
+    	// 			return {
+    	// 				text: `${arg.seriesName}: ${arg.valueText}`,
+    	// 			};
+    	// 		},
+    	// 	},
+    	// 	onLegendClick(e) {
+    	// 		const series = e.target;
+    	// 		if (series.isVisible()) {
+    	// 			series.hide();
+    	// 		} else {
+    	// 			series.show();
+    	// 		}
+    	// 	},
+    	// }).dxChart('instance');
+      //
+      //
+    	// const btn_change_category = $('#btn_change_category').dxButton({
+    	// 	icon: 'chart',
+    	// 	text: chartTypesArea[1],
+    	// 	onClick() {
+    	// 		changeCategoryChartType()
+    	// 	},
+    	// }).dxButton('instance');
+      //
+    	// const changeCategoryChartType = () => {
+    	// 	btn_change_category.option('text', chartTypesArea[choosedTypeArea])
+    	// 	choosedTypeArea = (choosedTypeArea == 0) ? 1 : 0
+    	// 	categoryСhart.option('commonSeriesSettings.type', chartTypesArea[choosedTypeArea]);
+    	// }
 
-    	const chartTypesArea = ['stackedsplinearea', 'fullstackedsplinearea']
-    	var choosedTypeArea = 0;
-    	const categoryСhart = $('#category_chart').dxChart({
-    		dataSource: dataSourceСategory,
-    		commonSeriesSettings: {
-    			argumentField: 'departament',
-    			type: chartTypesArea[0],
-    		},
-    		series: listСategory.map((node) => {
-    			let el = {
-    				valueField: node,
-    				name: node
-    			};
-    			return el
-    		}),
-    		legend: {
-    			verticalAlignment: 'bottom',
-    			horizontalAlignment: 'center',
-    		},
+})
 
-    		argumentAxis: {
-          aggregatedPointsPosition: 'crossTicks',
+      $.getJSON( "./data_ip.json", function( json ) {
+        let dataIPJSON = json.sort((a, b) => a.ip_count - b.ip_count);
+          $('#ip_statistics_chart').dxChart({
+            dataSource: dataIPJSON,
+            commonSeriesSettings: {
+              argumentField: 'company_name',
+              type: 'bar',
+              aggregation: {
+                enabled: true,
+              },
+            },
 
-    			valueMarginsEnabled: false,
-    			label: {
-    				wordWrap: 'none',
-    				overlappingBehavior: 'stagger',
-    			},
-    		},
-    		valueAxis: {
-
-    			title: {
-    				text: 'Количество',
-    			},
-    			position: 'left',
-    		},
-    		title: 'Блокировка по категориям',
-    		tooltip: {
-    			enabled: true,
-    			location: 'edge',
-    			customizeTooltip(arg) {
-    				return {
-    					text: `${arg.seriesName}: ${arg.valueText}`,
-    				};
-    			},
-    		},
-    		onLegendClick(e) {
-    			const series = e.target;
-    			if (series.isVisible()) {
-    				series.hide();
-    			} else {
-    				series.show();
-    			}
-    		},
-    	}).dxChart('instance');
-
-
-    	const btn_change_category = $('#btn_change_category').dxButton({
-    		icon: 'chart',
-    		text: chartTypesArea[1],
-    		onClick() {
-    			changeCategoryChartType()
-    		},
-    	}).dxButton('instance');
-
-    	const changeCategoryChartType = () => {
-    		btn_change_category.option('text', chartTypesArea[choosedTypeArea])
-    		choosedTypeArea = (choosedTypeArea == 0) ? 1 : 0
-    		categoryСhart.option('commonSeriesSettings.type', chartTypesArea[choosedTypeArea]);
-    	}
-
-
-    	const listCompany = ['DigitalOcean', 'CloudFlare', 'Amazon', 'GoDaddy', 'Google', 'Azure']
-    	const dataSourceIPStatistics = listCompany.map((node) => {
-    		let el = {
-    			nameCompany: node,
-    			blocked: getRandomInt(),
-    		}
-    		return el
-    	}).sort((a, b) => a.blocked - b.blocked)
-
-    	const ipStatisticsChart = $('#ip_statistics_chart').dxChart({
-    		dataSource: dataSourceIPStatistics,
-    		commonSeriesSettings: {
-    			argumentField: 'nameCompany',
-    			type: 'bar',
-    		},
-    		series: [{
-    			valueField: 'blocked',
-    			name: 'Заблокировано',
-          color: '#96a9e9'
-    		}],
-    		rotated: true,
-    		legend: {
-    			visible: false,
-    		},
-    		argumentAxis: {
-    			label: {
-    				wordWrap: 'none',
-    				overlappingBehavior: 'stagger',
-    			},
-    		},
-    		title: 'Статистика по IP-адресам',
-    		tooltip: {
-    			enabled: true,
-    			location: 'edge',
-    			customizeTooltip(arg) {
-    				return {
-    					text: `${arg.seriesName}: ${arg.valueText}`,
-    				};
-    			},
-    		},
-    		onLegendClick(e) {
-    			const series = e.target;
-    			if (series.isVisible()) {
-    				series.hide();
-    			} else {
-    				series.show();
-    			}
-    		},
-    	}).dxChart('instance');
+            series: [{
+              valueField: 'ip_count',
+              name: 'Заблокировано',
+              color: '#96a9e9'
+            }],
+            valueAxis: {
+              valueType: 'numeric',
+              type: 'logarithmic',
+            },
+            rotated: true,
+            legend: {
+              visible: false,
+            },
+            argumentAxis: {
+              label: {
+                wordWrap: 'none',
+                overlappingBehavior: 'stagger',
+              },
+            },
+            title: 'Статистика по IP-адресам',
+            tooltip: {
+              enabled: true,
+              location: 'edge',
+              customizeTooltip(arg) {
+                return {
+                  text: `${arg.seriesName}: ${arg.valueText}`,
+                };
+              },
+            },
+            onLegendClick(e) {
+              const series = e.target;
+              if (series.isVisible()) {
+                series.hide();
+              } else {
+                series.show();
+              }
+            },
+          });
   })
+
+
 
 });
