@@ -2899,7 +2899,7 @@ h6 {
 .section_blockings .section_blocking .btn_change_type {
   position: absolute;
   right: 0;
-  top: -30px;
+  top: 80px;
   z-index: 1;
 }
 .section_blockings .section_blocking:last-child {
@@ -2966,7 +2966,7 @@ h6 {
 
 @media (min-width: 600px) {
   .section_blockings .section_blocking .btn_change_type {
-    top: 5px;
+    top: 50px;
   }
 }
 @media (min-width: 768px) {

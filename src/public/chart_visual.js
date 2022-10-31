@@ -3,6 +3,7 @@ $(() => {
 function getRandomInt() {
   return Math.floor(Math.random() * 200000);
 }
+const listMonth = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
 
 const chartTypes = [{type:'stackedBar', name: 'число', icon:'percent'}, {type:'fullStackedBar', name: 'процент', icon:'percent'}]
 var choosedType = 0;
@@ -111,9 +112,14 @@ $.getJSON( "./data.json", function( json ) {
     				text: '',
     			},
     			position: 'left',
-          type: 'logarithmic',
     		},
-    		title: 'Распределение блокировок',
+        title: {
+          horizontalAlignment: 'left',
+          font: {
+            size: 22,
+          },
+          text: 'По ведомствам'
+        },
     		tooltip: {
     			enabled: true,
     			location: 'edge',
@@ -133,20 +139,6 @@ $.getJSON( "./data.json", function( json ) {
     		},
     	}).dxChart('instance');
 
-      // var container = $("#btn_change_type");
-      // chartTypes.forEach(function(buttonOptions) {
-      //     var wrapper = $("<div >");
-      //     var buttonContainer = $("<div >");
-      //     container.append(container.append(buttonContainer));
-      //     buttonContainer.dxButton({
-      //         text: buttonOptions.name,
-      //         type: buttonOptions.type,
-      //         onClick: function(e) {
-      //           blockingDistributionChart.option('commonSeriesSettings.type', buttonOptions.type);
-      //         }
-      //     });
-      // });
-
     	const btn_change_type = $('#btn_change_type').dxButton({
     		text: chartTypes[1].name,
     		onClick() {
@@ -165,6 +157,10 @@ $.getJSON( "./data.json", function( json ) {
   		const chartPeriod = $('#blocking_period_chart').dxChart({
   			palette: 'Harmony Light',
         dataSource: dataJSON,
+        // height: 200,
+        size: {
+            height: 300,
+        },
   			commonSeriesSettings: {
   				point: {
   					size: 0,
@@ -196,7 +192,13 @@ $.getJSON( "./data.json", function( json ) {
   				visible: false,
   			},
 
-  			title: 'Всего блокировок',
+        title: {
+          horizontalAlignment: 'left',
+          font: {
+            size: 22,
+          },
+          text: 'По годам'
+        },
   			tooltip: {
   				enabled: true,
   				location: 'edge',
@@ -212,35 +214,25 @@ $.getJSON( "./data.json", function( json ) {
       $('#range-selector').dxRangeSelector({
         dataSource:dataJSON,
           size: {
-            height: 120,
+            height: 80,
           },
-         chart: {
-           commonSeriesSettings: {
-             type: 'area',
-             argumentField: 'startPeriodDate',
-           },
-           series: [
-             {
-              valueField: 'totalUnblocked',
-               color: '#758CDA'
-             },
-             { valueField: 'totalBlocked',
-             color: '#d90202' },
-           ],
-           legend: {
-     				visible: false,
-     			},
-         },
-
          scale: {
+           startValue: dataJSON[0].startPeriodDate,
+           endValue:  dataJSON[dataJSON.length-1].endPeriodDate,
            minorTickInterval: 'week',
            tickInterval: 'year',
            valueType: 'datetime',
            aggregationInterval: 'week',
-           placeholderHeight: 35,
+           placeholderHeight: 15,
+           minorTick: {
+            visible: false,
+          },
          },
          sliderMarker: {
-           format: 'monthAndDay',
+           customizeText() {
+             var d = new Date(this.value);
+              return `${listMonth[d.getMonth()]} ${d.getFullYear()}`;
+            },
          },
          behavior: {
           callValueChanged: 'onMoving',
@@ -251,93 +243,6 @@ $.getJSON( "./data.json", function( json ) {
           updateDistributionChart(e.value)
          },
        });
-
-
-      //  const listDepartment = ['Роскомнадзор', 'Суд', 'Роспотребнадзор']
-     	// const listСategory = ['Сategory_1', 'Сategory_2', 'Сategory_3', 'Сategory_4', 'Сategory_5', 'Сategory_6', 'Сategory_7']
-     	// let dataSourceСategory = []
-     	// listDepartment.forEach((node) => {
-     	// 	let el;
-     	// 	listСategory.forEach((item, i) => {
-     	// 		el = {
-     	// 			departament: node,
-     	// 			[item]: getRandomInt()
-     	// 		}
-     	// 		dataSourceСategory.push(el)
-     	// 	});
-     	// })
-
-      //
-    	// const chartTypesArea = ['stackedsplinearea', 'fullstackedsplinearea']
-    	// var choosedTypeArea = 0;
-    	// const categoryСhart = $('#category_chart').dxChart({
-    	// 	dataSource: dataSourceСategory,
-    	// 	commonSeriesSettings: {
-    	// 		argumentField: 'departament',
-    	// 		type: chartTypesArea[0],
-    	// 	},
-    	// 	series: listСategory.map((node) => {
-    	// 		let el = {
-    	// 			valueField: node,
-    	// 			name: node
-    	// 		};
-    	// 		return el
-    	// 	}),
-    	// 	legend: {
-    	// 		verticalAlignment: 'bottom',
-    	// 		horizontalAlignment: 'center',
-    	// 	},
-      //
-    	// 	argumentAxis: {
-      //     aggregatedPointsPosition: 'crossTicks',
-      //
-    	// 		valueMarginsEnabled: false,
-    	// 		label: {
-    	// 			wordWrap: 'none',
-    	// 			overlappingBehavior: 'stagger',
-    	// 		},
-    	// 	},
-    	// 	valueAxis: {
-      //
-    	// 		title: {
-    	// 			text: 'Количество',
-    	// 		},
-    	// 		position: 'left',
-    	// 	},
-    	// 	title: 'Блокировка по категориям',
-    	// 	tooltip: {
-    	// 		enabled: true,
-    	// 		location: 'edge',
-    	// 		customizeTooltip(arg) {
-    	// 			return {
-    	// 				text: `${arg.seriesName}: ${arg.valueText}`,
-    	// 			};
-    	// 		},
-    	// 	},
-    	// 	onLegendClick(e) {
-    	// 		const series = e.target;
-    	// 		if (series.isVisible()) {
-    	// 			series.hide();
-    	// 		} else {
-    	// 			series.show();
-    	// 		}
-    	// 	},
-    	// }).dxChart('instance');
-      //
-      //
-    	// const btn_change_category = $('#btn_change_category').dxButton({
-    	// 	icon: 'chart',
-    	// 	text: chartTypesArea[1],
-    	// 	onClick() {
-    	// 		changeCategoryChartType()
-    	// 	},
-    	// }).dxButton('instance');
-      //
-    	// const changeCategoryChartType = () => {
-    	// 	btn_change_category.option('text', chartTypesArea[choosedTypeArea])
-    	// 	choosedTypeArea = (choosedTypeArea == 0) ? 1 : 0
-    	// 	categoryСhart.option('commonSeriesSettings.type', chartTypesArea[choosedTypeArea]);
-    	// }
 
 })
 
@@ -360,7 +265,6 @@ $.getJSON( "./data.json", function( json ) {
             }],
             valueAxis: {
               valueType: 'numeric',
-              type: 'logarithmic',
             },
             rotated: true,
             legend: {
@@ -372,7 +276,6 @@ $.getJSON( "./data.json", function( json ) {
                 overlappingBehavior: 'stagger',
               },
             },
-            title: 'Статистика по IP-адресам',
             tooltip: {
               enabled: true,
               location: 'edge',
