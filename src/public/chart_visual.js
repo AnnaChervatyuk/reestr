@@ -113,13 +113,7 @@ $.getJSON( "./data.json", function( json ) {
     			},
     			position: 'left',
     		},
-        title: {
-          horizontalAlignment: 'left',
-          font: {
-            size: 22,
-          },
-          text: 'По ведомствам'
-        },
+
     		tooltip: {
     			enabled: true,
     			location: 'edge',
@@ -159,7 +153,7 @@ $.getJSON( "./data.json", function( json ) {
         dataSource: dataJSON,
         // height: 200,
         size: {
-            height: 300,
+            height: 175,
         },
   			commonSeriesSettings: {
   				point: {
@@ -192,13 +186,6 @@ $.getJSON( "./data.json", function( json ) {
   				visible: false,
   			},
 
-        title: {
-          horizontalAlignment: 'left',
-          font: {
-            size: 22,
-          },
-          text: 'По годам'
-        },
   			tooltip: {
   				enabled: true,
   				location: 'edge',
